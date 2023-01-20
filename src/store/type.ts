@@ -1,10 +1,3 @@
-import { IMsg } from "../components/Chat/type";
-
-export type IMsgAtom = {
-  msg: IMsg[];
-  error: string;
-};
-
 export type IUserAtom = {
   user: string;
   error: string;

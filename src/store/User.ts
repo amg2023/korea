@@ -1,7 +1,6 @@
 import { atom } from "jotai";
-import { IJoiner } from "../components/Chat/type";
 
-export const userAtom = atom<IJoiner>({
+export const userAtom = atom<any>({
   user: "",
   model: "",
   error: "",
