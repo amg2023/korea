@@ -1,4 +1,4 @@
-import { Ref, useMemo, useRef, useState } from "react";
+import { Ref, useMemo, useRef } from "react";
 import { useAnimations, useGLTF } from "@react-three/drei";
 import { useEffect } from "react";
 import { Event, Group, Object3D, Quaternion, Vector3 } from "three";
@@ -7,7 +7,6 @@ import { SkeletonUtils } from "three-stdlib";
 import { useFrame, useGraph } from "@react-three/fiber";
 import { Api } from "@react-three/cannon";
 import { useControls } from "../../utils/useControls";
-import _ from "lodash";
 import { useAtomValue } from "jotai";
 import { userAtom } from "../../store/User";
 import Avatar from "./Avatar";
