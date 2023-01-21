@@ -1,15 +1,7 @@
 import * as S from "./style";
-import {
-  FaFacebookF,
-  FaFacebookSquare,
-  FaInstagramSquare,
-} from "react-icons/fa";
-import { useAtom } from "jotai";
-import { languageAtom } from "../../store/Language";
+import { FaFacebookSquare, FaInstagramSquare } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import { useEffect } from "react";
-
-import langKo from "../../lang/lang.ko.json";
 
 export default function Info() {
   const { t, i18n } = useTranslation();
