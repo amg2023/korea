@@ -12,7 +12,8 @@ import { S3_URL } from "../../utils/constant";
 
 export default function MyCharacter({ body }: { body: Api<Object3D<Event>> }) {
   const [ref, api] = body;
-  const { f, b, l, r, z } = useControls();
+  const { move } = useControls();
+  const { f, b, l, r, z } = move;
   const { materials, animations, scene }: IGltfReturn = useGLTF(
     S3_URL + "orly.gltf"
   );
@@ -38,7 +39,7 @@ export default function MyCharacter({ body }: { body: Api<Object3D<Event>> }) {
         actions["idle"]?.fadeOut(0.5);
       };
     }
-  }, [f, b, l, r, z]);
+  }, [f, b, l, r, z, move]);
 
   const innerRef = useRef<Group>();
   const speed = 15;

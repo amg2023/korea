@@ -1,11 +1,13 @@
+import { useAtom } from "jotai";
 import { useEffect, useState } from "react";
+import { controlAtom } from "../store/Control";
 
 type IKeys = {
   [name: string]: "f" | "b" | "l" | "r" | "z";
 };
 
 // 키 종류
-const keys: IKeys = {
+export const keys: IKeys = {
   KeyW: "f",
   ArrowUp: "f",
   KeyS: "b",
@@ -18,30 +20,23 @@ const keys: IKeys = {
 };
 
 export const useControls = () => {
-  const [move, setMove] = useState({
-    f: false,
-    b: false,
-    l: false,
-    r: false,
-    z: false,
-    stop: false,
-  });
+  const [move, setMove] = useAtom(controlAtom);
+  const keyDown = (e: KeyboardEvent) => {
+    setMove((m) => ({
+      ...m,
+      [keys[e.code]]: true,
+      stop: false,
+    }));
+  };
+  const keyUp = (e: KeyboardEvent) => {
+    setMove((m) => ({
+      ...m,
+      [keys[e.code]]: false,
+      stop: true,
+    }));
+  };
 
   useEffect(() => {
-    const keyDown = (e: KeyboardEvent) => {
-      setMove((m) => ({
-        ...m,
-        [keys[e.code]]: true,
-        stop: false,
-      }));
-    };
-    const keyUp = (e: KeyboardEvent) => {
-      setMove((m) => ({
-        ...m,
-        [keys[e.code]]: false,
-        stop: true,
-      }));
-    };
     // 이벤트 리스너
     document.addEventListener("keydown", keyDown);
     document.addEventListener("keyup", keyUp);
@@ -50,5 +45,5 @@ export const useControls = () => {
       document.removeEventListener("keyup", keyUp);
     };
   }, []);
-  return move;
+  return { move, keyDown, keyUp, setMove };
 };

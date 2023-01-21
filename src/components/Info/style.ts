@@ -84,6 +84,7 @@ export const InnerText = styled.p`
 
 export const Title = styled.div`
   font-family: "Antonio", sans-serif;
+  font-weight: 800;
   width: 100%;
   flex: 1 1 0%;
   padding: 0;
@@ -95,23 +96,52 @@ export const Title = styled.div`
 
 export const TitleLeft = styled.p`
   flex: 1 1 0%;
-  font-size: 12rem;
+  font-size: 9rem;
   line-height: 1em;
   color: black;
   margin: 0;
   letter-spacing: -10;
   text-shadow: 0 0 10px black;
+
+  span {
+    display: none;
+  }
+
+  @media (max-width: 900px) {
+    font-size: 7rem;
+  }
+
+  @media (max-width: 700px) {
+    font-size: 5rem;
+  }
+
+  @media (max-width: 500px) {
+    font-size: 2rem;
+    span {
+      display: flex;
+    }
+  }
 `;
 
 export const TitleRight = styled.p`
   flex: 1 1 0%;
-  font-size: 12rem;
+  font-size: 9rem;
   line-height: 100%;
   text-align: right;
   color: black;
   margin: 0;
   letter-spacing: -10;
   text-shadow: 0 0 10px black;
+
+  @media (max-width: 900px) {
+    font-size: 7rem;
+  }
+  @media (max-width: 700px) {
+    font-size: 5rem;
+  }
+  @media (max-width: 500px) {
+    display: none;
+  }
 `;
 
 export const Control = styled.div`
@@ -170,5 +200,54 @@ export const Control = styled.div`
         box-shadow: 0 0 20px #1d1d1d;
       }
     }
+  }
+`;
+
+export const JoyStick = styled.div`
+  display: none;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+
+  .up {
+    grid-row: 1/2;
+    grid-column: 2/3;
+  }
+  .left {
+    grid-row: 2/3;
+    grid-column: 1/2;
+  }
+  .down {
+    grid-row: 2/3;
+    grid-column: 2/3;
+  }
+  .right {
+    grid-row: 2/3;
+    grid-column: 3/4;
+  }
+
+  button {
+    all: unset;
+    z-index: 10;
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
+    box-shadow: 0 0 10px black;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+    background-color: rgba(0, 0, 0, 0.6);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      box-shadow: 0 0 20px #1d1d1d;
+    }
+  }
+
+  @media (max-width: 500px) {
+    display: grid;
   }
 `;
