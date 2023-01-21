@@ -1,27 +1,25 @@
-import { Ref, useMemo, useRef } from "react";
+import { Ref, useMemo, useRef, useState } from "react";
 import { useAnimations, useGLTF } from "@react-three/drei";
 import { useEffect } from "react";
-import { Event, Group, Object3D, Quaternion, Vector3 } from "three";
+import { Event, Group, MathUtils, Object3D, Quaternion, Vector3 } from "three";
 import { IGltfReturn } from "./types";
 import { SkeletonUtils } from "three-stdlib";
 import { useFrame, useGraph } from "@react-three/fiber";
 import { Api } from "@react-three/cannon";
 import { useControls } from "../../utils/useControls";
-import { useAtomValue } from "jotai";
-import { userAtom } from "../../store/User";
 import Avatar from "./Avatar";
 import { S3_URL } from "../../utils/constant";
 
 export default function MyCharacter({ body }: { body: Api<Object3D<Event>> }) {
-  const { user, model } = useAtomValue(userAtom);
   const [ref, api] = body;
-  const { f, b, l, r, z, stop } = useControls();
+  const { f, b, l, r, z } = useControls();
   const { materials, animations, scene }: IGltfReturn = useGLTF(
     S3_URL + "orly.gltf"
   );
   const clone = useMemo(() => SkeletonUtils.clone(scene), [scene]);
   const { nodes }: IGltfReturn = useGraph(clone);
   const { actions } = useAnimations(animations, ref);
+  const [isLimit, setIsLimit] = useState(false);
 
   useEffect(() => {
     if (f || b || l || r) {
@@ -56,7 +54,6 @@ export default function MyCharacter({ body }: { body: Api<Object3D<Event>> }) {
     api.angularVelocity.subscribe((av) => (values.current.av = av));
     api.position.subscribe((p) => {
       values.current.p = p;
-      // console.log(p);
     });
     api.rotation.subscribe((r) => (values.current.r = r));
   }, []);
@@ -86,10 +83,28 @@ export default function MyCharacter({ body }: { body: Api<Object3D<Event>> }) {
         // 전후진
         Q.setFromAxisAngle(frontAxis, offset);
         innerRef?.current?.quaternion.rotateTowards(Q, 0.2);
-        api.velocity.set(_x, 0, _z);
-        api.angularVelocity.set(0, _y / 2, 0);
+        //
+        const p = values.current.p;
+        const x_abs = Math.abs(p[0]);
+        const z_abs = Math.abs(p[2]);
+        const limit = 50;
+        if (x_abs > limit - 2 || z_abs > limit - 2) {
+          setIsLimit(true);
+          if (x_abs > limit - 2) api.velocity.set(-_x, 0, _z);
+          if (z_abs > limit - 2) api.velocity.set(_x, 0, -_z);
+        }
+        if (x_abs > limit || z_abs > limit) {
+          api.velocity.set(0, 0, 0);
+          api.angularVelocity.set(0, 0, 0);
+        }
+        if (!isLimit) {
+          api.velocity.set(_x, 0, _z);
+          api.angularVelocity.set(0, _y / 2, 0);
+        }
       } else {
         // 회전
+        setIsLimit(false);
+        console.log(isLimit);
         api.velocity.set(0, 0, 0);
         api.angularVelocity.set(0, _y, 0);
       }
@@ -104,7 +119,6 @@ export default function MyCharacter({ body }: { body: Api<Object3D<Event>> }) {
     <group ref={innerRef as Ref<Group>}>
       <Avatar
         nodes={nodes}
-        name={user + "(나)"}
         x={0}
         z={0}
         innerRef={innerRef as Ref<Group>}

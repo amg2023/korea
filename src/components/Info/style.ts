@@ -14,24 +14,42 @@ export const Info = styled.div`
 `;
 
 export const InfoInner = styled.div`
+  display: flex;
+  position: relative;
   width: 100%;
   padding: 0;
-  display: inline-flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 `;
 
-export const Location = styled.p`
+export const Location = styled.div`
   font-family: "Antonio", sans-serif;
-  flex: 1 1 0%;
-  height: 3rem;
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  flex-direction: column;
+
+  height: 6rem;
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 3rem;
   color: black;
   letter-spacing: -2;
   text-shadow: 0 0 2px black;
+
+  .title {
+    height: 2rem;
+  }
+
+  .contribute {
+    height: 1.4rem;
+    display: flex;
+    p {
+      font-size: 0.8rem;
+      text-shadow: 0 0 0;
+    }
+  }
 `;
 
 export const InnerText = styled.p`
@@ -70,4 +88,59 @@ export const TitleRight = styled.p`
   margin: 0;
   letter-spacing: -10;
   text-shadow: 0 0 10px black;
+`;
+
+export const Control = styled.div`
+  display: flex;
+  width: 100%;
+  align-items: flex-end;
+  justify-content: flex-start;
+  flex-direction: column;
+
+  height: 6rem;
+  font-size: 1rem;
+  line-height: 3rem;
+  color: black;
+  letter-spacing: -2;
+
+  .title {
+    height: 2.4rem;
+  }
+
+  .contribute {
+    display: flex;
+    p {
+      font-size: 0.8rem;
+      text-shadow: 0 0 0;
+    }
+  }
+
+  .button {
+    button {
+      all: unset;
+      width: 5rem;
+      border-radius: 10px;
+      background: #1d1d1d;
+      box-shadow: 0 0 10px #1d1d1d;
+      cursor: pointer;
+      transition: all 0.3s ease-in;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      p {
+        margin: 0;
+        padding: 0;
+
+        color: white;
+        font-size: 0.8rem;
+        font-weight: 800;
+      }
+
+      &:hover {
+        box-shadow: 0 0 20px #1d1d1d;
+      }
+    }
+  }
 `;

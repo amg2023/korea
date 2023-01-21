@@ -9,12 +9,21 @@ type IGltfObject = {
     [name: string]: Material | Material[] | undefined;
   };
   scene?: any;
+  scale?: [number, number, number];
+  rotation?: [number, number, number];
+  position?: [number, number, number];
   x?: number;
   z?: number;
 };
-export default function GltfObject({ nodes, materials }: IGltfObject) {
+export default function GltfObject({
+  nodes,
+  materials,
+  scale,
+  rotation,
+  position,
+}: IGltfObject) {
   return (
-    <group scale={[2, 0.1, 2]}>
+    <group scale={scale}>
       {Object.keys(nodes).map((name: string, key: number) => {
         const names = name.split("_");
         if (names[0] === "mesh") {
@@ -27,6 +36,8 @@ export default function GltfObject({ nodes, materials }: IGltfObject) {
               receiveShadow
               material={materials[material_name]}
               geometry={nodes[node_name].geometry}
+              rotation={rotation}
+              position={position}
             />
           );
         }

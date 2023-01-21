@@ -7,7 +7,6 @@ type IAvatar = {
   nodes: {
     [name: string]: Object3DExtends;
   };
-  name: string;
   materials: {
     [name: string]: Material | Material[] | undefined;
   };
@@ -15,14 +14,7 @@ type IAvatar = {
   z: number;
   innerRef: Ref<Group>;
 };
-export default function Avatar({
-  nodes,
-  name,
-  materials,
-  x,
-  z,
-  innerRef,
-}: IAvatar) {
+export default function Avatar({ nodes, materials, x, z, innerRef }: IAvatar) {
   return (
     <group ref={innerRef}>
       <group
@@ -31,7 +23,7 @@ export default function Avatar({
         rotation={[0, 0, 0]}
         position={[x, 0, z]}
       >
-        <NameTag name={name} />
+        <NameTag name={"ME"} />
         <primitive object={nodes.walk} visible={false} />
         {Object.keys(nodes).map((name: string, key: number) => {
           const names = name.split("_");

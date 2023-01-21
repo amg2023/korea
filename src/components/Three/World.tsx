@@ -1,4 +1,4 @@
-import { useCompoundBody } from "@react-three/cannon";
+import { useCompoundBody, useCylinder } from "@react-three/cannon";
 import { PerspectiveCamera } from "@react-three/drei";
 import MyCharacter from "./MyCharacter";
 
@@ -21,6 +21,7 @@ export default function World() {
           position={[0, 16, -25]}
           rotation={[0.25, 3.15, 0]}
         />
+
         <MyCharacter body={body} />
       </group>
     </group>

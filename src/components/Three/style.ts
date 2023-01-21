@@ -11,7 +11,7 @@ export const SmallTag = styled.div`
   height: 30px;
   width: 7rem;
 
-  background: rgba(22, 22, 22, 0.8);
+  background: rgba(22, 22, 22, 0.9);
   border-radius: 0.7rem;
   padding: 10px;
   --webkit-backdrop-filter: blur(10px);

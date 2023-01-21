@@ -1,5 +1,5 @@
 import { Canvas } from "@react-three/fiber";
-import { Physics } from "@react-three/cannon";
+import { Physics, useBox, useCylinder } from "@react-three/cannon";
 import { Environment, Stage } from "@react-three/drei";
 import World from "./World";
 import Ground from "./Ground";
@@ -9,6 +9,7 @@ export default function Three() {
   return (
     <Canvas shadows style={{ width: "100vw", height: "100vh" }}>
       <ambientLight intensity={0.1} />
+      <fog attach="fog" args={["white", 0, 500]} />
       <spotLight
         position={[100, 100, -100]}
         angle={1}
