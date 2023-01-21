@@ -1,10 +1,9 @@
 import { Canvas } from "@react-three/fiber";
-import { Physics, useBox, useCylinder } from "@react-three/cannon";
+import { Physics } from "@react-three/cannon";
 import { Environment, Stage } from "@react-three/drei";
 import World from "./World";
 import { Bloom, EffectComposer } from "@react-three/postprocessing";
 import Ground from "../object/Ground";
-import Hangul from "../object/Hangul";
 import Picture from "../object/Picture";
 import Tiger from "../object/Tiger";
 import Sang from "../object/Sang";
