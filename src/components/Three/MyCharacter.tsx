@@ -104,7 +104,6 @@ export default function MyCharacter({ body }: { body: Api<Object3D<Event>> }) {
       } else {
         // 회전
         setIsLimit(false);
-        console.log(isLimit);
         api.velocity.set(0, 0, 0);
         api.angularVelocity.set(0, _y, 0);
       }

@@ -1,5 +1,5 @@
 import { Material } from "three";
-import { Object3DExtends } from "./types";
+import { Object3DExtends } from "../Three/types";
 
 type IGltfObject = {
   nodes: {

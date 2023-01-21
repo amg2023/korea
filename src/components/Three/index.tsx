@@ -2,8 +2,17 @@ import { Canvas } from "@react-three/fiber";
 import { Physics, useBox, useCylinder } from "@react-three/cannon";
 import { Environment, Stage } from "@react-three/drei";
 import World from "./World";
-import Ground from "./Ground";
 import { Bloom, EffectComposer } from "@react-three/postprocessing";
+import Ground from "../object/Ground";
+import Hangul from "../object/Hangul";
+import Picture from "../object/Picture";
+import Tiger from "../object/Tiger";
+import Sang from "../object/Sang";
+import Bungpung from "../object/Bungpung";
+import WallFrontLeft from "../object/WallFrontLeft";
+import WallFrontRight from "../object/WallFrontRight";
+import WallBackLeft from "../object/WallBackLeft";
+import WallBackRight from "../object/WallBackRight";
 
 export default function Three() {
   return (
@@ -24,6 +33,15 @@ export default function Three() {
           shadows={{ type: "accumulative", bias: -0.001 } as any}
           adjustCamera={false}
         >
+          <Bungpung />
+          <WallFrontLeft />
+          <WallFrontRight />
+          <WallBackLeft />
+          <WallBackRight />
+
+          <Picture />
+          <Sang />
+          <Tiger />
           <World />
           <Ground />
         </Stage>

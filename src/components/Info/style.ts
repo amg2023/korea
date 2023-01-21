@@ -11,6 +11,14 @@ export const Info = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+
+  @media (max-width: 900px) {
+    padding: 2rem;
+  }
+
+  @media (max-width: 600px) {
+    padding: 1rem;
+  }
 `;
 
 export const InfoInner = styled.div`
@@ -39,7 +47,9 @@ export const Location = styled.div`
   text-shadow: 0 0 2px black;
 
   .title {
-    height: 2rem;
+    display: flex;
+    align-items: center;
+    height: 2.2rem;
   }
 
   .contribute {
@@ -48,6 +58,20 @@ export const Location = styled.div`
     p {
       font-size: 0.8rem;
       text-shadow: 0 0 0;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .title {
+      font-size: 1.2rem;
+      height: 2rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .title {
+      font-size: 1rem;
+      height: 1.8rem;
     }
   }
 `;
@@ -116,6 +140,10 @@ export const Control = styled.div`
   }
 
   .button {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: flex-end;
     button {
       all: unset;
       width: 5rem;

@@ -5,7 +5,6 @@ import GltfObject from "./GltfObject";
 
 export default function Ground() {
   const { nodes, materials } = useGLTF(S3_URL + "floor.gltf");
-  // const { nodes, materials } = useGLTF("/floor.gltf");
   const [ref] = usePlane(() => ({
     rotation: [-Math.PI / 2, 0, 0],
     position: [0, -0.3, 0],
