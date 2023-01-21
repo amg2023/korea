@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import _ from "lodash";
 
 type IKeys = {
   [name: string]: "f" | "b" | "l" | "r" | "z";

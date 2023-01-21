@@ -12,11 +12,7 @@ const AtomsDevtools = ({ children }: any) => {
 export default function App() {
   return (
     <AtomsDevtools>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Three />} />
-        </Routes>
-      </BrowserRouter>
+      <Three />
       <Info />
     </AtomsDevtools>
   );

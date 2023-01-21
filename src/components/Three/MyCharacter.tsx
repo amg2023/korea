@@ -56,7 +56,7 @@ export default function MyCharacter({ body }: { body: Api<Object3D<Event>> }) {
     api.angularVelocity.subscribe((av) => (values.current.av = av));
     api.position.subscribe((p) => {
       values.current.p = p;
-      console.log(p);
+      // console.log(p);
     });
     api.rotation.subscribe((r) => (values.current.r = r));
   }, []);

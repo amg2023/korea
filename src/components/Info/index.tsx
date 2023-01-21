@@ -26,7 +26,6 @@ export default function Info() {
           }}
         >
           <b>MadeBy YeomDongHwan</b>
-          {/* <b>contributor KimChaeYung</b> */}
         </p>
       </div>
       <S.Title className="full">
