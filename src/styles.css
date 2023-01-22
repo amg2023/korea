@@ -55,3 +55,7 @@ a:hover {
   text-decoration: underline;
   color: inherit;
 }
+
+button {
+  all: unset;
+}

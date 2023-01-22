@@ -1,4 +1,4 @@
-import { RefObject } from "react";
+import { Ref, RefObject } from "react";
 import {
   AnimationClip,
   BufferGeometry,
@@ -25,7 +25,7 @@ export interface Object3DExtends extends Object3D {
   geometry?: BufferGeometry;
   skeleton?: Skeleton;
 }
-
+// gltf 리턴 타입
 export type IGltfReturn = {
   nodes?: {
     [name: string]: Object3DExtends;
@@ -36,3 +36,24 @@ export type IGltfReturn = {
   animations?: AnimationClip[];
   scene?: Group;
 };
+// 아바타
+export type IAvatar = {
+  nodes: {
+    [name: string]: Object3DExtends;
+  };
+  materials: {
+    [name: string]: Material | Material[] | undefined;
+  };
+  x: number;
+  z: number;
+  innerRef: Ref<Group>;
+};
+
+export type ISmallTag = {
+  width?: string;
+  bottom?: string;
+};
+export type IName = {
+  name: string;
+};
+export type INameTag = IName & ISmallTag;

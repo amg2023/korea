@@ -1,19 +1,6 @@
-import { Ref } from "react";
-import { Group, Material } from "three";
 import { NameTag } from "./NameTag";
-import { Object3DExtends } from "./types";
+import { IAvatar } from "./types";
 
-type IAvatar = {
-  nodes: {
-    [name: string]: Object3DExtends;
-  };
-  materials: {
-    [name: string]: Material | Material[] | undefined;
-  };
-  x: number;
-  z: number;
-  innerRef: Ref<Group>;
-};
 export default function Avatar({ nodes, materials, x, z, innerRef }: IAvatar) {
   return (
     <group ref={innerRef}>

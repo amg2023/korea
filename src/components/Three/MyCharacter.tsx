@@ -1,14 +1,14 @@
 import { Ref, useMemo, useRef, useState } from "react";
 import { useAnimations, useGLTF } from "@react-three/drei";
 import { useEffect } from "react";
-import { Event, Group, MathUtils, Object3D, Quaternion, Vector3 } from "three";
+import { Event, Group, Object3D, Quaternion, Vector3 } from "three";
 import { IGltfReturn } from "./types";
 import { SkeletonUtils } from "three-stdlib";
 import { useFrame, useGraph } from "@react-three/fiber";
 import { Api } from "@react-three/cannon";
 import { useControls } from "../../utils/useControls";
 import Avatar from "./Avatar";
-import { S3_URL } from "../../utils/constant";
+import { S3_URL } from "../common/control/constant";
 
 export default function MyCharacter({ body }: { body: Api<Object3D<Event>> }) {
   const [ref, api] = body;
@@ -39,7 +39,7 @@ export default function MyCharacter({ body }: { body: Api<Object3D<Event>> }) {
         actions["idle"]?.fadeOut(0.5);
       };
     }
-  }, [f, b, l, r, z, move]);
+  }, [f, b, l, r, z]);
 
   const innerRef = useRef<Group>();
   const speed = 15;
@@ -88,7 +88,7 @@ export default function MyCharacter({ body }: { body: Api<Object3D<Event>> }) {
         const p = values.current.p;
         const x_abs = Math.abs(p[0]);
         const z_abs = Math.abs(p[2]);
-        const limit = 50;
+        const limit = 40;
         if (x_abs > limit - 2 || z_abs > limit - 2) {
           setIsLimit(true);
           if (x_abs > limit - 2) api.velocity.set(-_x, 0, _z);

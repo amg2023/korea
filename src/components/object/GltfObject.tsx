@@ -1,20 +1,5 @@
-import { Material } from "three";
-import { Object3DExtends } from "../Three/types";
+import { IGltfObject } from "./type";
 
-type IGltfObject = {
-  nodes: {
-    [name: string]: Object3DExtends;
-  };
-  materials: {
-    [name: string]: Material | Material[] | undefined;
-  };
-  scene?: any;
-  scale?: [number, number, number];
-  rotation?: [number, number, number];
-  position?: [number, number, number];
-  x?: number;
-  z?: number;
-};
 export default function GltfObject({
   nodes,
   materials,

@@ -1,6 +1,6 @@
 import { usePlane } from "@react-three/cannon";
 import { useGLTF } from "@react-three/drei";
-import { S3_URL } from "../../utils/constant";
+import { S3_URL } from "../common/control/constant";
 import GltfObject from "./GltfObject";
 
 export default function Ground() {
@@ -11,6 +11,7 @@ export default function Ground() {
     args: [100, 100, 10],
     type: "Static",
   }));
+
   return (
     <mesh ref={ref as any}>
       <GltfObject

@@ -1,15 +1,8 @@
-import { usePlane } from "@react-three/cannon";
 import { useGLTF } from "@react-three/drei";
-import { useEffect } from "react";
-import { S3_URL } from "../../utils/constant";
-import GltfObject from "./GltfObject";
+import { S3_URL } from "../common/control/constant";
 
 export default function Bungpung() {
-  // const { nodes, materials } = useGLTF(S3_URL + "floor.gltf");
   const { nodes, materials }: any = useGLTF(S3_URL + "bungpung.gltf");
-  useEffect(() => {
-    console.log(nodes, materials);
-  }, []);
   return (
     <group>
       <mesh

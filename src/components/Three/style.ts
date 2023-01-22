@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { ISmallTag } from "./types";
 
-export const SmallTag = styled.div`
+export const SmallTag = styled.div<ISmallTag>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,10 +9,12 @@ export const SmallTag = styled.div`
   font-weight: 800;
   min-width: 50px;
   position: relative;
-  height: 30px;
-  width: 7rem;
+  height: 3rem;
+  width: ${(props) => (props.width ? props.width : "7rem")};
+  right: 50%;
+  bottom: ${(props) => (props.bottom ? props.bottom : "12rem")};
 
-  background: rgba(22, 22, 22, 0.9);
+  background: rgba(0, 0, 0, 0.4);
   border-radius: 0.7rem;
   padding: 10px;
   --webkit-backdrop-filter: blur(10px);

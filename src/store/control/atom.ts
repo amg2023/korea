@@ -1,13 +1,7 @@
 import { atom } from "jotai";
+import { IControl } from "./type";
 
-export const controlAtom = atom<{
-  f: boolean;
-  b: boolean;
-  l: boolean;
-  r: boolean;
-  z: boolean;
-  stop: boolean;
-}>({
+export const controlAtom = atom<IControl>({
   f: false,
   b: false,
   l: false,

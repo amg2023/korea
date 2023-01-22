@@ -98,10 +98,10 @@ export const TitleLeft = styled.p`
   flex: 1 1 0%;
   font-size: 9rem;
   line-height: 1em;
-  color: black;
+  color: white;
   margin: 0;
   letter-spacing: -10;
-  text-shadow: 0 0 10px black;
+  text-shadow: 0 0 5px white;
 
   span {
     display: none;
@@ -128,10 +128,10 @@ export const TitleRight = styled.p`
   font-size: 9rem;
   line-height: 100%;
   text-align: right;
-  color: black;
+  color: white;
   margin: 0;
   letter-spacing: -10;
-  text-shadow: 0 0 10px black;
+  text-shadow: 0 0 5px white;
 
   @media (max-width: 900px) {
     font-size: 7rem;
