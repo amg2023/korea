@@ -50,6 +50,7 @@ export type IAvatar = {
 };
 
 export type ISmallTag = {
+  height?: string;
   width?: string;
   bottom?: string;
 };

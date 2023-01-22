@@ -19,8 +19,8 @@ export default function Info() {
   };
 
   return (
-    <S.Info>
-      <S.InfoInner>
+    <>
+      <>
         <S.Location>
           <div className="title">{`${t("SOUTH KOREA")}`}</div>
           <div className="title">{`${t("LOCATION")}`}</div>
@@ -37,15 +37,15 @@ export default function Info() {
             </button>
           </div>
         </S.Control>
-      </S.InfoInner>
+      </>
 
-      <S.Title className="full">
+      <>
         <S.TitleLeft>
           AMG <span>2023</span>
         </S.TitleLeft>
         <S.TitleRight>2023</S.TitleRight>
         <JoyStick />
-      </S.Title>
-    </S.Info>
+      </>
+    </>
   );
 }

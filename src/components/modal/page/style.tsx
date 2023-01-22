@@ -3,19 +3,18 @@ import { Center } from "../../../style";
 
 export const Page = styled(Center)`
   position: relative;
-  width: 450px;
-  height: 500px;
-  /* background-color: #fafafacc; */
+  width: 90vw;
+  padding: 2rem;
   border-radius: 1rem;
-  /* box-shadow: 0 0 10px #fafafacc; */
 
   .close {
     position: relative;
-    color: black;
+    color: white;
     background-color: transparent;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     position: absolute;
     top: 2rem;
     right: 2rem;
+    z-index: 20;
   }
 `;

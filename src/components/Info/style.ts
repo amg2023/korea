@@ -22,19 +22,26 @@ export const Info = styled.div`
 `;
 
 export const InfoInner = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 1rem;
   display: flex;
-  position: relative;
-  width: 100%;
-  padding: 0;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  z-index: 30;
 `;
 
 export const Location = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+
   font-family: "Antonio", sans-serif;
   display: flex;
-  width: 100%;
+  /* width: 100%; */
   justify-content: flex-start;
   flex-direction: column;
 
@@ -95,7 +102,11 @@ export const Title = styled.div`
 `;
 
 export const TitleLeft = styled.p`
-  flex: 1 1 0%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+
   font-size: 9rem;
   line-height: 1em;
   color: white;
@@ -124,7 +135,11 @@ export const TitleLeft = styled.p`
 `;
 
 export const TitleRight = styled.p`
-  flex: 1 1 0%;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 1rem;
+
   font-size: 9rem;
   line-height: 100%;
   text-align: right;
@@ -145,8 +160,12 @@ export const TitleRight = styled.p`
 `;
 
 export const Control = styled.div`
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+
   display: flex;
-  width: 100%;
   align-items: flex-end;
   justify-content: flex-start;
   flex-direction: column;
@@ -204,6 +223,11 @@ export const Control = styled.div`
 `;
 
 export const JoyStick = styled.div`
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 1rem;
+
   display: none;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
@@ -231,8 +255,9 @@ export const JoyStick = styled.div`
   button {
     all: unset;
     z-index: 10;
-    height: 2.5rem;
-    width: 2.5rem;
+    height: 3rem;
+    width: 3rem;
+    margin: 0.2rem;
     border-radius: 50%;
     box-shadow: 0 0 10px black;
     cursor: pointer;

@@ -1,4 +1,4 @@
-import { useCompoundBody, useCylinder } from "@react-three/cannon";
+import { useCompoundBody } from "@react-three/cannon";
 import { PerspectiveCamera } from "@react-three/drei";
 import MyCharacter from "./MyCharacter";
 

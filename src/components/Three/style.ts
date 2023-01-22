@@ -6,15 +6,14 @@ export const SmallTag = styled.div<ISmallTag>`
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-weight: 800;
   min-width: 50px;
   position: relative;
-  height: 3rem;
-  width: ${(props) => (props.width ? props.width : "7rem")};
+  height: ${(props) => (props.width ? props.width : "1.8rem")};
+  width: ${(props) => (props.width ? props.width : "6rem")};
   right: 50%;
-  bottom: ${(props) => (props.bottom ? props.bottom : "12rem")};
+  bottom: ${(props) => (props.bottom ? props.bottom : "9rem")};
 
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.7);
   border-radius: 0.7rem;
   padding: 10px;
   --webkit-backdrop-filter: blur(10px);
@@ -23,7 +22,7 @@ export const SmallTag = styled.div<ISmallTag>`
   box-shadow: 0 0 30px rgb(30, 30, 30);
 
   .categoryset-text {
-    font-size: 1rem;
+    font-size: 0.8rem;
     transition: all 0.3s ease-in;
   }
 `;

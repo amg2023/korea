@@ -1,3 +1,4 @@
+import { ThreeEvent } from "@react-three/fiber";
 import { Material } from "three";
 import { Object3DExtends } from "../Three/types";
 
@@ -16,10 +17,17 @@ export type IGltfObject = {
   materials: {
     [name: string]: Material | Material[] | undefined;
   };
-  scene?: any;
   scale?: [number, number, number];
   rotation?: [number, number, number];
   position?: [number, number, number];
   x?: number;
   z?: number;
+  onHover?: () => void;
+  onLeave?: () => void;
+  onClick?: (e: ThreeEvent<MouseEvent>) => void;
 };
+
+export type ISelectGltf = {
+  url: string;
+  nameTag: string;
+} & Omit<IGltfObject, "nodes" | "materials">;

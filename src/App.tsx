@@ -1,8 +1,9 @@
 import { useAtomsDevtools } from "jotai/devtools";
 import Three from "./components/Three";
-import Info from "./components/Info";
 import "./lang/index";
 import ModalPage from "./components/modal/ModalPage";
+import { ReactNode } from "react";
+import Info from "./components/Info";
 
 const AtomsDevtools = ({ children }: any) => {
   useAtomsDevtools("demo");

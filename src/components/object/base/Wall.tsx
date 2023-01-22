@@ -1,8 +1,10 @@
 import { useGLTF } from "@react-three/drei";
-import { S3_URL } from "../common/control/constant";
-import { IGltfReturn } from "../Three/types";
+import { useLoader } from "@react-three/fiber";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import { S3_URL } from "../../../data/constant";
+import { IWall, IWallPosition } from "../type";
+
 import GltfObject from "./GltfObject";
-import { IWall, IWallPosition } from "./type";
 
 export const WallPosition: IWallPosition = [
   // 전면
@@ -32,9 +34,9 @@ export const WallPosition: IWallPosition = [
     rotation: [-Math.PI, 0, 0],
   },
 ];
-
+const url = S3_URL + "wall.gltf";
 export default function Wall({ position, scale, rotation }: IWall) {
-  const { nodes, materials }: IGltfReturn = useGLTF(S3_URL + "wall.gltf");
+  const { nodes, materials } = useLoader(GLTFLoader, url);
   return (
     <mesh position={position}>
       <GltfObject
@@ -46,3 +48,4 @@ export default function Wall({ position, scale, rotation }: IWall) {
     </mesh>
   );
 }
+useLoader.preload(GLTFLoader, url);

@@ -1,6 +1,6 @@
 import { useAtom } from "jotai";
 import { useEffect, useState } from "react";
-import { controlAtom } from "../store/control/atom";
+import { controlAtom } from "../../../store/control/atom";
 
 type IKeys = {
   [name: string]: "f" | "b" | "l" | "r" | "z";

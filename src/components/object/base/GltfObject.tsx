@@ -1,4 +1,4 @@
-import { IGltfObject } from "./type";
+import { IGltfObject } from "../type";
 
 export default function GltfObject({
   nodes,
@@ -6,9 +6,11 @@ export default function GltfObject({
   scale,
   rotation,
   position,
+  onHover,
+  onLeave,
 }: IGltfObject) {
   return (
-    <group scale={scale}>
+    <group scale={scale} onPointerEnter={onHover} onPointerLeave={onLeave}>
       {Object.keys(nodes).map((name: string, key: number) => {
         const names = name.split("_");
         if (names[0] === "mesh") {

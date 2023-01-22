@@ -1,23 +1,21 @@
-import { useAtom } from "jotai";
-import { modalAtom } from "../../../store/modal/atom";
+import useModalActions from "../../../store/modal/query";
 import { CancelButton } from "../../common/cancel/CancelButton";
-import PicturePage from "./PicturePage";
+import HangulPage from "./HangulPage";
+import SeoulPage from "./SeoulPage";
+import SsirumPage from "./SsirumPage";
 import * as S from "./style";
+import TigerPage from "./TigerPage";
 
 export default function Page() {
-  const [modal, setModal] = useAtom(modalAtom);
-
-  const onClickCancel = () => {
-    setModal({
-      on: false,
-      type: "",
-    });
-  };
+  const { onClickCancel, modal } = useModalActions();
 
   return (
     <S.Page>
       <CancelButton className="close" onClick={onClickCancel} />
-      <PicturePage />
+      {modal.type === "ssirum" && <SsirumPage />}
+      {modal.type === "hangul" && <HangulPage />}
+      {modal.type === "seoul" && <SeoulPage />}
+      {modal.type === "tiger" && <TigerPage />}
     </S.Page>
   );
 }

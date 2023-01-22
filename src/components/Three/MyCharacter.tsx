@@ -4,22 +4,26 @@ import { useEffect } from "react";
 import { Event, Group, Object3D, Quaternion, Vector3 } from "three";
 import { IGltfReturn } from "./types";
 import { SkeletonUtils } from "three-stdlib";
-import { useFrame, useGraph } from "@react-three/fiber";
+import { useFrame, useGraph, useLoader } from "@react-three/fiber";
 import { Api } from "@react-three/cannon";
-import { useControls } from "../../utils/useControls";
+import { useControls } from "../common/control/useControls";
 import Avatar from "./Avatar";
-import { S3_URL } from "../common/control/constant";
+import { S3_URL } from "../../data/constant";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+
+const url = S3_URL + "orly.gltf";
 
 export default function MyCharacter({ body }: { body: Api<Object3D<Event>> }) {
   const [ref, api] = body;
   const { move } = useControls();
   const { f, b, l, r, z } = move;
-  const { materials, animations, scene }: IGltfReturn = useGLTF(
-    S3_URL + "orly.gltf"
+  const { materials, animations, scene }: IGltfReturn = useLoader(
+    GLTFLoader,
+    url
   );
-  const clone = useMemo(() => SkeletonUtils.clone(scene), [scene]);
+  const clone = useMemo(() => SkeletonUtils.clone(scene!!), [scene]);
   const { nodes }: IGltfReturn = useGraph(clone);
-  const { actions } = useAnimations(animations, ref);
+  const { actions } = useAnimations(animations!!, ref);
   const [isLimit, setIsLimit] = useState(false);
 
   useEffect(() => {
@@ -122,8 +126,10 @@ export default function MyCharacter({ body }: { body: Api<Object3D<Event>> }) {
         x={0}
         z={0}
         innerRef={innerRef as Ref<Group>}
-        materials={materials}
+        materials={materials!!}
       />
     </group>
   );
 }
+
+useLoader.preload(GLTFLoader, url);

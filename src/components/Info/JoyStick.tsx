@@ -1,9 +1,8 @@
 import { useSetAtom } from "jotai";
 import { MouseEvent } from "react";
 import { controlAtom } from "../../store/control/atom";
-import { keys } from "../../utils/useControls";
+import { keys } from "../common/control/useControls";
 import * as S from "./style";
-import { AiOutlineDownCircle } from "react-icons/ai";
 
 export default function JoyStick() {
   const setMove = useSetAtom(controlAtom);
