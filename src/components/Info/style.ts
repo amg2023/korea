@@ -208,30 +208,44 @@ export const JoyStick = styled.div`
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
 
-  .up {
+  #ArrowUp {
     grid-row: 1/2;
     grid-column: 2/3;
+    .up {
+      fill: #ffffff;
+    }
   }
-  .left {
+  #ArrowLeft {
     grid-row: 2/3;
     grid-column: 1/2;
+    .left {
+      fill: #ffffff;
+    }
   }
-  .down {
+  #ArrowDown {
     grid-row: 2/3;
     grid-column: 2/3;
+    .down {
+      fill: #ffffff;
+    }
   }
-  .right {
+  #ArrowRight {
     grid-row: 2/3;
     grid-column: 3/4;
+    .right {
+      fill: #ffffff;
+    }
   }
 
-  button {
+  svg {
     all: unset;
     z-index: 10;
-    height: 2.5rem;
-    width: 2.5rem;
+    height: 3rem;
+    width: 3rem;
+    margin: 0.2rem;
     border-radius: 50%;
     box-shadow: 0 0 10px black;
+    color: white;
     cursor: pointer;
     transition: all 0.3s ease-in;
     background-color: rgba(0, 0, 0, 0.6);

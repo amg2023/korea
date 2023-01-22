@@ -1,5 +1,4 @@
 import { useGLTF } from "@react-three/drei";
-import { useEffect } from "react";
 import { S3_URL } from "../common/control/constant";
 import { IGltfReturn } from "../Three/types";
 import GltfObject from "./GltfObject";
@@ -7,9 +6,6 @@ import GltfObject from "./GltfObject";
 // 인스타
 export default function Instargram() {
   const { nodes, materials }: IGltfReturn = useGLTF(S3_URL + "instargram.gltf");
-  useEffect(() => {
-    console.log(nodes, materials);
-  }, []);
 
   return (
     <mesh position={[-25, 15, -38]}>
