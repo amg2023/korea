@@ -207,45 +207,42 @@ export const JoyStick = styled.div`
   display: none;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
+  -webkit-touch-callout: none;
 
-  #ArrowUp {
+  .up {
+    -webkit-touch-callout: none;
+
     grid-row: 1/2;
     grid-column: 2/3;
-    .up {
-      fill: #ffffff;
-    }
   }
-  #ArrowLeft {
+  .left {
+    -webkit-touch-callout: none;
+
     grid-row: 2/3;
     grid-column: 1/2;
-    .left {
-      fill: #ffffff;
-    }
   }
-  #ArrowDown {
+  .down {
+    -webkit-touch-callout: none;
+
     grid-row: 2/3;
     grid-column: 2/3;
-    .down {
-      fill: #ffffff;
-    }
   }
-  #ArrowRight {
+  .right {
+    -webkit-touch-callout: none;
+
     grid-row: 2/3;
     grid-column: 3/4;
-    .right {
-      fill: #ffffff;
-    }
   }
 
-  svg {
+  button {
+    -webkit-touch-callout: none;
+
     all: unset;
     z-index: 10;
-    height: 3rem;
-    width: 3rem;
-    margin: 0.2rem;
+    height: 2.5rem;
+    width: 2.5rem;
     border-radius: 50%;
     box-shadow: 0 0 10px black;
-    color: white;
     cursor: pointer;
     transition: all 0.3s ease-in;
     background-color: rgba(0, 0, 0, 0.6);
