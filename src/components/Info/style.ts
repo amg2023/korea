@@ -208,35 +208,27 @@ export const JoyStick = styled.div`
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
   .up {
-    -webkit-touch-callout: none;
-
     grid-row: 1/2;
     grid-column: 2/3;
   }
   .left {
-    -webkit-touch-callout: none;
-
     grid-row: 2/3;
     grid-column: 1/2;
   }
   .down {
-    -webkit-touch-callout: none;
-
     grid-row: 2/3;
     grid-column: 2/3;
   }
   .right {
-    -webkit-touch-callout: none;
-
     grid-row: 2/3;
     grid-column: 3/4;
   }
 
   button {
-    -webkit-touch-callout: none;
-
     all: unset;
     z-index: 10;
     height: 2.5rem;
