@@ -1,14 +1,10 @@
 import { Canvas } from "@react-three/fiber";
 import { Physics } from "@react-three/cannon";
 import { Environment, Stage } from "@react-three/drei";
-import World from "./World";
-// import { Bloom, EffectComposer } from "@react-three/postprocessing";
 import Ground from "../object/base/Ground";
 import NameDesc from "../object/nametag/NameDesc";
-
 import Hangul from "../object/front/Hangul";
 import Facebook from "../object/back/Facebook";
-
 import { Suspense } from "react";
 import ProgressBar from "../common/progress";
 import Wall, { WallPosition } from "../object/base/Wall";
@@ -25,6 +21,8 @@ import {
   Outline,
   Selection,
 } from "@react-three/postprocessing";
+import MyCharacter from "./MyCharacter";
+import Screen from "../object/right/Screen";
 
 export default function Three() {
   return (
@@ -63,8 +61,10 @@ export default function Three() {
               <Hangul />
               <Seoul />
 
+              <Screen />
+
               <Tiger />
-              <World />
+              <MyCharacter />
               <Ground />
             </Stage>
             <Environment background preset="sunset" blur={1} />

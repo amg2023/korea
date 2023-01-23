@@ -6,10 +6,18 @@ import {
 } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import JoyStick from "./JoyStick";
+import {
+  FACEBOOK_URL,
+  INSTARGRAM_URL,
+  WHATSAPP_URL,
+} from "../../data/constant";
+import Clock from "./Clock";
+import { KeyArray } from "./Key";
+import { IKey } from "./type";
+import KeyIcon from "./Key";
 
 export default function Info() {
   const { t, i18n } = useTranslation();
-
   const onClick = () => {
     if (i18n.language === "en") {
       i18n.changeLanguage("ko");
@@ -20,30 +28,41 @@ export default function Info() {
 
   return (
     <>
-      <>
-        <S.Location>
-          <div className="title">{`${t("SOUTH KOREA")}`}</div>
-          <div className="title">{`${t("LOCATION")}`}</div>
-          <div className="sns">
-            <FaFacebookSquare className="facebook" />
-            <FaInstagramSquare className="facebook" />
-            <FaWhatsappSquare className="facebook" />
-          </div>
-        </S.Location>
-        <S.Control>
-          <div className="button">
-            <button onClick={onClick}>
-              <p>{`${t("LANGUAGE")}`}</p>
-            </button>
-          </div>
-        </S.Control>
-      </>
-
+      <S.Location>
+        <div className="title">{`${t("SOUTH KOREA")}`}</div>
+        <div className="title">{`${t("LOCATION")}`}</div>
+        <div className="sns">
+          <a href={FACEBOOK_URL}>
+            <FaFacebookSquare />
+          </a>
+          <a href={INSTARGRAM_URL}>
+            <FaInstagramSquare />
+          </a>
+          <a href={WHATSAPP_URL}>
+            <FaWhatsappSquare />
+          </a>
+        </div>
+        {KeyArray.map((item: IKey, i: number) => {
+          return (
+            <KeyIcon key={i} code={item.code} description={item.description} />
+          );
+        })}
+      </S.Location>
+      <S.Control>
+        <div className="button">
+          <button onClick={onClick}>
+            <p>{`${t("LANGUAGE")}`}</p>
+          </button>
+        </div>
+        <div>
+          <Clock />
+        </div>
+      </S.Control>
       <>
         <S.TitleLeft>
-          AMG <span>2023</span>
+          AMG <span>2022</span>
         </S.TitleLeft>
-        <S.TitleRight>2023</S.TitleRight>
+        <S.TitleRight>2022</S.TitleRight>
         <JoyStick />
       </>
     </>

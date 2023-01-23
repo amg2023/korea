@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Center } from "../../style";
 
 export const Info = styled.div`
   position: absolute;
@@ -41,7 +42,6 @@ export const Location = styled.div`
 
   font-family: "Antonio", sans-serif;
   display: flex;
-  /* width: 100%; */
   justify-content: flex-start;
   flex-direction: column;
 
@@ -278,4 +278,29 @@ export const JoyStick = styled.div`
   @media (max-width: 500px) {
     display: grid;
   }
+`;
+
+export const KeyIcon = styled(Center)`
+  margin: 0;
+  padding: 0;
+  height: 2.2rem;
+  flex-direction: row;
+
+  justify-content: flex-start;
+  p {
+    font-size: 0.8rem;
+  }
+`;
+
+export const Key = styled(Center)`
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.2rem;
+  border-radius: 5px;
+  background: #1d1d1d;
+  box-shadow: 0 0 10px #1d1d1d;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  color: white;
+  font-size: 0.6rem;
 `;
