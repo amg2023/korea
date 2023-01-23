@@ -2,8 +2,6 @@ import { useEffect, useState } from "react";
 
 export default function Clock() {
   const [time, setTime] = useState(new Date());
-  // const targetDate = new Date("2023-04-26 00:00:00");
-
   useEffect(() => {
     const id = setInterval(() => {
       setTime(new Date());
