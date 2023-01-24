@@ -304,3 +304,25 @@ export const Key = styled(Center)`
   color: white;
   font-size: 0.6rem;
 `;
+
+export const Clock = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+
+  .title {
+    font-size: 1.2rem;
+    font-weight: 800;
+  }
+  .time {
+    display: flex;
+    flex-direction: row;
+    div {
+      margin-left: 0.2rem;
+    }
+  }
+  span {
+    font-weight: 800;
+  }
+`;

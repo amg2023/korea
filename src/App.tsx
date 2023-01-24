@@ -2,8 +2,8 @@ import { useAtomsDevtools } from "jotai/devtools";
 import Three from "./components/Three";
 import "./lang/index";
 import ModalPage from "./components/modal/ModalPage";
-import { ReactNode } from "react";
 import Info from "./components/Info";
+import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 
 const AtomsDevtools = ({ children }: any) => {
   useAtomsDevtools("demo");
@@ -13,9 +13,15 @@ const AtomsDevtools = ({ children }: any) => {
 export default function App() {
   return (
     <AtomsDevtools>
-      <ModalPage />
-      <Three />
-      <Info />
+      <PayPalScriptProvider
+        options={{
+          "client-id": (import.meta as any).env.VITE_PAYPAL,
+        }}
+      >
+        <ModalPage />
+        <Three />
+        <Info />
+      </PayPalScriptProvider>
     </AtomsDevtools>
   );
 }

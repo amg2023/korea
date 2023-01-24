@@ -15,6 +15,7 @@ import Clock from "./Clock";
 import { KeyArray } from "./Key";
 import { IKey } from "./type";
 import KeyIcon from "./Key";
+import Paypal from "../common/button/Paypal.js";
 
 export default function Info() {
   const { t, i18n } = useTranslation();
@@ -42,6 +43,9 @@ export default function Info() {
             <FaWhatsappSquare />
           </a>
         </div>
+        <div>
+          <Paypal />
+        </div>
         {KeyArray.map((item: IKey, i: number) => {
           return (
             <KeyIcon key={i} code={item.code} description={item.description} />
@@ -58,13 +62,11 @@ export default function Info() {
           <Clock />
         </div>
       </S.Control>
-      <>
-        <S.TitleLeft>
-          AMG <span>2022</span>
-        </S.TitleLeft>
-        <S.TitleRight>2022</S.TitleRight>
-        <JoyStick />
-      </>
+      <S.TitleLeft>
+        AMG <span>2022</span>
+      </S.TitleLeft>
+      <S.TitleRight>2022</S.TitleRight>
+      <JoyStick />
     </>
   );
 }

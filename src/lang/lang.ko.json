@@ -13,5 +13,10 @@
   "HANGUL": "한글",
   "SSIRUM": "씨름",
   "WHERE": "어디에서",
-  "TIGER": "호랑이"
+  "TIGER": "호랑이",
+  "GREET": "인사",
+  "DAY": "일",
+  "HOUR": "시",
+  "MIN": "분",
+  "SECOND": "초"
 }

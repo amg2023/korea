@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { START_DAY } from "../../data/constant";
+import * as S from "./style";
 
 export default function Clock() {
   const [time, setTime] = useState(new Date());
+  const { t } = useTranslation();
   useEffect(() => {
     const id = setInterval(() => {
       setTime(new Date());
@@ -9,7 +13,7 @@ export default function Clock() {
     return () => clearInterval(id);
   }, []);
 
-  const target = new Date("4/26/2023");
+  const target = new Date(START_DAY);
   const gap = target.getTime() - time.getTime();
 
   let _second = 1000;
@@ -22,11 +26,26 @@ export default function Clock() {
   let minutes = Math.floor((gap % _hour) / _minute);
   let seconds = Math.floor((gap % _minute) / _second);
   return (
-    <div>
-      <div>
-        D-DAY: {days} day {hours} hour {minutes} min {seconds} sec
+    <S.Clock>
+      <div className="title">D-DAY</div>
+      <div className="time">
+        <div>
+          <span>{days}</span>
+          {t("DAY")}
+        </div>
+        <div>
+          <span>{hours}</span>
+          {t("HOUR")}
+        </div>
+        <div>
+          <span>{minutes}</span>
+          {t("MIN")}
+        </div>
+        <div>
+          <span>{seconds}</span>
+          {t("SECOND")}
+        </div>
       </div>
-      {/* <div>{time.toLocaleTimeString()}</div> */}
-    </div>
+    </S.Clock>
   );
 }

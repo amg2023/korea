@@ -13,5 +13,10 @@
   "HANGUL": "HANGUL",
   "SSIRUM": "SSIRUM",
   "WHERE": "WHERE",
-  "TIGER": "TIGER"
+  "TIGER": "TIGER",
+  "GREET": "GREET",
+  "DAY": "DAY",
+  "HOUR": "HOUR",
+  "MIN": "MIN",
+  "SECOND": "SECOND"
 }

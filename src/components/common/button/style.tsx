@@ -97,3 +97,12 @@ export const ColorButton = styled.button<IColorButton>`
     box-shadow: 0 0 20px #1d1d1d;
   }
 `;
+
+export const PayPalButtons = styled.div`
+  .paypal-button-disploay-none {
+  }
+
+  .paypal-button-label-container {
+    background-color: red !important;
+  }
+`;

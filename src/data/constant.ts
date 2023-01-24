@@ -7,3 +7,5 @@ export const FACEBOOK_URL = "https://www.google.com/";
 export const INSTARGRAM_URL = "https://www.google.com/";
 // 왓츠앱 url
 export const WHATSAPP_URL = "https://www.google.com/";
+// 시작
+export const START_DAY = "4/26/2023";
