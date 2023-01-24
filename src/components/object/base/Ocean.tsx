@@ -31,7 +31,7 @@ export default function Ocean() {
       ((ref?.current as any).material.uniforms.time.value += delta)
   );
   return (
-    <mesh position={[0, -2, 0]}>
+    <mesh position={[0, 0.2, 0]}>
       <water ref={ref} args={[geom, config]} rotation-x={-Math.PI / 2} />
     </mesh>
   );
