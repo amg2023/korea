@@ -10,14 +10,14 @@ export const WallPosition: IWallPosition = [
   // 전면
   // 좌측
   {
-    position: [20, 11, 45],
-    scale: [30, 20, 1],
-    rotation: [Math.PI, Math.PI, 0],
+    position: [45, 11, 16],
+    scale: [1, 10, 15],
+    rotation: [Math.PI, -Math.PI, 0],
   },
   // 우측
   {
-    position: [-20, 11, 40],
-    scale: [20, 10, 1],
+    position: [45, 11, -16],
+    scale: [1, 10, 15],
     rotation: [Math.PI, Math.PI, 0],
   },
   // 후면

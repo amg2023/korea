@@ -9,6 +9,7 @@ export type IWall = {
 };
 
 export type IWallPosition = IWall[];
+export type ICrystalPosition = IWall[];
 
 export type IGltfObject = {
   nodes: {

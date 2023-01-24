@@ -17,9 +17,9 @@ export default function Tiger() {
     <SelectGltf
       url={url}
       nameTag={"TIGER"}
-      position={[20, 10, 43]}
-      scale={[0.01, 0.007, 0.02]}
-      rotation={[0, 0, 0]}
+      scale={[0.01, 0.006, 0.009]}
+      rotation={[0, Math.PI / 2, 0]}
+      position={[38, 10, 18]}
       onClick={onClick}
     />
   );

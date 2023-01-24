@@ -16,15 +16,15 @@ export default function Clock() {
   const target = new Date(START_DAY);
   const gap = target.getTime() - time.getTime();
 
-  let _second = 1000;
-  let _minute = _second * 60;
-  let _hour = _minute * 60;
-  let _day = _hour * 24;
+  const _second = 1000;
+  const _minute = _second * 60;
+  const _hour = _minute * 60;
+  const _day = _hour * 24;
 
-  let days = Math.floor(gap / _day);
-  let hours = Math.floor((gap % _day) / _hour);
-  let minutes = Math.floor((gap % _hour) / _minute);
-  let seconds = Math.floor((gap % _minute) / _second);
+  const days = Math.floor(gap / _day);
+  const hours = Math.floor((gap % _day) / _hour);
+  const minutes = Math.floor((gap % _hour) / _minute);
+  const seconds = Math.floor((gap % _minute) / _second);
   return (
     <S.Clock>
       <div className="title">D-DAY</div>

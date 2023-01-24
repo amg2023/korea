@@ -17,9 +17,9 @@ export default function Screen() {
     <SelectGltf
       url={url}
       nameTag={"HANGUL"}
-      scale={[18, 14, 18]}
+      scale={[8, 8, 8]}
       rotation={[Math.PI / 2, Math.PI, Math.PI / 2]}
-      position={[-45, 14, 5]}
+      position={[-45, 8, 5]}
       onClick={onClick}
     />
   );

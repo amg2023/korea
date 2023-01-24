@@ -16,9 +16,9 @@ export default function Ssirum() {
     <SelectGltf
       url={url}
       nameTag={"SSIRUM"}
-      position={[-30, 10, 37]}
-      scale={[0.015, 0.015, 0.015]}
-      rotation={[0, 0, 0]}
+      scale={[0.015, 0.013, 0.015]}
+      rotation={[0, Math.PI / 2, 0]}
+      position={[38, 10, 8]}
       onClick={onClick}
     />
   );

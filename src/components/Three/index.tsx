@@ -23,6 +23,10 @@ import {
 } from "@react-three/postprocessing";
 import MyCharacter from "./MyCharacter";
 import Screen from "../object/right/Screen";
+import Roof from "../object/base/Roof";
+import Ocean from "../object/base/Ocean";
+import Crystal, { CrystalPosition } from "../object/base/Crystal";
+import Sun from "../object/base/Sun";
 
 export default function Three() {
   return (
@@ -37,7 +41,13 @@ export default function Three() {
             />
           </EffectComposer>
           <Physics>
-            <Stage intensity={0.2} environment="sunset" adjustCamera={false}>
+            <Stage
+              intensity={0.2}
+              environment="sunset"
+              adjustCamera={false}
+              receiveShadow
+              castShadow
+            >
               {WallPosition.map(({ position, scale, rotation }, key) => {
                 return (
                   <Wall
@@ -48,10 +58,23 @@ export default function Three() {
                   />
                 );
               })}
-              <NameDesc />
+              {CrystalPosition.map(({ position, scale, rotation }, key) => {
+                return (
+                  <Crystal
+                    key={key}
+                    position={position}
+                    scale={scale}
+                    rotation={rotation}
+                  />
+                );
+              })}
+              <Ocean />
+              <Sun />
+
+              {/* <NameDesc />
               <NameSNS />
               <NameKorea />
-              <NameHelper />
+              <NameHelper /> */}
 
               <Facebook />
               <Instargram />
@@ -66,8 +89,9 @@ export default function Three() {
               <Tiger />
               <MyCharacter />
               <Ground />
+              <Roof />
             </Stage>
-            <Environment background preset="sunset" blur={1} />
+            <Environment preset="sunset" blur={1} background={true} />
           </Physics>
         </Selection>
       </Canvas>

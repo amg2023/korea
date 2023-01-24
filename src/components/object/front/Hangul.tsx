@@ -17,9 +17,9 @@ export default function Hangul() {
     <SelectGltf
       url={url}
       nameTag={"HANGUL"}
-      scale={[0.04, 0.015, 0.015]}
-      rotation={[0, 0, 0]}
-      position={[-15, 10, 38]}
+      scale={[0.01, 0.01, 0.025]}
+      rotation={[0, Math.PI / 2, 0]}
+      position={[38, 10, -20]}
       onClick={onClick}
     />
   );

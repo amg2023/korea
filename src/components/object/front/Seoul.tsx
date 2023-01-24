@@ -16,9 +16,9 @@ export default function Seoul() {
     <SelectGltf
       url={url}
       nameTag={"WHERE"}
-      scale={[0.03, 0.015, 0.015]}
-      rotation={[0, 0, 0]}
-      position={[35, 10, 40]}
+      scale={[0.01, 0.01, 0.02]}
+      rotation={[0, Math.PI / 2, 0]}
+      position={[38, 10, -8]}
       onClick={onClick}
     />
   );

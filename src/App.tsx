@@ -4,7 +4,10 @@ import "./lang/index";
 import ModalPage from "./components/modal/ModalPage";
 import Info from "./components/Info";
 import { PayPalScriptProvider } from "@paypal/react-paypal-js";
+import { Water } from "three-stdlib";
+import { extend } from "@react-three/fiber";
 
+extend({ Water });
 const AtomsDevtools = ({ children }: any) => {
   useAtomsDevtools("demo");
   return children;
