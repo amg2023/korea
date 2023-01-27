@@ -4,7 +4,7 @@ import { S3_URL } from "../../../data/constant";
 import useModalActions from "../../../store/modal/query";
 import SelectGltf from "../base/SelectGltf";
 
-const url = S3_URL + "tiger.gltf";
+const url = "./tiger.gltf";
 
 export default function Tiger() {
   const { onSetType } = useModalActions();

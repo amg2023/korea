@@ -15,8 +15,8 @@
   "WHERE": "WHERE",
   "TIGER": "TIGER",
   "GREET": "GREET",
-  "DAY": "DAY",
-  "HOUR": "HOUR",
-  "MIN": "MIN",
-  "SECOND": "SECOND"
+  "DAY": "D",
+  "HOUR": "H",
+  "MIN": "M",
+  "SECOND": "S"
 }

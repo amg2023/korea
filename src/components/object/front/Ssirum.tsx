@@ -18,7 +18,7 @@ export default function Ssirum() {
       nameTag={"SSIRUM"}
       scale={[0.015, 0.013, 0.015]}
       rotation={[0, Math.PI / 2, 0]}
-      position={[38, 10, 8]}
+      position={[43, 10, 16]}
       onClick={onClick}
     />
   );

@@ -27,10 +27,12 @@ export const KeyArray: IKeyArray = [
 export default function KeyIcon({ code, description }: IKey) {
   return (
     <S.KeyIcon>
-      <S.Key>
+      {/* <S.Key>
         <p>{code}</p>
       </S.Key>
-      <p>{description}</p>
+      <div>
+        <p>{description}</p>
+      </div> */}
     </S.KeyIcon>
   );
 }

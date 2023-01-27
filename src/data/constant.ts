@@ -4,7 +4,7 @@ export const S3_URL =
 // 페이스북 페이지 url
 export const FACEBOOK_URL = "https://www.google.com/";
 // 인스타그램 url
-export const INSTARGRAM_URL = "https://www.google.com/";
+export const INSTARGRAM_URL = "https://www.instagram.com/amgseoul2022/";
 // 왓츠앱 url
 export const WHATSAPP_URL = "https://www.google.com/";
 // 시작

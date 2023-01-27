@@ -3,7 +3,7 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { S3_URL, WHATSAPP_URL } from "../../../data/constant";
 import SelectGltf from "../base/SelectGltf";
 
-const url = S3_URL + "whatsapp.gltf";
+const url = S3_URL + "./whatsapp.gltf";
 export default function Whatsapp() {
   const onClick = (e: ThreeEvent<MouseEvent>) => {
     e.stopPropagation();
@@ -13,7 +13,7 @@ export default function Whatsapp() {
     <SelectGltf
       url={url}
       nameTag={"WHATSAPP"}
-      position={[-40, 15, -38]}
+      position={[-40, 10, -38]}
       scale={[0.02, 0.01, 0.01]}
       rotation={[0, Math.PI, 0]}
       onClick={onClick}

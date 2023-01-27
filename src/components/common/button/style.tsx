@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { IColorButton } from "./type";
+import { IColorButton, IPulseButton } from "./type";
 
 export const GradientButton = styled.button`
   @keyframes gradient {
@@ -104,5 +104,64 @@ export const PayPalButtons = styled.div`
 
   .paypal-button-label-container {
     background-color: red !important;
+  }
+`;
+
+export const PulseButton = styled.button<IPulseButton>`
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0.5rem;
+  width: ${(props) => (props.width ? props.width : "100%")};
+  height: ${(props) => (props.height ? props.height : "100%")};
+  border-radius: 0.4rem;
+  background: ${(props) => (props.color ? props.color : "#1d1d1d")};
+  box-shadow: 0 0 10px #1d1d1d;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+  color: white;
+
+  .border-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .box {
+    font-size: 0.8rem;
+  }
+
+  .blob {
+    background: black;
+    width: ${(props) => (props.width ? props.width : "100%")};
+    height: ${(props) => (props.height ? props.height : "100%")};
+    border-radius: 0.4rem;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+    transform: scale(1);
+    animation: pulse-black 2s infinite;
+    cursor: pointer;
+  }
+  .blob.white {
+    width: ${(props) => (props.width ? props.width : "100%")};
+    background: var(--text-black-dark);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 1);
+    animation: pulse-white 2s infinite;
+  }
+  @keyframes pulse-white {
+    0% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+    }
+    70% {
+      transform: scale(1);
+      box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+    }
+    100% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
   }
 `;

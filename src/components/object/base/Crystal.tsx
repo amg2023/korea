@@ -7,9 +7,9 @@ import GltfObject from "./GltfObject";
 export const CrystalPosition: ICrystalPosition = [
   // 전면
   {
-    scale: [50, 30, 20],
+    scale: [100, 30, 20],
     rotation: [0, 0, 0],
-    position: [4, -0.1, 17],
+    position: [4, -0.1, 20],
   },
   // 좌측
   {
@@ -29,7 +29,7 @@ const url = S3_URL + "crystal.gltf";
 export default function Crystal({ position, scale, rotation }: IWall) {
   const { nodes, materials } = useLoader(GLTFLoader, url);
   return (
-    <mesh>
+    <mesh scale={[1, 1, 1]}>
       <GltfObject
         nodes={nodes}
         materials={materials}

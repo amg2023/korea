@@ -1,13 +1,13 @@
 import { Ref, useMemo, useRef, useState } from "react";
 import { PerspectiveCamera, useAnimations } from "@react-three/drei";
 import { useEffect } from "react";
-import { Group, Mesh, MeshStandardMaterial, Quaternion, Vector3 } from "three";
+import { Group, Quaternion, Vector3 } from "three";
 import { IGltfReturn } from "./types";
-import { DRACOLoader, SkeletonUtils } from "three-stdlib";
+import { SkeletonUtils } from "three-stdlib";
 import { useFrame, useGraph, useLoader } from "@react-three/fiber";
 import { useCompoundBody } from "@react-three/cannon";
 import { useControls } from "../common/control/useControls";
-import { GLTF, GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { S3_URL } from "../../data/constant";
 import { NameTag } from "./NameTag";
 
@@ -28,14 +28,12 @@ export default function MyCharacter() {
   }));
   const { move } = useControls();
   const { f, b, l, r, z } = move;
-  const { materials, animations, scene, nodes }: any = useMemo(() => {
-    const _loader: IGltfReturn = useLoader(GLTFLoader, url, (loader) => {
-      const dracoLoader = new DRACOLoader();
-      dracoLoader.setDecoderPath("/draco-gltf/");
-      loader.setDRACOLoader(dracoLoader);
-    });
-    return _loader;
-  }, [url]);
+  const { materials, animations, scene }: IGltfReturn = useLoader(
+    GLTFLoader,
+    url
+  );
+  const clone = useMemo(() => SkeletonUtils.clone(scene!!), [scene]);
+  const { nodes }: IGltfReturn = useGraph(clone);
   const { actions } = useAnimations(animations!!, ref);
   const [isLimit, setIsLimit] = useState(false);
 
@@ -59,7 +57,7 @@ export default function MyCharacter() {
   }, [f, b, l, r, z]);
 
   const innerRef = useRef<Group>();
-  const speed = 30;
+  const speed = 15;
   const values = useRef({
     v: [0, 0, 0],
     av: [0, 0, 0],
@@ -145,7 +143,7 @@ export default function MyCharacter() {
         // 회전
         setIsLimit(false);
         api.velocity.set(0, 0, 0);
-        api.angularVelocity.set(0, _y * 0.5, 0);
+        api.angularVelocity.set(0, _y, 0);
       }
     } else {
       // 누른 키가 없을 때 멈춤
@@ -159,15 +157,14 @@ export default function MyCharacter() {
       <group ref={ref as Ref<Group>}>
         <PerspectiveCamera
           makeDefault
-          position={[0, 10, -20]}
+          position={[0, 16, -25]}
           rotation={[0.25, 3.15, 0]}
           fov={fov}
         />
-
         <group ref={innerRef as Ref<Group>}>
           <NameTag name={"TORANG"} bottom="15rem" />
-          <primitive object={nodes!.walk} visible={false} />
-          {Object.keys(nodes!).map((name: string, key: number) => {
+          <primitive object={nodes.walk} visible={false} />
+          {Object.keys(nodes).map((name: string, key: number) => {
             const names = name.split("_");
             if (names[0] === "mesh") {
               const material_name = "material_" + names[1];
@@ -177,8 +174,8 @@ export default function MyCharacter() {
                   castShadow
                   receiveShadow
                   material={materials!![material_name]}
-                  geometry={nodes![node_name].geometry}
-                  skeleton={nodes![node_name].skeleton}
+                  geometry={nodes[node_name].geometry}
+                  skeleton={nodes[node_name].skeleton}
                   key={key}
                 ></skinnedMesh>
               );

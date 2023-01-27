@@ -53,6 +53,14 @@ export const Location = styled.div`
   letter-spacing: -2;
   text-shadow: 0 0 2px black;
 
+  .sns {
+    font-size: 1.8rem;
+
+    a {
+      margin: 0.2rem;
+    }
+  }
+
   .title {
     display: flex;
     align-items: center;
@@ -297,6 +305,12 @@ export const Key = styled(Center)`
   height: 2rem;
   margin-right: 0.2rem;
   border-radius: 5px;
+  display: flex;
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   background: #1d1d1d;
   box-shadow: 0 0 10px #1d1d1d;
   -webkit-backdrop-filter: blur(10px);

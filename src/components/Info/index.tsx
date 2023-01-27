@@ -16,6 +16,7 @@ import { KeyArray } from "./Key";
 import { IKey } from "./type";
 import KeyIcon from "./Key";
 import Paypal from "../common/button/Paypal.js";
+import PulseButton from "../common/button/PulseButton";
 
 export default function Info() {
   const { t, i18n } = useTranslation();
@@ -43,14 +44,15 @@ export default function Info() {
             <FaWhatsappSquare />
           </a>
         </div>
-        <div>
+        {/* <div>
           <Paypal />
-        </div>
+        </div> */}
         {KeyArray.map((item: IKey, i: number) => {
           return (
             <KeyIcon key={i} code={item.code} description={item.description} />
           );
         })}
+        <PulseButton width={"4rem"} height={"2rem"} />
       </S.Location>
       <S.Control>
         <div className="button">
