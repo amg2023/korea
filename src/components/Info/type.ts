@@ -4,3 +4,8 @@ export type IKey = {
 };
 
 export type IKeyArray = IKey[];
+export type IJoyButton = {
+  className: string;
+  value: string;
+  icon: string;
+};

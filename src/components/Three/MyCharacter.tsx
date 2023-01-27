@@ -1,13 +1,13 @@
 import { Ref, useMemo, useRef, useState } from "react";
 import { PerspectiveCamera, useAnimations } from "@react-three/drei";
 import { useEffect } from "react";
-import { Group, Mesh, MeshStandardMaterial, Quaternion, Vector3 } from "three";
+import { Group, Quaternion, Vector3 } from "three";
 import { IGltfReturn } from "./types";
-import { DRACOLoader, SkeletonUtils } from "three-stdlib";
-import { useFrame, useGraph, useLoader } from "@react-three/fiber";
+import { DRACOLoader } from "three-stdlib";
+import { useFrame, useLoader } from "@react-three/fiber";
 import { useCompoundBody } from "@react-three/cannon";
 import { useControls } from "../common/control/useControls";
-import { GLTF, GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { S3_URL } from "../../data/constant";
 import { NameTag } from "./NameTag";
 
@@ -70,9 +70,7 @@ export default function MyCharacter() {
   useEffect(() => {
     api.velocity.subscribe((v) => (values.current.v = v));
     api.angularVelocity.subscribe((av) => (values.current.av = av));
-    api.position.subscribe((p) => {
-      values.current.p = p;
-    });
+    api.position.subscribe((p) => (values.current.p = p));
     api.rotation.subscribe((r) => (values.current.r = r));
   }, []);
 

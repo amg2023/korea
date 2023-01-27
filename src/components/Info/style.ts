@@ -201,6 +201,7 @@ export const Control = styled.div`
     width: 100%;
     justify-content: flex-end;
     align-items: flex-end;
+
     button {
       all: unset;
       width: 5rem;
@@ -217,7 +218,6 @@ export const Control = styled.div`
       p {
         margin: 0;
         padding: 0;
-
         color: white;
         font-size: 0.8rem;
         font-weight: 800;
@@ -231,17 +231,40 @@ export const Control = styled.div`
 `;
 
 export const JoyStick = styled.div`
+  z-index: 30;
   position: fixed;
   bottom: 0;
   right: 0;
   padding: 1rem;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+`;
+
+export const JoyStickInner = styled.div`
   display: none;
+  align-items: center;
+  justify-content: center;
+
+  width: 40vw;
+
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+  button {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
 
   .up {
     grid-row: 1/2;
@@ -260,31 +283,54 @@ export const JoyStick = styled.div`
     grid-column: 3/4;
   }
 
+  .z {
+    grid-row: 1/2;
+    grid-column: 3/4;
+    button {
+      background: linear-gradient(45deg, #8e2de2, #4a00e0);
+      box-shadow: 0 0 10px #8e2de2;
+      font-size: 0.8rem;
+      font-weight: 800;
+    }
+  }
+
+  @media (max-width: 500px) {
+    display: grid;
+  }
+`;
+
+export const JoyButton = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   button {
     all: unset;
-    z-index: 10;
-    height: 3rem;
+    position: relative;
     width: 3rem;
+    height: 3rem;
     margin: 0.2rem;
     border-radius: 50%;
-    box-shadow: 0 0 10px black;
-    cursor: pointer;
-    transition: all 0.3s ease-in;
-    background-color: rgba(0, 0, 0, 0.6);
+
+    background: linear-gradient(45deg, #dc2424, #4a569d);
+    box-shadow: 0 0 10px #ff416c;
+
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
 
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 1.6rem;
 
-    &:hover {
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+
+    &:checked {
       box-shadow: 0 0 20px #1d1d1d;
     }
-  }
-
-  @media (max-width: 500px) {
-    display: grid;
   }
 `;
 
