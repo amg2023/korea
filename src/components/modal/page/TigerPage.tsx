@@ -6,7 +6,7 @@ import { S3_URL } from "../../../data/constant";
 import Markdown from "../../common/Markdown/Markdown";
 import GltfObject from "../../object/base/GltfObject";
 
-const url = S3_URL + "tiger.gltf";
+const url = S3_URL + "wall.gltf";
 
 export default function TigerPage() {
   const { nodes, materials } = useLoader(GLTFLoader, url);

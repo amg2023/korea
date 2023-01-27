@@ -6,7 +6,7 @@ import { S3_URL } from "../../../data/constant";
 import Markdown from "../../common/Markdown/Markdown";
 import GltfObject from "../../object/base/GltfObject";
 
-const url = S3_URL + "hangul.gltf";
+const url = S3_URL + "wall.gltf";
 
 export default function HangulPage() {
   const { nodes, materials } = useLoader(GLTFLoader, url);

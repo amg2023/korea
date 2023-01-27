@@ -1,9 +1,7 @@
-import { useGLTF } from "@react-three/drei";
 import { useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { S3_URL } from "../../../data/constant";
 import { IWall, IWallPosition } from "../type";
-
 import GltfObject from "./GltfObject";
 
 export const WallPosition: IWallPosition = [
