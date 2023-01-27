@@ -1,6 +1,7 @@
 import { t } from "i18next";
 import { useSetAtom } from "jotai";
-import { MouseEvent } from "react";
+import { MouseEvent, Ref, useRef, useState } from "react";
+import { keyframes } from "styled-components";
 import { controlAtom } from "../../store/control/atom";
 import { keys } from "../common/control/useControls";
 import * as S from "./style";
@@ -43,9 +44,20 @@ export default function JoyButton({ className, value, icon }: IJoyButton) {
     }));
   };
 
+  const [click, setClick] = useState(false);
+  const ref = useRef<HTMLButtonElement>();
+
+  const onClick = () => {
+    ref.current?.classList.add("click");
+    setTimeout(() => {
+      ref.current?.classList.remove("click");
+    }, 300);
+  };
+
   return (
-    <S.JoyButton className={className}>
+    <S.JoyButton className={className} onClick={onClick}>
       <button
+        ref={ref as Ref<HTMLButtonElement>}
         value={value}
         onPointerDown={(e) => onMouseDown(e)}
         onPointerUp={(e) => onMouseLeave(e)}

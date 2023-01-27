@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { Center } from "../../style";
 
 export const Info = styled.div`
@@ -238,13 +238,39 @@ export const JoyStick = styled.div`
   padding: 1rem;
 
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
+
   width: 100vw;
+  height: 40vh;
 
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+`;
+
+export const keyFramesClickHello = keyframes`
+  0% {
+    box-shadow: 0 0 10px #ee0979;
+  }
+  50% {
+    box-shadow: 0 0 30px #ee0979;
+  }
+  100% {
+    box-shadow: 0 0 10px #ee0979;
+  }
+`;
+
+export const keyFramesClick = keyframes`
+  0% {
+    box-shadow: 0 0 10px #8e2de2;
+  }
+  50% {
+    box-shadow: 0 0 30px #8e2de2;
+  }
+  100% {
+    box-shadow: 0 0 10px #8e2de2;
+  }
 `;
 
 export const JoyStickInner = styled.div`
@@ -292,9 +318,15 @@ export const JoyStickInner = styled.div`
       font-size: 0.8rem;
       font-weight: 800;
     }
+    .click {
+      animation: 0.3s ${keyFramesClick} infinite;
+    }
+    &.hover {
+      box-shadow: 0 0 20px #8e2de2;
+    }
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: 700px) {
     display: grid;
   }
 `;
@@ -306,16 +338,17 @@ export const JoyButton = styled.div`
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
   button {
     all: unset;
     position: relative;
-    width: 3rem;
-    height: 3rem;
-    margin: 0.2rem;
+    width: 3.2rem;
+    height: 3.2rem;
+    margin: 0.3rem;
     border-radius: 50%;
 
-    background: linear-gradient(45deg, #dc2424, #4a569d);
-    box-shadow: 0 0 10px #ff416c;
+    background: linear-gradient(45deg, #ee0979, #ff6a00);
+    box-shadow: 0 0 10px #ee0979;
 
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
@@ -327,10 +360,10 @@ export const JoyButton = styled.div`
 
     cursor: pointer;
     transition: all 0.3s ease-in;
+  }
 
-    &:checked {
-      box-shadow: 0 0 20px #1d1d1d;
-    }
+  .click {
+    animation: 0.3s ${keyFramesClickHello} infinite;
   }
 `;
 
