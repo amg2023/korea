@@ -11,21 +11,13 @@ import Wall, { WallPosition } from "../object/base/Wall";
 import Instargram from "../object/back/Instargram";
 import Whatsapp from "../object/back/Whatsapp";
 import Ssirum from "../object/front/Ssirum";
-import Seoul from "../object/front/Seoul";
-import Tiger from "../object/front/Tiger";
-import {
-  EffectComposer,
-  Outline,
-  Selection,
-} from "@react-three/postprocessing";
+import { Selection } from "@react-three/postprocessing";
 import MyCharacter from "./MyCharacter";
 import Screen from "../object/right/Screen";
 import Roof from "../object/base/Roof";
 import Ocean from "../object/base/Ocean";
 import Crystal, { CrystalPosition } from "../object/base/Crystal";
 import Sun from "../object/base/Sun";
-import { browserName, browserVersion } from "react-device-detect";
-import { OrbitControls } from "three-stdlib";
 
 export default function Three() {
   return (
