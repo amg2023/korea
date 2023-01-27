@@ -13,7 +13,7 @@ export default function Whatsapp() {
     <SelectGltf
       url={url}
       nameTag={"WHATSAPP"}
-      position={[-40, 10, -38]}
+      position={[15, 10, -38]}
       scale={[0.02, 0.01, 0.01]}
       rotation={[0, Math.PI, 0]}
       onClick={onClick}

@@ -17,22 +17,41 @@ import { IKey } from "./type";
 import KeyIcon from "./Key";
 import Paypal from "../common/button/Paypal.js";
 import PulseButton from "../common/button/PulseButton";
+import useModalActions from "../../store/modal/query";
 
 export default function Info() {
-  const { t, i18n } = useTranslation();
-  const onClick = () => {
-    if (i18n.language === "en") {
-      i18n.changeLanguage("ko");
-    } else {
-      i18n.changeLanguage("en");
-    }
+  const { modal, setModal } = useModalActions();
+
+  const onClickTimetable = () => {
+    setModal({ on: true, type: "timetable" });
   };
 
   return (
     <>
       <S.Location>
-        <div className="title">{`${t("SOUTH KOREA")}`}</div>
-        <div className="title">{`${t("LOCATION")}`}</div>
+        <div className="title">
+          <p>SOUTH KOREA | SEOUL | APRIL 26-30, 2023</p>
+        </div>
+
+        <div className="title">
+          <PulseButton
+            width={"5rem"}
+            height={"2rem"}
+            title={"TIMETABLE"}
+            margin={"0 1rem 0 0"}
+            onClick={onClickTimetable}
+          />
+          <PulseButton width={"5rem"} height={"2rem"} title={"TIP"} />
+        </div>
+
+        {/* <div>
+          <Paypal />
+        </div> */}
+        {KeyArray.map((item: IKey, i: number) => {
+          return (
+            <KeyIcon key={i} code={item.code} description={item.description} />
+          );
+        })}
         <div className="sns">
           <a href={FACEBOOK_URL}>
             <FaFacebookSquare />
@@ -44,31 +63,17 @@ export default function Info() {
             <FaWhatsappSquare />
           </a>
         </div>
-        {/* <div>
-          <Paypal />
-        </div> */}
-        {KeyArray.map((item: IKey, i: number) => {
-          return (
-            <KeyIcon key={i} code={item.code} description={item.description} />
-          );
-        })}
-        <PulseButton width={"4rem"} height={"2rem"} />
       </S.Location>
       <S.Control>
-        <div className="button">
-          <button onClick={onClick}>
-            <p>{`${t("LANGUAGE")}`}</p>
-          </button>
-        </div>
         <div>
           <Clock />
         </div>
       </S.Control>
-      <S.TitleLeft>
+      {/* <S.TitleLeft>
         AMG <span>2022</span>
       </S.TitleLeft>
-      <S.TitleRight>2022</S.TitleRight>
-      <JoyStick />
+      <S.TitleRight>2022</S.TitleRight> */}
+      {!modal.on && <JoyStick />}
     </>
   );
 }

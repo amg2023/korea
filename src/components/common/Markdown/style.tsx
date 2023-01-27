@@ -1,20 +1,34 @@
 import styled from "styled-components";
 
 export const PostContentOrigin = styled.div`
-  line-height: 2em;
-  color: #f9f9f9;
-  background-color: rgba(0, 0, 0, 0.6);
-  border-radius: 1rem;
-  box-shadow: 0 0 0.6rem black;
-  width: 60vw;
-  height: 80vh;
+  position: relative;
 
-  --webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  padding: 2rem;
+
+  width: 90%;
+  height: 100%;
+
+  * {
+    margin: 0;
+    text-align: start;
+  }
+
+  h1 {
+    font-size: 7rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
 
   hr {
     height: 4px;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.3);
     border: none;
   }
   strong {
@@ -22,9 +36,17 @@ export const PostContentOrigin = styled.div`
   }
   ul {
     margin: 0;
+    padding: 0;
   }
+
   li {
     font-weight: 100;
+    display: flex;
+
+    &::before {
+      content: "*";
+      margin-right: 0.4rem;
+    }
   }
 
   blockquote {
@@ -46,20 +68,22 @@ export const PostContentOrigin = styled.div`
     overflow-x: hidden;
   }
   table {
-    min-width: 45vw;
+    width: 90%;
     margin: 20px;
-    background: #f9f9f9;
   }
   thead {
-    background: #e2e2e2;
   }
   th,
   tr,
   td {
+    font-size: 1.2rem;
     border: 2px solid gray;
-    color: black;
     padding: 10px;
-    min-width: 3rem;
+  }
+  td:first-of-type,
+  th:first-of-type {
+    width: 20vw;
+    background-color: #232323;
   }
   hr {
     margin-bottom: 30px;
@@ -67,8 +91,10 @@ export const PostContentOrigin = styled.div`
 
   @media (max-width: 992px) {
     padding: 0 10px 10px 10px;
-    line-height: 2em;
-    color: black;
+
+    h1 {
+      font-size: 5rem;
+    }
     hr {
       margin-bottom: 10px;
     }
@@ -79,17 +105,33 @@ export const PostContentOrigin = styled.div`
     }
     ul {
       padding: 0.5rem;
+      display: flex;
+      align-content: flex-start;
+      flex-wrap: wrap;
     }
-    li {
-      padding: 0.5rem;
-    }
+
     table {
       margin: 20px;
+    }
+    td {
+      font-size: 1.2rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 4rem;
+    }
+
+    td {
+      font-size: 0.9rem;
     }
   }
 `;
 
 export const PostContent = styled(PostContentOrigin)`
+  padding-top: 5rem;
+
   em {
     font-weight: 1000;
     text-decoration: underline;
@@ -99,6 +141,6 @@ export const PostContent = styled(PostContentOrigin)`
   }
   del {
     text-decoration: none;
-    color: gray;
+    color: #ff6b6b;
   }
 `;

@@ -113,7 +113,8 @@ export const PulseButton = styled.button<IPulseButton>`
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin: 0.5rem;
+
+  margin: ${(props) => (props.margin ? props.margin : "")};
   width: ${(props) => (props.width ? props.width : "100%")};
   height: ${(props) => (props.height ? props.height : "100%")};
   border-radius: 0.4rem;

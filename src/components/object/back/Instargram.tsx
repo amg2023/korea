@@ -3,7 +3,7 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { INSTARGRAM_URL, S3_URL } from "../../../data/constant";
 import SelectGltf from "../base/SelectGltf";
 
-const url = S3_URL + "./instargram.gltf";
+const url = S3_URL + "instargram.gltf";
 export default function Instargram() {
   const onClick = (e: ThreeEvent<MouseEvent>) => {
     e.stopPropagation();
@@ -13,7 +13,7 @@ export default function Instargram() {
     <SelectGltf
       url={url}
       nameTag={"INSTARGRAM"}
-      position={[-25, 10, -38]}
+      position={[0, 10, -38]}
       scale={[0.02, 0.01, 0.01]}
       rotation={[0, Math.PI, 0]}
       onClick={onClick}

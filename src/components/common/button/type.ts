@@ -20,9 +20,10 @@ export type ICancelButton = {
 
 // 프로필 이미지 아바타 props타입
 export interface IPulseButton {
-  imageUrl?: string | null;
   width?: string;
   height?: string;
   boxShadow?: string;
-  className?: string;
+  title?: string;
+  onClick?: Function;
+  margin?: string;
 }

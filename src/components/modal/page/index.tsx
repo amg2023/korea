@@ -1,10 +1,7 @@
 import useModalActions from "../../../store/modal/query";
 import { CancelButton } from "../../common/cancel/CancelButton";
-import HangulPage from "./HangulPage";
-import SeoulPage from "./SeoulPage";
-import SsirumPage from "./SsirumPage";
 import * as S from "./style";
-import TigerPage from "./TigerPage";
+import TimetablePage from "./TimetablePage";
 
 export default function Page() {
   const { onClickCancel, modal } = useModalActions();
@@ -12,10 +9,7 @@ export default function Page() {
   return (
     <S.Page>
       <CancelButton className="close" onClick={onClickCancel} />
-      {modal.type === "ssirum" && <SsirumPage />}
-      {modal.type === "hangul" && <HangulPage />}
-      {modal.type === "seoul" && <SeoulPage />}
-      {modal.type === "tiger" && <TigerPage />}
+      {modal.type === "timetable" && <TimetablePage />}
     </S.Page>
   );
 }

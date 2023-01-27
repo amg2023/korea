@@ -8,7 +8,7 @@ export default function ProgressBar() {
   const { t } = useTranslation();
   return (
     <div className="loader">
-      <h2>{t("WAIT")}</h2>
+      <h2>PLEASE WAIT</h2>
       <div className="progress-bar">
         <div
           className="progress-gray"
@@ -18,7 +18,7 @@ export default function ProgressBar() {
         ></div>
       </div>
       <h6 className="progress-number">
-        {t("IMPORT")} {progress.toFixed(2)} %
+        3D model import {progress.toFixed(2)} %
       </h6>
     </div>
   );

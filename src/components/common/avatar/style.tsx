@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { IAvatar } from "./Avatar";
 
-// avatar의 props를 인자로 받음(넓이, 높이 다르게 가능)
 export const Avatar = styled.div<IAvatar>`
   margin: 10px;
 

@@ -44,17 +44,18 @@ export const Location = styled.div`
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 
   height: 6rem;
-  font-size: 1.5rem;
-  font-weight: 700;
-  line-height: 3rem;
+  margin: 0.4rem;
   color: black;
   letter-spacing: -2;
   text-shadow: 0 0 2px black;
+  z-index: 10;
 
   .sns {
-    font-size: 1.8rem;
+    font-size: 2.5rem;
 
     a {
       margin: 0.2rem;
@@ -62,31 +63,35 @@ export const Location = styled.div`
   }
 
   .title {
+    margin: 0.4rem;
     display: flex;
-    align-items: center;
-    height: 2.2rem;
+
+    font-size: 1rem;
+    font-weight: 200;
+
+    p {
+      margin: 0;
+      padding: 0;
+    }
   }
 
   .contribute {
     height: 1.4rem;
     display: flex;
     p {
-      font-size: 0.8rem;
-      text-shadow: 0 0 0;
+      font-size: 1rem;
     }
   }
 
   @media (max-width: 900px) {
     .title {
       font-size: 1.2rem;
-      height: 2rem;
     }
   }
 
   @media (max-width: 600px) {
     .title {
       font-size: 1rem;
-      height: 1.8rem;
     }
   }
 `;
@@ -101,7 +106,6 @@ export const Title = styled.div`
   font-family: "Antonio", sans-serif;
   font-weight: 800;
   width: 100%;
-  flex: 1 1 0%;
   padding: 0;
   display: inline-flex;
   flex-direction: row;
@@ -278,7 +282,7 @@ export const JoyStickInner = styled.div`
   align-items: center;
   justify-content: center;
 
-  width: 40vw;
+  width: 10rem;
 
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
@@ -326,7 +330,7 @@ export const JoyStickInner = styled.div`
     }
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: 1024px) {
     display: grid;
   }
 `;

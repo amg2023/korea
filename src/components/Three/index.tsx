@@ -11,7 +11,11 @@ import Wall, { WallPosition } from "../object/base/Wall";
 import Instargram from "../object/back/Instargram";
 import Whatsapp from "../object/back/Whatsapp";
 import Ssirum from "../object/front/Ssirum";
-import { Selection } from "@react-three/postprocessing";
+import {
+  EffectComposer,
+  Outline,
+  Selection,
+} from "@react-three/postprocessing";
 import MyCharacter from "./MyCharacter";
 import Screen from "../object/right/Screen";
 import Roof from "../object/base/Roof";
@@ -27,7 +31,7 @@ export default function Three() {
         <Selection>
           {/* <EffectComposer multisampling={0} autoClear={false}>
             <Outline
-              visibleEdgeColor={"white" as unknown as number}
+              visibleEdgeColor={"#ff6b6b" as unknown as number}
               edgeStrength={1000}
             />
           </EffectComposer> */}
@@ -49,7 +53,6 @@ export default function Three() {
                   />
                 );
               })}
-
               {CrystalPosition.map(({ position, scale, rotation }, key) => {
                 return (
                   <Crystal

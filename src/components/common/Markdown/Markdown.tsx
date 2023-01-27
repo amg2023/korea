@@ -2,6 +2,7 @@ import ReactMarkdown from "react-markdown";
 import dracula from "react-syntax-highlighter/dist/cjs/styles/prism/dracula";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import * as S from "./style";
+import remarkGfm from "remark-gfm";
 
 export default function Markdown({ content }: any) {
   const components = {
@@ -26,9 +27,11 @@ export default function Markdown({ content }: any) {
 
   return (
     <S.PostContent>
-      <div className="markdown-body">
-        <ReactMarkdown components={components} children={content} />
-      </div>
+      <ReactMarkdown
+        components={components}
+        children={content}
+        remarkPlugins={[remarkGfm]}
+      />
     </S.PostContent>
   );
 }

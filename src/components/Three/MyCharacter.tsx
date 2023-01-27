@@ -157,7 +157,7 @@ export default function MyCharacter() {
       <group ref={ref as Ref<Group>}>
         <PerspectiveCamera
           makeDefault
-          position={[0, 10, -20]}
+          position={[0, 15, -30]}
           rotation={[0.25, 3.15, 0]}
           fov={fov}
         />

@@ -1,7 +1,6 @@
 import { t } from "i18next";
 import { useSetAtom } from "jotai";
-import { MouseEvent, Ref, useRef, useState } from "react";
-import { keyframes } from "styled-components";
+import { MouseEvent, Ref, useRef } from "react";
 import { controlAtom } from "../../store/control/atom";
 import { keys } from "../common/control/useControls";
 import * as S from "./style";
@@ -16,7 +15,7 @@ export const JoyButtonProps = [
   { className: "down", value: "ArrowDown", icon: "↧" },
   { className: "left", value: "ArrowLeft", icon: "↢" },
   { className: "right", value: "ArrowRight", icon: "↣" },
-  { className: "z", value: "KeyZ", icon: "Hello" },
+  { className: "z", value: "KeyZ", icon: "GREET" },
 ];
 
 export default function JoyButton({ className, value, icon }: IJoyButton) {
@@ -44,7 +43,6 @@ export default function JoyButton({ className, value, icon }: IJoyButton) {
     }));
   };
 
-  const [click, setClick] = useState(false);
   const ref = useRef<HTMLButtonElement>();
 
   const onClick = () => {
@@ -62,7 +60,7 @@ export default function JoyButton({ className, value, icon }: IJoyButton) {
         onPointerDown={(e) => onMouseDown(e)}
         onPointerUp={(e) => onMouseLeave(e)}
       >
-        {className === "z" ? t("GREET") : icon}
+        {icon}
       </button>
     </S.JoyButton>
   );

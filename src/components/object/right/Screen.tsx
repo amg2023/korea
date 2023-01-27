@@ -19,7 +19,7 @@ export default function Screen() {
       nameTag={"HANGUL"}
       scale={[8, 8, 8]}
       rotation={[Math.PI / 2, 0, Math.PI / 2]}
-      position={[-45, 8, 5]}
+      position={[-42, 8, 0]}
       onClick={onClick}
     />
   );

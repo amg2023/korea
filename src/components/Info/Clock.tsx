@@ -30,20 +30,16 @@ export default function Clock() {
       <div className="title">D-DAY</div>
       <div className="time">
         <div>
-          <span>{days}</span>
-          {t("DAY")}
+          <span>{days}</span>D
         </div>
         <div>
-          <span>{hours}</span>
-          {t("HOUR")}
+          <span>{hours}</span>H
         </div>
         <div>
-          <span>{minutes}</span>
-          {t("MIN")}
+          <span>{minutes}</span>M
         </div>
         <div>
-          <span>{seconds}</span>
-          {t("SECOND")}
+          <span>{seconds}</span>S
         </div>
       </div>
     </S.Clock>
