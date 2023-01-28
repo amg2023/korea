@@ -36,7 +36,7 @@ export default function Info() {
         <div className="title">
           <p>SOUTH KOREA | SEOUL | APRIL 26-30, 2023</p>
         </div>
-
+        <div>We are preparing to open.</div>
         <div className="title">
           <PulseButton
             width={"5rem"}
