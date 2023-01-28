@@ -51,7 +51,6 @@ export const Location = styled.div`
   margin: 0.4rem;
   color: black;
   letter-spacing: -2;
-  text-shadow: 0 0 2px black;
   z-index: 10;
 
   .sns {
@@ -64,6 +63,7 @@ export const Location = styled.div`
 
   .title {
     margin: 0.4rem;
+    color: #ee0979;
     display: flex;
 
     font-size: 1rem;
@@ -72,6 +72,7 @@ export const Location = styled.div`
     p {
       margin: 0;
       padding: 0;
+      text-shadow: 0 0 4px #ee0979;
     }
   }
 

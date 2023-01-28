@@ -2,7 +2,7 @@ import * as THREE from "three";
 import { useRef, useMemo } from "react";
 import { extend, useThree, useLoader, useFrame } from "@react-three/fiber";
 import { Water } from "three-stdlib";
-import { S3_URL } from "../../../data/constant";
+import { S3_URL } from "data/constant";
 
 extend({ Water });
 

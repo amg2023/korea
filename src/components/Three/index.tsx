@@ -1,31 +1,27 @@
 import { Canvas } from "@react-three/fiber";
 import { Physics } from "@react-three/cannon";
 import { Environment, Stage } from "@react-three/drei";
-import Ground from "../object/base/Ground";
-import Hangul from "../object/front/Hangul";
-import Facebook from "../object/back/Facebook";
+import { Selection } from "@react-three/postprocessing";
 import { Suspense } from "react";
-import ProgressBar from "../common/progress";
-import Wall, { WallPosition } from "../object/base/Wall";
 
-import Instargram from "../object/back/Instargram";
-import Whatsapp from "../object/back/Whatsapp";
-import Ssirum from "../object/front/Ssirum";
-import {
-  EffectComposer,
-  Outline,
-  Selection,
-} from "@react-three/postprocessing";
+import Facebook from "components/object/back/Facebook";
+import Instargram from "components/object/back/Instargram";
+import Whatsapp from "components/object/back/Whatsapp";
+import Mountain, { MountainPosition } from "components/object/base/Mountain";
+import Ground from "components/object/base/Ground";
+import Roof from "components/object/base/Roof";
+import Sun from "components/object/base/Sun";
+import Wall, { WallPosition } from "components/object/base/Wall";
+import Hangul from "components/object/front/Hangul";
+import Ssirum from "components/object/front/Ssirum";
 import MyCharacter from "./MyCharacter";
-import Screen from "../object/right/Screen";
-import Roof from "../object/base/Roof";
-import Ocean from "../object/base/Ocean";
-import Crystal, { CrystalPosition } from "../object/base/Crystal";
-import Sun from "../object/base/Sun";
+import Ocean from "components/object/base/Ocean";
+import ScreenPicture from "components/object/right/ScreenPicture";
+import Progress3D from "components/common/progress";
 
 export default function Three() {
   return (
-    <Suspense fallback={<ProgressBar />}>
+    <Suspense fallback={<Progress3D />}>
       <Canvas shadows style={{ width: "100vw", height: "100vh" }}>
         {/* <fog attach="fog" args={["white", 0, 500]} /> */}
         <Selection>
@@ -53,9 +49,9 @@ export default function Three() {
                   />
                 );
               })}
-              {CrystalPosition.map(({ position, scale, rotation }, key) => {
+              {MountainPosition.map(({ position, scale, rotation }, key) => {
                 return (
-                  <Crystal
+                  <Mountain
                     key={key}
                     position={position}
                     scale={scale}
@@ -71,7 +67,7 @@ export default function Three() {
 
               <Ssirum />
               <Hangul />
-              <Screen />
+              <ScreenPicture />
               <MyCharacter />
               <Ground />
               <Roof />

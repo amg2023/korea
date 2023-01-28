@@ -26,6 +26,10 @@ export default function Info() {
     setModal({ on: true, type: "timetable" });
   };
 
+  const onClickRegistertable = () => {
+    setModal({ on: true, type: "registertable" });
+  };
+
   return (
     <>
       <S.Location>
@@ -65,6 +69,23 @@ export default function Info() {
         </div>
       </S.Location>
       <S.Control>
+        {!modal.on && (
+          <PulseButton
+            style={{
+              width: "8rem",
+              height: "3rem",
+              fontSize: "1.2rem",
+              fontWeight: "200",
+              textShadow: "0 0 10px black",
+              background: "linear-gradient(45deg,#ee0979,#ff6a00)",
+              boxShadow: "0 0 10px #ee0979",
+              color: "black",
+              zIndex: 100,
+            }}
+            title={"REGISTER"}
+            onClick={onClickRegistertable}
+          />
+        )}
         <div>
           <Clock />
         </div>
@@ -73,6 +94,12 @@ export default function Info() {
         AMG <span>2022</span>
       </S.TitleLeft>
       <S.TitleRight>2022</S.TitleRight> */}
+      {!modal.on && (
+        <S.TitleLeft>
+          AMG <span>2022</span>
+        </S.TitleLeft>
+      )}
+
       {!modal.on && <JoyStick />}
     </>
   );

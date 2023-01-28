@@ -9,6 +9,7 @@ export default function PulseButton({
   title = "",
   onClick,
   margin,
+  style,
 }: IPulseButton) {
   return (
     <S.PulseButton
@@ -19,9 +20,12 @@ export default function PulseButton({
       onClick={() => {
         if (onClick) onClick();
       }}
+      style={style}
     >
-      <div className="border-div blob white">
-        <div className="box">{title}</div>
+      <div className="border-div blob white" style={style}>
+        <div className="box">
+          <p style={{ fontSize: style?.fontSize ?? "0.8rem" }}>{title}</p>
+        </div>
       </div>
     </S.PulseButton>
   );

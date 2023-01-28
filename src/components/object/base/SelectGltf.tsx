@@ -5,9 +5,9 @@ import { Ref, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Group } from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import { NameTag } from "../../Three/NameTag";
 import { ISelectGltf } from "../type";
 import GltfObject from "./GltfObject";
+import { NameTag } from "components/Three/NameTag";
 
 export default function SelectGltf({
   url,

@@ -20,8 +20,6 @@ export default function App() {
           "client-id": (import.meta as any).env.VITE_PAYPAL,
         }}
       >
-
-      
       </PayPalScriptProvider> */}
       <ModalPage />
       <Three />

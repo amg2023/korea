@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Center } from "../../../style";
+import { Center } from "../../style";
 
 export const Page = styled(Center)`
   position: relative;
@@ -33,7 +33,7 @@ export const DefaultPage = styled.div`
   box-shadow: 0 0 0.6rem black;
   /* 스크롤 */
   ::-webkit-scrollbar {
-    width: 1.5rem;
+    width: 1rem;
     background: linear-gradient(45deg, #ee0979, #ff6a00);
   }
   /* 스크롤 엄지부분 */
@@ -49,10 +49,4 @@ export const DefaultPage = styled.div`
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
   }
-`;
-
-export const TimetablePage = styled(DefaultPage)`
-  position: relative;
-  width: 100%;
-  height: 90vh;
 `;

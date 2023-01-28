@@ -13,7 +13,7 @@ export const SmallTag = styled.div<ISmallTag>`
   right: 50%;
   bottom: ${(props) => (props.bottom ? props.bottom : "9rem")};
 
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.2);
   border-radius: 0.7rem;
   padding: 10px;
   --webkit-backdrop-filter: blur(10px);

@@ -18,7 +18,7 @@ export const PostContentOrigin = styled.div`
   }
 
   h1 {
-    font-size: 7rem;
+    font-size: 5rem;
     width: 100%;
     display: flex;
     align-items: center;
@@ -120,7 +120,7 @@ export const PostContentOrigin = styled.div`
 
   @media (max-width: 768px) {
     h1 {
-      font-size: 4rem;
+      font-size: 3rem;
     }
 
     td {

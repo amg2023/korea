@@ -1,4 +1,3 @@
-import { render } from "react-dom";
 import "./styles.css";
 import App from "./App";
 import ReactDOM from "react-dom/client";

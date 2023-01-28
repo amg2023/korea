@@ -2,13 +2,13 @@ import { OrbitControls } from "@react-three/drei";
 import { Canvas, useLoader } from "@react-three/fiber";
 import { Suspense } from "react";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import { S3_URL } from "../../../data/constant";
-import Markdown from "../../common/Markdown/Markdown";
-import GltfObject from "../../object/base/GltfObject";
+import { S3_URL } from "../../data/constant";
+import Markdown from "./Markdown/Markdown";
+import GltfObject from "../object/base/GltfObject";
 
 const url = S3_URL + "wall.gltf";
 
-export default function TigerPage() {
+export default function SsirumPage() {
   const { nodes, materials } = useLoader(GLTFLoader, url);
 
   return (
@@ -31,12 +31,12 @@ export default function TigerPage() {
           <GltfObject
             nodes={nodes}
             materials={materials}
-            scale={[0.004, 0.003, 0.004]}
+            scale={[0.006, 0.005, 0.006]}
           />
         </group>
         <OrbitControls maxDistance={6} minDistance={2} />
       </Canvas>
-      <Markdown content={"### 타이거 페이지"} />
+      <Markdown content={"### 씨름 페이지"} />
     </Suspense>
   );
 }

@@ -129,9 +129,14 @@ export const PulseButton = styled.button<IPulseButton>`
     justify-content: center;
     align-items: center;
     text-align: center;
+    border-radius: 0.4rem;
   }
 
   .box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     font-size: 0.8rem;
   }
 
@@ -147,7 +152,7 @@ export const PulseButton = styled.button<IPulseButton>`
   }
   .blob.white {
     width: ${(props) => (props.width ? props.width : "100%")};
-    background: var(--text-black-dark);
+    background: black;
     box-shadow: 0 0 0 0 rgba(255, 255, 255, 1);
     animation: pulse-white 2s infinite;
   }

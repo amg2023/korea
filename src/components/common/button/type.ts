@@ -1,3 +1,5 @@
+import { CSSProperties } from "react";
+
 export interface IColorButton {
   color?: string;
   fontColor?: string;
@@ -26,4 +28,5 @@ export interface IPulseButton {
   title?: string;
   onClick?: Function;
   margin?: string;
+  style?: CSSProperties;
 }

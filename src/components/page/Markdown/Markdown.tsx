@@ -26,7 +26,7 @@ export default function Markdown({ content }: any) {
   };
 
   return (
-    <S.PostContent>
+    <S.PostContent className="markdown">
       <ReactMarkdown
         components={components}
         children={content}

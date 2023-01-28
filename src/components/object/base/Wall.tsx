@@ -1,8 +1,8 @@
 import { useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import { S3_URL } from "../../../data/constant";
 import { IWall, IWallPosition } from "../type";
 import GltfObject from "./GltfObject";
+import { S3_URL } from "data/constant";
 
 export const WallPosition: IWallPosition = [
   // 후면
@@ -24,7 +24,7 @@ export const WallPosition: IWallPosition = [
     rotation: [0, -Math.PI / 2, 0],
   },
 ];
-const url = "./wall.gltf";
+const url = S3_URL + "wall.gltf";
 export default function Wall({ position, scale, rotation }: IWall) {
   const { nodes, materials } = useLoader(GLTFLoader, url);
   return (

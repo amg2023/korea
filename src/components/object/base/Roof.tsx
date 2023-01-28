@@ -1,7 +1,7 @@
 import { useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import { S3_URL } from "../../../data/constant";
 import GltfObject from "./GltfObject";
+import { S3_URL } from "data/constant";
 
 const url = S3_URL + "roof.gltf";
 export default function Roof() {

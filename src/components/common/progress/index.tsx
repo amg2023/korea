@@ -1,11 +1,8 @@
 import { useProgress } from "@react-three/drei";
-import { useTransition } from "react";
-import { useTranslation } from "react-i18next";
 import "./style.css";
 
-export default function ProgressBar() {
+export default function Progress3D() {
   const { progress } = useProgress();
-  const { t } = useTranslation();
   return (
     <div className="loader">
       <h2>PLEASE WAIT</h2>

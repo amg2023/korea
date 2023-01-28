@@ -1,10 +1,11 @@
 import { useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import { S3_URL } from "../../../data/constant";
-import { ICrystalPosition, IWall } from "../type";
-import GltfObject from "./GltfObject";
 
-export const CrystalPosition: ICrystalPosition = [
+import GltfObject from "./GltfObject";
+import { S3_URL } from "data/constant";
+import { IMountainPosition, IWall } from "../type";
+
+export const MountainPosition: IMountainPosition = [
   // 전면
   {
     scale: [100, 30, 20],
@@ -26,7 +27,7 @@ export const CrystalPosition: ICrystalPosition = [
 ];
 
 const url = S3_URL + "crystal.gltf";
-export default function Crystal({ position, scale, rotation }: IWall) {
+export default function Mountain({ position, scale, rotation }: IWall) {
   const { nodes, materials } = useLoader(GLTFLoader, url);
   return (
     <mesh scale={[1, 1, 1]}>

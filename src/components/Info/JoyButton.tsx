@@ -1,4 +1,3 @@
-import { t } from "i18next";
 import { useSetAtom } from "jotai";
 import { MouseEvent, Ref, useRef } from "react";
 import { controlAtom } from "../../store/control/atom";
@@ -7,11 +6,7 @@ import * as S from "./style";
 import { IJoyButton } from "./type";
 
 export const JoyButtonProps = [
-  {
-    className: "up",
-    value: "ArrowUp",
-    icon: "↥",
-  },
+  { className: "up", value: "ArrowUp", icon: "↥" },
   { className: "down", value: "ArrowDown", icon: "↧" },
   { className: "left", value: "ArrowLeft", icon: "↢" },
   { className: "right", value: "ArrowRight", icon: "↣" },
