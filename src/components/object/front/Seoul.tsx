@@ -15,10 +15,10 @@ export default function Seoul() {
   return (
     <SelectGltf
       url={url}
-      nameTag={"WHERE"}
-      scale={[0.01, 0.01, 0.02]}
+      nameTag={"SEOUL"}
+      scale={[0.03, 0.011, 0.02]}
       rotation={[0, Math.PI / 2, 0]}
-      position={[38, 10, -8]}
+      position={[43, 10, 16]}
       onClick={onClick}
     />
   );

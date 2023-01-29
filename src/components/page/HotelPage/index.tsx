@@ -1,14 +1,15 @@
 import { OrbitControls } from "@react-three/drei";
-import { Canvas, useLoader } from "@react-three/fiber";
+import { useLoader, Canvas } from "@react-three/fiber";
+import GltfObject from "components/object/base/GltfObject";
+import { S3_URL } from "data/constant";
+import { seoulEs } from "data/seoul";
 import { Suspense } from "react";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import { S3_URL } from "../../data/constant";
-import Markdown from "./Markdown/Markdown";
-import GltfObject from "../object/base/GltfObject";
+import Markdown from "../Markdown/Markdown";
 
-const url = S3_URL + "wall.gltf";
+const url = S3_URL + "screen.gltf";
 
-export default function SsirumPage() {
+export default function HotelPage() {
   const { nodes, materials } = useLoader(GLTFLoader, url);
 
   return (
@@ -17,7 +18,7 @@ export default function SsirumPage() {
         shadows
         style={{
           width: "50vw",
-          height: "50vh",
+          height: "60vh",
         }}
       >
         <spotLight
@@ -27,16 +28,16 @@ export default function SsirumPage() {
           castShadow
           penumbra={1}
         />
-        <group rotation={[0, Math.PI, 0]}>
+        <group rotation={[Math.PI / 2, 0, 0]}>
           <GltfObject
             nodes={nodes}
             materials={materials}
-            scale={[0.006, 0.005, 0.006]}
+            scale={[1.5, 1.5, 1.5]}
           />
         </group>
         <OrbitControls maxDistance={6} minDistance={2} />
       </Canvas>
-      <Markdown content={"### 씨름 페이지"} />
+      <Markdown content={seoulEs} />
     </Suspense>
   );
 }

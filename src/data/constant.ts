@@ -9,3 +9,5 @@ export const INSTARGRAM_URL = "https://www.instagram.com/amgseoul2022/";
 export const WHATSAPP_URL = "https://www.google.com/";
 // 시작
 export const START_DAY = "4/26/2023";
+// 메일
+export const MAIL_URL = "https://wicked-lyssa-jigglypop.koyeb.app/";

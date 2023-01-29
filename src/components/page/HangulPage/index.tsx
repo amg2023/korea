@@ -1,14 +1,17 @@
-import { OrbitControls } from "@react-three/drei";
 import { Canvas, useLoader } from "@react-three/fiber";
+import GltfObject from "components/object/base/GltfObject";
+import { IGltfReturn } from "components/Three/types";
+import { S3_URL } from "data/constant";
+import { hangulEs } from "data/hangul";
 import { Suspense } from "react";
+import Markdown from "../Markdown/Markdown";
+import { OrbitControls } from "@react-three/drei";
+import * as S from "./style";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import { S3_URL } from "../../data/constant";
-import Markdown from "./Markdown/Markdown";
-import GltfObject from "../object/base/GltfObject";
 
-const url = S3_URL + "wall.gltf";
+const url = S3_URL + "hangul.gltf";
 
-export default function TigerPage() {
+export default function HangulPage() {
   const { nodes, materials } = useLoader(GLTFLoader, url);
 
   return (
@@ -17,7 +20,7 @@ export default function TigerPage() {
         shadows
         style={{
           width: "50vw",
-          height: "50vh",
+          height: "60vh",
         }}
       >
         <spotLight
@@ -31,12 +34,12 @@ export default function TigerPage() {
           <GltfObject
             nodes={nodes}
             materials={materials}
-            scale={[0.004, 0.003, 0.004]}
+            scale={[0.012, 0.005, 0.006]}
           />
         </group>
         <OrbitControls maxDistance={6} minDistance={2} />
       </Canvas>
-      <Markdown content={"### 타이거 페이지"} />
+      <Markdown content={hangulEs} />
     </Suspense>
   );
 }

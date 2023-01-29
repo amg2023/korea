@@ -1,12 +1,13 @@
 import { OrbitControls } from "@react-three/drei";
-import { Canvas, useLoader } from "@react-three/fiber";
+import { useLoader, Canvas } from "@react-three/fiber";
+import GltfObject from "components/object/base/GltfObject";
+import { S3_URL } from "data/constant";
+import { seoulEs } from "data/seoul";
 import { Suspense } from "react";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import { S3_URL } from "../../data/constant";
-import Markdown from "./Markdown/Markdown";
-import GltfObject from "../object/base/GltfObject";
+import Markdown from "../Markdown/Markdown";
 
-const url = S3_URL + "wall.gltf";
+const url = S3_URL + "seoul.gltf";
 
 export default function SeoulPage() {
   const { nodes, materials } = useLoader(GLTFLoader, url);
@@ -17,7 +18,7 @@ export default function SeoulPage() {
         shadows
         style={{
           width: "50vw",
-          height: "50vh",
+          height: "60vh",
         }}
       >
         <spotLight
@@ -31,12 +32,12 @@ export default function SeoulPage() {
           <GltfObject
             nodes={nodes}
             materials={materials}
-            scale={[0.012, 0.006, 0.006]}
+            scale={[0.012, 0.005, 0.006]}
           />
         </group>
         <OrbitControls maxDistance={6} minDistance={2} />
       </Canvas>
-      <Markdown content={"### 서울 페이지"} />
+      <Markdown content={seoulEs} />
     </Suspense>
   );
 }

@@ -54,6 +54,10 @@ export const Location = styled.div`
   z-index: 10;
 
   .sns {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
     font-size: 2.5rem;
 
     a {
@@ -62,17 +66,10 @@ export const Location = styled.div`
   }
 
   .title {
-    margin: 0.4rem;
-    color: #ee0979;
     display: flex;
-
-    font-size: 1rem;
-    font-weight: 200;
-
-    p {
-      margin: 0;
-      padding: 0;
-      text-shadow: 0 0 4px #ee0979;
+    flex-direction: column;
+    button {
+      margin: 0.2rem;
     }
   }
 
@@ -87,6 +84,9 @@ export const Location = styled.div`
   @media (max-width: 900px) {
     .title {
       font-size: 1.2rem;
+    }
+    .sns {
+      font-size: 2rem;
     }
   }
 
@@ -120,18 +120,18 @@ export const TitleLeft = styled.p`
   left: 0;
   padding: 1rem;
 
-  font-size: 9rem;
   line-height: 1em;
   color: white;
   margin: 0;
   letter-spacing: -10;
   text-shadow: 0 0 5px white;
 
+  font-size: 2rem;
   span {
-    display: none;
+    display: flex;
   }
 
-  @media (max-width: 900px) {
+  /* @media (max-width: 900px) {
     font-size: 7rem;
   }
 
@@ -144,7 +144,7 @@ export const TitleLeft = styled.p`
     span {
       display: flex;
     }
-  }
+  } */
 `;
 
 export const TitleRight = styled.p`
@@ -160,37 +160,41 @@ export const TitleRight = styled.p`
   margin: 0;
   letter-spacing: -10;
   text-shadow: 0 0 5px white;
+  z-index: 50;
 
-  @media (max-width: 900px) {
-    font-size: 7rem;
-  }
-  @media (max-width: 700px) {
-    font-size: 5rem;
-  }
-  @media (max-width: 500px) {
-    display: none;
-  }
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 `;
 
 export const Control = styled.div`
   position: fixed;
   top: 0;
   right: 0;
+  margin: 1rem;
   padding: 1rem;
 
   display: flex;
+  flex-direction: row;
   align-items: flex-end;
   justify-content: flex-start;
   flex-direction: column;
 
-  height: 6rem;
-  font-size: 1rem;
-  line-height: 3rem;
   color: black;
   letter-spacing: -2;
 
   .title {
-    height: 2.4rem;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-start;
+    flex-direction: column;
+
+    h5 {
+      margin: 0;
+      padding: 0.2rem;
+      font-weight: 300;
+    }
   }
 
   .contribute {
@@ -225,7 +229,6 @@ export const Control = styled.div`
         padding: 0;
         color: white;
         font-size: 0.8rem;
-        font-weight: 800;
       }
 
       &:hover {
@@ -233,6 +236,10 @@ export const Control = styled.div`
       }
     }
   }
+  color: #f9f9f9;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 1rem;
+  box-shadow: 0 0 0.6rem black;
 `;
 
 export const JoyStick = styled.div`
@@ -422,5 +429,9 @@ export const Clock = styled.div`
   }
   span {
     font-weight: 800;
+  }
+
+  @media (max-width: 600px) {
+    display: none;
   }
 `;

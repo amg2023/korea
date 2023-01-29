@@ -10,6 +10,7 @@ export default function PulseButton({
   onClick,
   margin,
   style,
+  complete,
 }: IPulseButton) {
   return (
     <S.PulseButton
@@ -21,6 +22,7 @@ export default function PulseButton({
         if (onClick) onClick();
       }}
       style={style}
+      disabled={complete}
     >
       <div className="border-div blob white" style={style}>
         <div className="box">

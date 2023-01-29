@@ -1,3 +1,4 @@
+import { modalAtom } from "./../../../store/modal/atom";
 import { useAtom } from "jotai";
 import { useEffect, useState } from "react";
 import { controlAtom } from "../../../store/control/atom";
@@ -8,33 +9,29 @@ type IKeys = {
 
 // 키 종류
 export const keys: IKeys = {
-  KeyW: "f",
   ArrowUp: "f",
-  KeyS: "b",
   ArrowDown: "b",
-  KeyA: "l",
   ArrowLeft: "l",
-  KeyD: "r",
   ArrowRight: "r",
   KeyZ: "z",
 };
 
 export const useControls = () => {
   const [move, setMove] = useAtom(controlAtom);
-  const keyDown = (e: KeyboardEvent) => {
+  function keyDown(e: KeyboardEvent) {
     setMove((m) => ({
       ...m,
       [keys[e.code]]: true,
       stop: false,
     }));
-  };
-  const keyUp = (e: KeyboardEvent) => {
+  }
+  function keyUp(e: KeyboardEvent) {
     setMove((m) => ({
       ...m,
       [keys[e.code]]: false,
       stop: true,
     }));
-  };
+  }
 
   useEffect(() => {
     // 이벤트 리스너

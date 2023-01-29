@@ -13,11 +13,11 @@ import Roof from "components/object/base/Roof";
 import Sun from "components/object/base/Sun";
 import Wall, { WallPosition } from "components/object/base/Wall";
 import Hangul from "components/object/front/Hangul";
-import Ssirum from "components/object/front/Ssirum";
 import MyCharacter from "./MyCharacter";
 import Ocean from "components/object/base/Ocean";
 import ScreenPicture from "components/object/right/ScreenPicture";
 import Progress3D from "components/common/progress";
+import Seoul from "components/object/front/Seoul";
 
 export default function Three() {
   return (
@@ -65,7 +65,7 @@ export default function Three() {
               <Instargram />
               <Whatsapp />
 
-              <Ssirum />
+              <Seoul />
               <Hangul />
               <ScreenPicture />
               <MyCharacter />

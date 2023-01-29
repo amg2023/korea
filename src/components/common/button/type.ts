@@ -29,4 +29,5 @@ export interface IPulseButton {
   onClick?: Function;
   margin?: string;
   style?: CSSProperties;
+  complete?: boolean;
 }

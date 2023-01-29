@@ -34,10 +34,6 @@ export default function Info() {
     <>
       <S.Location>
         <div className="title">
-          <p>SOUTH KOREA | SEOUL | APRIL 26-30, 2023</p>
-        </div>
-        <div>We are preparing to open.</div>
-        <div className="title">
           <PulseButton
             width={"5rem"}
             height={"2rem"}
@@ -48,14 +44,6 @@ export default function Info() {
           <PulseButton width={"5rem"} height={"2rem"} title={"TIP"} />
         </div>
 
-        {/* <div>
-          <Paypal />
-        </div> */}
-        {KeyArray.map((item: IKey, i: number) => {
-          return (
-            <KeyIcon key={i} code={item.code} description={item.description} />
-          );
-        })}
         <div className="sns">
           <a href={FACEBOOK_URL}>
             <FaFacebookSquare />
@@ -69,23 +57,12 @@ export default function Info() {
         </div>
       </S.Location>
       <S.Control>
-        {!modal.on && (
-          <PulseButton
-            style={{
-              width: "8rem",
-              height: "3rem",
-              fontSize: "1.2rem",
-              fontWeight: "200",
-              textShadow: "0 0 10px black",
-              background: "linear-gradient(45deg,#ee0979,#ff6a00)",
-              boxShadow: "0 0 10px #ee0979",
-              color: "black",
-              zIndex: 100,
-            }}
-            title={"REGISTER"}
-            onClick={onClickRegistertable}
-          />
-        )}
+        <div className="title">
+          <h5> SOUTH KOREA | </h5>
+          <h5> SEOUL | </h5>
+          <h5> APRIL 26-30, 2023 | </h5>
+          <h5>We are preparing to open.</h5>
+        </div>
         <div>
           <Clock />
         </div>
@@ -96,11 +73,32 @@ export default function Info() {
       <S.TitleRight>2022</S.TitleRight> */}
       {!modal.on && (
         <S.TitleLeft>
-          AMG <span>2022</span>
+          <div>
+            AMG <span>2022</span>
+          </div>
         </S.TitleLeft>
       )}
 
       {!modal.on && <JoyStick />}
+      {!modal.on && (
+        <S.TitleRight>
+          <PulseButton
+            style={{
+              width: "5rem",
+              height: "2rem",
+              fontSize: "1rem",
+              fontWeight: "200",
+              textShadow: "0 0 10px black",
+              background: "linear-gradient(45deg,#ee0979,#ff6a00)",
+              boxShadow: "0 0 10px #ee0979",
+              color: "black",
+              zIndex: 100,
+            }}
+            title={"REGISTER"}
+            onClick={onClickRegistertable}
+          />
+        </S.TitleRight>
+      )}
     </>
   );
 }

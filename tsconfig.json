@@ -22,6 +22,7 @@
       "@lang/*": ["src/lang/*"],
       "@store/*": ["src/store/*"],
       "@utils/*": ["src/utils/*"],
+      "@api/*": ["src/api/*"],
       "@/*": ["src/*"]
     }
   },

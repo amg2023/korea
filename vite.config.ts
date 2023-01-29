@@ -12,6 +12,7 @@ export default defineConfig({
       { find: "lang", replacement: "/src/lang" },
       { find: "store", replacement: "/src/store" },
       { find: "utils", replacement: "/src/utils" },
+      { find: "api", replacement: "/src/api" },
       { find: "src", replacement: "/src" },
     ],
   },

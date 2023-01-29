@@ -5,6 +5,9 @@ import Info from "./components/Info";
 import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 import { Water } from "three-stdlib";
 import { extend } from "@react-three/fiber";
+import GlobalStyle from "./globalStyle";
+import { useState } from "react";
+import { QueryClient, QueryClientProvider } from "react-query";
 
 extend({ Water });
 const AtomsDevtools = ({ children }: any) => {
@@ -13,17 +16,24 @@ const AtomsDevtools = ({ children }: any) => {
 };
 
 export default function App() {
+  const [queryClient] = useState(() => new QueryClient());
+
   return (
-    <AtomsDevtools>
-      {/* <PayPalScriptProvider
+    <>
+      <GlobalStyle />
+      <AtomsDevtools>
+        <QueryClientProvider client={queryClient}>
+          {/* <PayPalScriptProvider
         options={{
           "client-id": (import.meta as any).env.VITE_PAYPAL,
         }}
       >
       </PayPalScriptProvider> */}
-      <ModalPage />
-      <Three />
-      <Info />
-    </AtomsDevtools>
+          <ModalPage />
+          <Three />
+          <Info />
+        </QueryClientProvider>
+      </AtomsDevtools>
+    </>
   );
 }
