@@ -1,5 +1,5 @@
 import { Ref, useMemo, useRef, useState } from "react";
-import { PerspectiveCamera, useAnimations } from "@react-three/drei";
+import { PerspectiveCamera, useAnimations, useGLTF } from "@react-three/drei";
 import { useEffect } from "react";
 import { Group, Quaternion, Vector3 } from "three";
 import { IGltfReturn } from "./types";
@@ -11,7 +11,7 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { S3_URL } from "../../data/constant";
 import { NameTag } from "./NameTag";
 
-const url = S3_URL + "torang.gltf";
+const url = S3_URL + "torang.glb";
 
 export default function MyCharacter() {
   const [fov, setFov] = useState(50);
@@ -29,11 +29,7 @@ export default function MyCharacter() {
   const { move } = useControls();
   const { f, b, l, r, z } = move;
   const { materials, animations, scene, nodes }: any = useMemo(() => {
-    const _loader: IGltfReturn = useLoader(GLTFLoader, url, (loader) => {
-      const dracoLoader = new DRACOLoader();
-      dracoLoader.setDecoderPath("/draco-gltf/");
-      loader.setDRACOLoader(dracoLoader);
-    });
+    const _loader: IGltfReturn = useGLTF(url);
     return _loader;
   }, [url]);
   const { actions } = useAnimations(animations!!, ref);

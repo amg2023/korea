@@ -18,6 +18,7 @@ import Ocean from "components/object/base/Ocean";
 import ScreenPicture from "components/object/right/ScreenPicture";
 import Progress3D from "components/common/progress";
 import Seoul from "components/object/front/Seoul";
+import Tree, { TreePosition } from "components/object/base/Tree";
 
 export default function Three() {
   return (
@@ -52,6 +53,16 @@ export default function Three() {
               {MountainPosition.map(({ position, scale, rotation }, key) => {
                 return (
                   <Mountain
+                    key={key}
+                    position={position}
+                    scale={scale}
+                    rotation={rotation}
+                  />
+                );
+              })}
+              {TreePosition.map(({ position, scale, rotation }, key) => {
+                return (
+                  <Tree
                     key={key}
                     position={position}
                     scale={scale}

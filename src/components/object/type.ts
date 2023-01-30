@@ -10,6 +10,7 @@ export type IWall = {
 
 export type IWallPosition = IWall[];
 export type IMountainPosition = IWall[];
+export type ITreePosition = IWall[];
 
 export type IGltfObject = {
   nodes: {
