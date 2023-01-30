@@ -19,6 +19,7 @@ import ScreenPicture from "components/object/right/ScreenPicture";
 import Progress3D from "components/common/progress";
 import Seoul from "components/object/front/Seoul";
 import Tree, { TreePosition } from "components/object/base/Tree";
+import Dragon from "components/object/base/Dragon";
 
 export default function Three() {
   return (
