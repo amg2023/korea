@@ -22,7 +22,7 @@ export const TreePosition: ITreePosition = [
   },
 ];
 
-const url = "./tree.glb";
+const url = S3_URL + "tree.glb";
 export default function Tree({ position, scale, rotation }: IWall) {
   const { nodes, materials } = useGLTF(url);
   return (
