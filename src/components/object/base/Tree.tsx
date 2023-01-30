@@ -40,7 +40,6 @@ export const TreePosition: ITreePosition = [
     rotation: [-Math.PI / 2, 0, -Math.PI / 2],
   },
 ];
-
 const url = S3_URL + "tree.glb";
 export default function Tree({ position, scale, rotation }: IWall) {
   const ref = useRef<any>();
