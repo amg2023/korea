@@ -42,11 +42,9 @@ export const TreePosition: ITreePosition = [
 ];
 const url = S3_URL + "tree.glb";
 export default function Tree({ position, scale, rotation }: IWall) {
-  const ref = useRef<any>();
   const { nodes, materials } = useGLTF(url);
-
   return (
-    <mesh scale={scale} position={position} rotation={rotation} ref={ref}>
+    <mesh scale={scale} position={position} rotation={rotation}>
       <GltfObject nodes={nodes} materials={materials} />
     </mesh>
   );
