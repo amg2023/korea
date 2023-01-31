@@ -4,7 +4,7 @@ import { INameTag } from "./types";
 
 export const NameTag = ({ name, width, bottom }: INameTag) => {
   return (
-    <Html zIndexRange={[2, 0]}>
+    <Html zIndexRange={[1, 0]}>
       <S.SmallTag width={width} bottom={bottom}>
         <div className="categoryset-text">{name}</div>
       </S.SmallTag>

@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { DefaultPage } from "../style";
+import { DefaultPage, InnerPage } from "../style";
 
-export const hangulPage = styled(DefaultPage)`
+export const hangulPage = styled(InnerPage)`
   position: relative;
   width: 100%;
   height: 90vh;
@@ -11,5 +11,6 @@ export const hangulPage = styled(DefaultPage)`
     text-align: center;
     justify-content: center;
     align-items: center;
+    overflow-y: scroll;
   }
 `;

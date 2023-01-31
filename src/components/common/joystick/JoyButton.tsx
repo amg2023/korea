@@ -1,7 +1,7 @@
 import { useSetAtom } from "jotai";
 import { MouseEvent, Ref, useRef } from "react";
-import { controlAtom } from "../../store/control/atom";
-import { keys } from "../common/control/useControls";
+import { controlAtom } from "../../../store/control/atom";
+import { keys } from "../control/useControls";
 import * as S from "./style";
 import { IJoyButton } from "./type";
 

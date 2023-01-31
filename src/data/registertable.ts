@@ -48,4 +48,7 @@ export const registerTableEs = `
 | time     | content                      |
 | -------- | ---------------------------- |
 | ~ 17:00/18:00 | Travel Back to Seoul/Incheon |
+
+---
+
 `;

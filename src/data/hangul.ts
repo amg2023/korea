@@ -1,5 +1,4 @@
 export const hangulEs = `
-# HANGUL
 
 ~That is unparalleled grammatological luxuary.~
 

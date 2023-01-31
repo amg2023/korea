@@ -15,6 +15,10 @@ export const GradientInput = styled.div<IInput>`
   margin: 1rem;
   height: ${(props) => (props.label === "country" ? "8.7rem" : "")};
 
+  span {
+    display: none;
+  }
+
   input {
     border: none;
     border-right: 0px;

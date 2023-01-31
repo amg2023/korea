@@ -9,8 +9,9 @@ export const PostContentOrigin = styled.div`
 
   padding: 2rem;
 
-  width: 90%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: scroll;
 
   * {
     margin: 0;
@@ -90,8 +91,6 @@ export const PostContentOrigin = styled.div`
   }
 
   @media (max-width: 992px) {
-    padding: 0 10px 10px 10px;
-
     h1 {
       font-size: 5rem;
     }
@@ -122,7 +121,6 @@ export const PostContentOrigin = styled.div`
     h1 {
       font-size: 3rem;
     }
-
     td {
       font-size: 0.9rem;
     }
@@ -140,6 +138,8 @@ export const PostContent = styled(PostContentOrigin)`
     position: relative;
   }
   del {
+    display: flex;
+    text-align: center;
     text-decoration: none;
     color: #ff6b6b;
   }

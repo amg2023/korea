@@ -4,7 +4,7 @@ import { DefaultPage } from "../style";
 export const TimetablePage = styled(DefaultPage)`
   position: relative;
   width: 100%;
-  height: 90vh;
+  height: 100%;
 
   overflow-y: scroll;
 `;

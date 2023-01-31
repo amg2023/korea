@@ -10,33 +10,33 @@ import { useEffect, useRef } from "react";
 export const TreePosition: ITreePosition = [
   // // 전면
   {
-    scale: [0.1, 0.1, 0.1],
-    position: [50, -4, 60],
+    scale: [0.08, 0.08, 0.08],
+    position: [30, -4, 60],
     rotation: [-Math.PI / 2, 0, Math.PI / 2],
   },
   {
-    scale: [0.1, 0.1, 0.1],
-    position: [-30, -4, 27],
-    rotation: [-Math.PI / 2, 0, 0],
-  },
-  {
-    scale: [0.1, 0.1, 0.1],
-    position: [30, -4, 27],
-    rotation: [-Math.PI / 2, 0, -Math.PI / 2],
-  },
-  {
-    scale: [0.1, 0.1, 0.1],
+    scale: [0.08, 0.08, 0.08],
     position: [-20, -4, 50],
     rotation: [-Math.PI / 2, 0, Math.PI / 2],
   },
   {
-    scale: [0.1, 0.1, 0.1],
-    position: [-30, -4, -27],
+    scale: [0.08, 0.08, 0.08],
+    position: [-35, -4, 35],
     rotation: [-Math.PI / 2, 0, 0],
   },
   {
-    scale: [0.1, 0.1, 0.1],
-    position: [30, -4, -27],
+    scale: [0.08, 0.08, 0.08],
+    position: [35, -4, 35],
+    rotation: [-Math.PI / 2, 0, -Math.PI / 2],
+  },
+  {
+    scale: [0.08, 0.08, 0.08],
+    position: [-35, -4, -35],
+    rotation: [-Math.PI / 2, 0, 0],
+  },
+  {
+    scale: [0.08, 0.08, 0.08],
+    position: [35, -4, -35],
     rotation: [-Math.PI / 2, 0, -Math.PI / 2],
   },
 ];

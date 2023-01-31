@@ -27,7 +27,6 @@ export default function Clock() {
   const seconds = Math.floor((gap % _minute) / _second);
   return (
     <S.Clock>
-      <div className="title">D-DAY</div>
       <div className="time">
         <div>
           <span>{days}</span>D

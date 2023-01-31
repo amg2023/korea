@@ -1,102 +1,6 @@
 import styled, { keyframes } from "styled-components";
 import { Center } from "../../style";
 
-export const Info = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  padding: 4rem;
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-
-  @media (max-width: 900px) {
-    padding: 2rem;
-  }
-
-  @media (max-width: 600px) {
-    padding: 1rem;
-  }
-`;
-
-export const InfoInner = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  padding: 1rem;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  z-index: 30;
-`;
-
-export const Location = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  padding: 1rem;
-
-  font-family: "Antonio", sans-serif;
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: column;
-  margin: 0;
-  padding: 0;
-
-  height: 6rem;
-  margin: 0.4rem;
-  color: black;
-  letter-spacing: -2;
-  z-index: 10;
-
-  .sns {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    font-size: 2.5rem;
-
-    a {
-      margin: 0.2rem;
-    }
-  }
-
-  .title {
-    display: flex;
-    flex-direction: column;
-    button {
-      margin: 0.2rem;
-    }
-  }
-
-  .contribute {
-    height: 1.4rem;
-    display: flex;
-    p {
-      font-size: 1rem;
-    }
-  }
-
-  @media (max-width: 900px) {
-    .title {
-      font-size: 1.2rem;
-    }
-    .sns {
-      font-size: 2rem;
-    }
-  }
-
-  @media (max-width: 600px) {
-    .title {
-      font-size: 1rem;
-    }
-  }
-`;
-
 export const InnerText = styled.p`
   color: white;
   font-size: 500px;
@@ -114,7 +18,7 @@ export const Title = styled.div`
   justify-content: center;
 `;
 
-export const TitleLeft = styled.p`
+export const TitleLeft = styled.div`
   position: fixed;
   bottom: 0;
   left: 0;
@@ -130,24 +34,9 @@ export const TitleLeft = styled.p`
   span {
     display: flex;
   }
-
-  /* @media (max-width: 900px) {
-    font-size: 7rem;
-  }
-
-  @media (max-width: 700px) {
-    font-size: 5rem;
-  }
-
-  @media (max-width: 500px) {
-    font-size: 2rem;
-    span {
-      display: flex;
-    }
-  } */
 `;
 
-export const TitleRight = styled.p`
+export const TitleRight = styled.div`
   position: fixed;
   bottom: 0;
   right: 0;
@@ -160,14 +49,14 @@ export const TitleRight = styled.p`
   margin: 0;
   letter-spacing: -10;
   text-shadow: 0 0 5px white;
-  z-index: 50;
+  z-index: 300;
 
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 `;
 
-export const Control = styled.div`
+export const Footer = styled.div`
   position: fixed;
   top: 0;
   right: 0;
@@ -376,62 +265,5 @@ export const JoyButton = styled.div`
 
   .click {
     animation: 0.3s ${keyFramesClickHello} infinite;
-  }
-`;
-
-export const KeyIcon = styled(Center)`
-  margin: 0;
-  padding: 0;
-  height: 2.2rem;
-  flex-direction: row;
-
-  justify-content: flex-start;
-  p {
-    font-size: 0.8rem;
-  }
-`;
-
-export const Key = styled(Center)`
-  width: 2rem;
-  height: 2rem;
-  margin-right: 0.2rem;
-  border-radius: 5px;
-  display: flex;
-
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  background: #1d1d1d;
-  box-shadow: 0 0 10px #1d1d1d;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  color: white;
-  font-size: 0.6rem;
-`;
-
-export const Clock = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-end;
-
-  .title {
-    font-size: 1.2rem;
-    font-weight: 800;
-  }
-  .time {
-    display: flex;
-    flex-direction: row;
-    div {
-      margin-left: 0.2rem;
-    }
-  }
-  span {
-    font-weight: 800;
-  }
-
-  @media (max-width: 600px) {
-    display: none;
   }
 `;

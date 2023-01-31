@@ -1,33 +1,24 @@
 import styled from "styled-components";
-import { DefaultPage } from "../style";
 import { PostContent } from "../Markdown/style";
 
-export const RegisterPage = styled(DefaultPage)`
-  position: relative;
-  width: 100%;
-  height: 90vh;
-
-  /* 디스플레이 */
-  display: grid;
-  grid-template-columns: 8rem 1fr;
-`;
-/* 스텝바 */
 export const StepBar = styled.div`
-  position: relative;
-  grid-column: 1/2;
+  position: fixed;
 
-  width: 100%;
-  height: 100%;
+  top: 0;
+  left: 0;
+
+  width: 10vw;
+  height: 100vh;
+  z-index: 200;
 
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
   .step {
     position: relative;
-    width: 100%;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     text-align: center;
 
@@ -49,31 +40,16 @@ export const StepBar = styled.div`
   }
 
   .select {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-
     .dot {
-      width: 1rem;
-      height: 1rem;
-      border-radius: 50%;
       background: white;
       box-shadow: 0 0 20px white;
-      margin: 1rem;
     }
     .title {
       display: flex;
       font-size: 0.8rem;
       color: white;
       text-shadow: 0 0 10px white;
-      justify-content: center;
-      text-align: center;
     }
-  }
-
-  @media (max-width: 1000px) {
-    display: none;
   }
 `;
 
@@ -84,68 +60,16 @@ export const SelectContent = styled(PostContent)`
   align-items: center;
 `;
 
-export const Tap = styled.div`
+export const CourseSelectContent = styled(PostContent)`
   position: relative;
-  width: 100%;
-  height: 100%;
-
-  grid-column: 2/3;
-
-  overflow-y: scroll;
-  ::-webkit-scrollbar {
-    width: 1rem;
-    background: linear-gradient(45deg, #ee0979, #ff6a00);
-  }
-  ::-webkit-scrollbar-thumb {
-    background: linear-gradient(45deg, #ee0979, #ff6a00);
-    border-radius: 10px;
-    border: 2px solid transparent;
-    background-clip: padding-box;
-  }
-  ::-webkit-scrollbar-track {
-    background-color: black;
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-  }
-  .under {
-    position: relative;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    padding: 2rem;
-
-    h2 {
-      margin: 1rem;
-    }
-  }
-
-  @media (max-width: 1000px) {
-    grid-column: 1/3;
-  }
-`;
-
-export const SelectTap = styled(Tap)``;
-
-export const PaypalTap = styled(Tap)``;
-
-export const InfoFormTap = styled(Tap)`
-  span {
-    display: none;
-  }
-`;
-
-export const _PostContent = styled(PostContent)`
-  position: relative;
+  padding: 5rem;
   width: 100%;
   height: 100%;
 
   display: flex;
-  align-items: flex-start;
-  text-align: flex-start;
   justify-content: flex-start;
+  align-items: center;
+  text-align: center;
 
   td:first-of-type,
   th:first-of-type {
@@ -204,8 +128,15 @@ export const _PostContent = styled(PostContent)`
     }
   }
 
+  h2 {
+    margin: 1rem;
+    font-size: 1.4rem;
+
+    font-weight: 300;
+    color: #ff6b6b;
+  }
+
   @media (max-width: 992px) {
-    padding: 0;
     h1 {
       font-size: 3rem;
     }
@@ -238,14 +169,23 @@ export const _PostContent = styled(PostContent)`
   }
 `;
 
-export const PaypalContent = styled(_PostContent)``;
-
-export const InfoFormContent = styled(_PostContent)`
+export const RequestFormContent = styled(PostContent)`
+  .under {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding: 2rem;
+    h2 {
+      margin: 1rem;
+    }
+  }
   position: relative;
-
   display: flex;
   align-items: center;
-
   form {
     position: relative;
     width: 80%;
