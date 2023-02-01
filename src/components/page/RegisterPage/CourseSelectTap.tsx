@@ -71,72 +71,74 @@ export default function CourseSelectTap({ setStep }: ITap) {
   return (
     <S.CourseSelectContent>
       <h1>CHOOSE COURSE (is TEST)</h1>
-      <h2>Main Events</h2>
-      <table>
-        <THead />
-        <tbody>
-          {MainEvents.map((item: IOption, key: number) => {
-            return (
-              <tr key={key} className="table-row">
-                <td>{item.title}</td>
-                <td>{item.content}</td>
-                <td>{item.schedule}</td>
-                <td>{item.price}</td>
-                <td>
-                  <input
-                    type="radio"
-                    id={key + 1 + ""}
-                    name="course"
-                    checked={item.checked}
-                    onChange={onChangeMainEvent}
-                  />
-                  <label htmlFor={key + 1 + ""}>
-                    <div className="outer">
-                      <div className="inner"></div>
-                    </div>
-                  </label>
-                </td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
-      {!option && (
-        <>
-          <h2>Options</h2>
-          <table>
-            <THead />
-            <tbody ref={ref as Ref<HTMLTableSectionElement>}>
-              {Options.map((item: IOption, key: number) => {
-                return (
-                  <tr key={key} className="table-row">
-                    <td>{item.title}</td>
-                    <td>{item.content}</td>
-                    <td>{item.schedule}</td>
-                    <td>{item.price}</td>
-                    <td className="table-radio">
-                      <input
-                        type="radio"
-                        id={item.id + ""}
-                        name={"option" + (key + 1)}
-                        checked={item.checked}
-                        onClick={onChangeOptions}
-                        readOnly
-                      />
-                      <label htmlFor={MainEvents.length + key + 1 + ""}>
-                        <div className="outer">
-                          <div className="inner"></div>
-                        </div>
-                      </label>
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
-        </>
-      )}
-      <h2>total price: {pay.total} </h2>
+      <S.TableOuter>
+        <h2>Main Events</h2>
+        <table>
+          <THead />
+          <tbody>
+            {MainEvents.map((item: IOption, key: number) => {
+              return (
+                <tr key={key} className="table-row">
+                  <td>{item.title}</td>
+                  <td>{item.content}</td>
+                  <td>{item.schedule}</td>
+                  <td>{item.price}</td>
+                  <td>
+                    <input
+                      type="radio"
+                      id={key + 1 + ""}
+                      name="course"
+                      checked={item.checked}
+                      onChange={onChangeMainEvent}
+                    />
+                    <label htmlFor={key + 1 + ""}>
+                      <div className="outer">
+                        <div className="inner"></div>
+                      </div>
+                    </label>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+        {!option && (
+          <>
+            <h2>Options</h2>
+            <table>
+              <THead />
+              <tbody ref={ref as Ref<HTMLTableSectionElement>}>
+                {Options.map((item: IOption, key: number) => {
+                  return (
+                    <tr key={key} className="table-row">
+                      <td>{item.title}</td>
+                      <td>{item.content}</td>
+                      <td>{item.schedule}</td>
+                      <td>{item.price}</td>
+                      <td className="table-radio">
+                        <input
+                          type="radio"
+                          id={item.id + ""}
+                          name={"option" + (key + 1)}
+                          checked={item.checked}
+                          onClick={onChangeOptions}
+                          readOnly
+                        />
+                        <label htmlFor={MainEvents.length + key + 1 + ""}>
+                          <div className="outer">
+                            <div className="inner"></div>
+                          </div>
+                        </label>
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </>
+        )}
+      </S.TableOuter>
+      {/* <h2>total price: {pay.total} </h2>
       <div className="under">
         <PulseButton
           title={"NEXT"}
@@ -152,7 +154,7 @@ export default function CourseSelectTap({ setStep }: ITap) {
           onClick={onClickNext}
           complete={complete}
         />
-      </div>
+      </div> */}
     </S.CourseSelectContent>
   );
 }

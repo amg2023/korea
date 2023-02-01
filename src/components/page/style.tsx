@@ -36,9 +36,17 @@ export const Page = styled(Center)`
     z-index: 20;
   }
 
+  @media (max-width: 900px) {
+    h1 {
+      font-size: 3rem;
+    }
+  }
   @media (max-width: 600px) {
     width: 100vw;
     padding: 0;
+    h1 {
+      font-size: 2rem;
+    }
   }
 `;
 

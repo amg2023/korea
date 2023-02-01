@@ -70,7 +70,7 @@ export default function MyCharacter() {
     api.rotation.subscribe((r) => (values.current.r = r));
   }, []);
 
-  useFrame(({ camera }) => {
+  useFrame(({ camera, raycaster }) => {
     const frontAxis = new Vector3(0, 1, 0);
     const sideAxis = new Vector3(0, 0, 0);
     const V = new Vector3();

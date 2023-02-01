@@ -19,13 +19,13 @@ import ScreenPicture from "components/object/right/ScreenPicture";
 import Progress3D from "components/common/progress";
 import Seoul from "components/object/front/Seoul";
 import Tree, { TreePosition } from "components/object/base/Tree";
-import Dragon from "components/object/base/Dragon";
 
 export default function Three() {
   return (
     <Suspense fallback={<Progress3D />}>
       <Canvas shadows style={{ width: "100vw", height: "100vh" }}>
-        {/* <fog attach="fog" args={["white", 0, 500]} /> */}
+        <fog attach="fog" args={["white", 0, 500]} />
+
         <Selection>
           {/* <EffectComposer multisampling={0} autoClear={false}>
             <Outline

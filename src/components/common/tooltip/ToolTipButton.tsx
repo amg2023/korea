@@ -17,7 +17,7 @@ export const JoyDiscriptionProps = [
   { className: "z", value: "green Icon KeyZ (greeting)", icon: "Z" },
 ];
 
-export default function JoyDiscriptionButton({
+export default function ToolTipButton({
   className,
   value,
   icon,

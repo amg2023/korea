@@ -12,6 +12,7 @@ export const PostContentOrigin = styled.div`
   width: 100vw;
   height: 100vh;
   overflow-y: scroll;
+  overflow-x: hidden;
 
   * {
     margin: 0;
@@ -68,29 +69,27 @@ export const PostContentOrigin = styled.div`
     width: 60vw;
     overflow-x: hidden;
   }
+
   table {
-    width: 90%;
-    margin: 20px;
-  }
-  thead {
+    margin: 2rem;
   }
   th,
   tr,
   td {
+    padding: 0.2rem;
     font-size: 1.2rem;
     border: 2px solid gray;
-    padding: 10px;
   }
   td:first-of-type,
   th:first-of-type {
-    width: 20vw;
+    width: 100px;
     background-color: #232323;
   }
   hr {
     margin-bottom: 30px;
   }
 
-  @media (max-width: 992px) {
+  @media (max-width: 1000px) {
     h1 {
       font-size: 5rem;
     }
@@ -108,10 +107,6 @@ export const PostContentOrigin = styled.div`
       align-content: flex-start;
       flex-wrap: wrap;
     }
-
-    table {
-      margin: 20px;
-    }
     td {
       font-size: 1.2rem;
     }
@@ -128,8 +123,6 @@ export const PostContentOrigin = styled.div`
 `;
 
 export const PostContent = styled(PostContentOrigin)`
-  padding-top: 5rem;
-
   em {
     font-weight: 1000;
     text-decoration: underline;

@@ -67,13 +67,15 @@ export const CourseSelectContent = styled(PostContent)`
   height: 100%;
 
   display: flex;
-  justify-content: flex-start;
   align-items: center;
   text-align: center;
 
+  table {
+    position: relative;
+  }
+
   td:first-of-type,
   th:first-of-type {
-    width: 8rem;
     background-color: #232323;
   }
 
@@ -140,9 +142,7 @@ export const CourseSelectContent = styled(PostContent)`
     h1 {
       font-size: 3rem;
     }
-    table {
-      margin: 1rem;
-    }
+
     td {
       font-size: 1rem;
     }
@@ -155,9 +155,6 @@ export const CourseSelectContent = styled(PostContent)`
   @media (max-width: 800px) {
     h1 {
       font-size: 2rem;
-    }
-    table {
-      margin: 0;
     }
     td {
       font-size: 0.8rem;
@@ -190,4 +187,14 @@ export const RequestFormContent = styled(PostContent)`
     position: relative;
     width: 80%;
   }
+`;
+
+export const TableOuter = styled.div`
+  position: relative;
+  width: 90vw;
+  overflow-x: scroll;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;

@@ -4,9 +4,10 @@ import * as S from "./style";
 import JoyStick from "components/common/joystick/JoyStick";
 import { useSizeEffect } from "utils/useSizeEffect";
 import { useEffect, useState } from "react";
-import JoyDiscription from "components/common/joyDiscription";
+import JoyDiscription from "components/common/tooltip";
 import { CancelButton } from "components/common/cancel/CancelButton";
 import useTipActions from "store/tip/query";
+import ToolTip from "components/common/tooltip";
 
 export default function Footer() {
   const { modal, setModal } = useModalActions();
@@ -47,7 +48,7 @@ export default function Footer() {
         </S.TitleLeft>
       )}
       {!modal.on && <JoyStick />}
-      {!modal.on && tip.on && <JoyDiscription />}
+      {!modal.on && tip.on && <ToolTip />}
       {!modal.on && (
         <S.TitleRight>
           <PulseButton

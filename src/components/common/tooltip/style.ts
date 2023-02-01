@@ -25,7 +25,7 @@ export const JoyStickInner = styled.div`
   justify-content: center;
 
   position: relative;
-  width: 30rem;
+  width: 20rem;
   padding: 0.5rem;
   border-radius: 10px;
   background-color: rgba(0, 0, 0, 0.8);
@@ -78,11 +78,12 @@ export const JoyStickInner = styled.div`
       font-size: 0.8rem;
     }
   }
+
   @media (max-width: 800px) {
     width: 20rem;
     padding: 1rem;
     position: fixed;
-    top: 8rem;
+    top: 6.5rem;
   }
 `;
 
@@ -99,8 +100,8 @@ export const JoyDiscription = styled.div`
   div {
     all: unset;
     position: relative;
-    width: 2.8rem;
-    height: 2.8rem;
+    width: 2.4rem;
+    height: 2.4rem;
     border-radius: 10%;
 
     background: #1d1d1d;

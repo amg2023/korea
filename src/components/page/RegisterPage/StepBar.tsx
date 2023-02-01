@@ -1,7 +1,7 @@
 import * as S from "./style";
 import { ITap } from "./type";
 
-export default function StepBar({ step, setStep }: ITap) {
+export default function StepBar({ step }: ITap) {
   return (
     <S.StepBar>
       <div className={"step" + (step === 1 ? " select" : "")}>

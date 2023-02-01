@@ -1,5 +1,8 @@
 * {
   box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 html,
@@ -14,8 +17,8 @@ body,
 
 body {
   font-family: "Inter var", sans-serif;
+  background-color: black;
   color: white;
-  background: white;
   user-select: none;
 }
 
@@ -29,19 +32,6 @@ body {
   justify-content: center;
   align-items: center;
   transition: all 1s;
-}
-
-.bg {
-  background: linear-gradient(to top, #0a0a0a, #181a1a, #1d1d1f);
-}
-
-.notready {
-  color: #606060;
-}
-
-.clicked {
-  pointer-events: none;
-  opacity: 0;
 }
 
 a {
@@ -58,12 +48,4 @@ a:hover {
 
 button {
   all: unset;
-}
-
-.paypal-button {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  z-index: 100;
-  color: white !important;
 }
