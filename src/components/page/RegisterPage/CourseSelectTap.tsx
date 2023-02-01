@@ -2,7 +2,7 @@ import * as S from "./style";
 import { IOption, ITap } from "./type";
 import { Ref, useEffect, useRef, useState } from "react";
 import PulseButton from "components/common/button/PulseButton";
-import { MainEvents, Options } from "./package";
+import { MainEvents, Options } from "../../../data/package";
 import usePayActions from "store/pay/query";
 
 export const THead = () => {

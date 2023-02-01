@@ -19,6 +19,8 @@ import ScreenPicture from "components/object/right/ScreenPicture";
 import Progress3D from "components/common/progress";
 import Seoul from "components/object/front/Seoul";
 import Tree, { TreePosition } from "components/object/base/Tree";
+import Hanok from "components/object/base/Hanok";
+import Flag from "components/object/base/Flag";
 
 export default function Three() {
   return (
@@ -83,6 +85,8 @@ export default function Three() {
               <MyCharacter />
               <Ground />
               <Roof />
+              <Hanok />
+              {/* <Flag /> */}
             </Stage>
             <Environment preset="sunset" blur={1} background={true} />
           </Physics>

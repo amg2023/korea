@@ -25,7 +25,7 @@ export const JoyStickInner = styled.div`
   justify-content: center;
 
   position: relative;
-  width: 20rem;
+  width: 35rem;
   padding: 0.5rem;
   border-radius: 10px;
   background-color: rgba(0, 0, 0, 0.8);

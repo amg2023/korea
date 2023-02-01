@@ -1,12 +1,7 @@
 import styled from "styled-components";
 
-export const PostContentOrigin = styled.div`
+export const PostContent = styled.div`
   position: relative;
-
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-
   padding: 2rem;
 
   width: 100vw;
@@ -15,63 +10,43 @@ export const PostContentOrigin = styled.div`
   overflow-x: hidden;
 
   * {
-    margin: 0;
-    text-align: start;
+    margin: 0.1rem;
+    padding: 0;
+    font-weight: 300;
   }
 
   h1 {
     font-size: 5rem;
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
   }
-
   hr {
-    height: 4px;
     background-color: rgba(255, 255, 255, 0.3);
     border: none;
-  }
-  strong {
-    margin-top: 100px;
   }
   ul {
     margin: 0;
     padding: 0;
   }
-
   li {
     font-weight: 100;
     display: flex;
-
     &::before {
       content: "*";
       margin-right: 0.4rem;
     }
   }
-
   blockquote {
     border-left: 0.5rem solid #bfffe7;
     margin: 2rem 0;
     width: 100%;
     background: rgba(185, 185, 185, 0.1);
     padding: 1rem;
-
     line-height: 1.4em;
     color: #a5a5a5;
   }
-
-  pre,
-  span {
-    margin-top: 10px;
-    font-size: 14px !important;
-    width: 60vw;
-    overflow-x: hidden;
-  }
-
   table {
-    margin: 2rem;
+    position: relative;
+    width: 100%;
   }
   th,
   tr,
@@ -85,13 +60,9 @@ export const PostContentOrigin = styled.div`
     width: 100px;
     background-color: #232323;
   }
-  hr {
-    margin-bottom: 30px;
-  }
-
   @media (max-width: 1000px) {
     h1 {
-      font-size: 5rem;
+      font-size: 4rem;
     }
     hr {
       margin-bottom: 10px;
@@ -111,7 +82,12 @@ export const PostContentOrigin = styled.div`
       font-size: 1.2rem;
     }
   }
-
+  del {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    color: #ff6b6b;
+  }
   @media (max-width: 768px) {
     h1 {
       font-size: 3rem;
@@ -119,21 +95,5 @@ export const PostContentOrigin = styled.div`
     td {
       font-size: 0.9rem;
     }
-  }
-`;
-
-export const PostContent = styled(PostContentOrigin)`
-  em {
-    font-weight: 1000;
-    text-decoration: underline;
-  }
-  code {
-    position: relative;
-  }
-  del {
-    display: flex;
-    text-align: center;
-    text-decoration: none;
-    color: #ff6b6b;
   }
 `;

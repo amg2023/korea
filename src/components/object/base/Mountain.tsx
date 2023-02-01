@@ -10,7 +10,7 @@ export const MountainPosition: IMountainPosition = [
   {
     scale: [100, 30, 20],
     rotation: [0, 0, 0],
-    position: [4, -0.1, 20],
+    position: [2.2, -0.1, 15],
   },
   // 좌측
   {

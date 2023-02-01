@@ -15,7 +15,7 @@ export default function HangulPage() {
   const { nodes, materials } = useLoader(GLTFLoader, url);
 
   return (
-    <>
+    <S.hangulPage>
       <h1>HANGUL</h1>
       <Suspense>
         <Canvas
@@ -43,7 +43,7 @@ export default function HangulPage() {
         </Canvas>
       </Suspense>
       <Markdown content={hangulEs} />
-    </>
+    </S.hangulPage>
   );
 }
 useLoader.preload(GLTFLoader, url);

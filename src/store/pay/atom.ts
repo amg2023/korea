@@ -1,7 +1,4 @@
-import {
-  MainEvents,
-  Options,
-} from "./../../components/page/RegisterPage/package";
+import { MainEvents, Options } from "../../data/package";
 import { atom } from "jotai";
 import { IPay } from "./type";
 

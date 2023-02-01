@@ -6,6 +6,7 @@ import { seoulEs } from "data/seoul";
 import { Suspense } from "react";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import Markdown from "../Markdown/Markdown";
+import * as S from "./style";
 
 const url = S3_URL + "seoul.gltf";
 
@@ -13,14 +14,14 @@ export default function SeoulPage() {
   const { nodes, materials } = useLoader(GLTFLoader, url);
 
   return (
-    <>
+    <S.seoulPage>
       <h1>SEOUL</h1>
       <Suspense>
         <Canvas
           shadows
           style={{
-            width: "50vw",
-            height: "60vh",
+            width: "100vw",
+            height: "70vh",
           }}
         >
           <spotLight
@@ -34,14 +35,14 @@ export default function SeoulPage() {
             <GltfObject
               nodes={nodes}
               materials={materials}
-              scale={[0.012, 0.005, 0.006]}
+              scale={[0.02, 0.01, 0.008]}
             />
           </group>
           <OrbitControls maxDistance={6} minDistance={2} />
         </Canvas>
       </Suspense>
       <Markdown content={seoulEs} />
-    </>
+    </S.seoulPage>
   );
 }
 useLoader.preload(GLTFLoader, url);

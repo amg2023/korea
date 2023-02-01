@@ -1,16 +1,25 @@
 import styled from "styled-components";
-import { DefaultPage, InnerPage } from "../style";
+import { DefaultPage } from "../style";
 
-export const hangulPage = styled(InnerPage)`
+export const hangulPage = styled(DefaultPage)`
   position: relative;
   width: 100%;
-  height: 90vh;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   .markdown {
+    padding: 0 5rem;
     display: flex;
-    text-align: center;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    overflow-y: scroll;
+    text-align: center;
+
+    del {
+      font-size: 1.2rem;
+      text-align: center;
+    }
   }
 `;

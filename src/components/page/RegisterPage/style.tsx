@@ -56,6 +56,7 @@ export const StepBar = styled.div`
 export const SelectContent = styled(PostContent)`
   position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 `;
@@ -67,11 +68,13 @@ export const CourseSelectContent = styled(PostContent)`
   height: 100%;
 
   display: flex;
+  flex-direction: column;
   align-items: center;
   text-align: center;
 
   table {
     position: relative;
+    padding: 0 5rem;
   }
 
   td:first-of-type,

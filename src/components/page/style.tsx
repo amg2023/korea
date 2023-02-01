@@ -1,18 +1,9 @@
 import styled from "styled-components";
-import { Center } from "../../style";
 
-export const InnerPage = styled(Center)`
-  overflow-y: scroll;
-
-  .markdown {
-    overflow-y: scroll;
-  }
-`;
-
-export const Page = styled(Center)`
+export const Page = styled.div`
   position: relative;
   border-radius: 1rem;
-  padding-top: 5rem;
+  padding-top: 3rem;
   width: 100vw;
   height: 100vh;
 
@@ -22,7 +13,7 @@ export const Page = styled(Center)`
   justify-content: flex-start;
 
   h1 {
-    font-size: 5rem;
+    font-size: 4rem;
   }
 
   .close {
@@ -56,8 +47,6 @@ export const DefaultPage = styled.div`
   justify-content: center;
 
   position: relative;
-  height: 90vh;
   color: #f9f9f9;
   border-radius: 1rem;
-  box-shadow: 0 0 0.6rem black;
 `;

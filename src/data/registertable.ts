@@ -2,7 +2,6 @@ export const registerTableEs = `
 
 # REGISTER
 ---
----
 ## 1) DAY 00 WedApr26
 ---
 | time  | content	                        | price                             |

@@ -33,7 +33,7 @@ export const Progress = styled.div`
     box-shadow: 0 0 0.2rem white;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     .loader {
       top: 4rem;
     }

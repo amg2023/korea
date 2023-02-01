@@ -13,7 +13,7 @@ export default function Sun() {
         materials={materials}
         scale={[20, 20, 20]}
         rotation={[0, 0, 0]}
-        position={[0, 2, 20]}
+        position={[-4, 1.5, 20]}
       />
     </mesh>
   );

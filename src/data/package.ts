@@ -1,4 +1,4 @@
-import { IOption } from "./type";
+import { IOption } from "../components/page/RegisterPage/type";
 
 export const MainEvents: IOption[] = [
   {
