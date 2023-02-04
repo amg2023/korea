@@ -19,7 +19,7 @@ export const SHangulArea = styled.div`
   .title {
     h1 {
       font-size: 4rem;
-      font-weight: 300;
+      font-weight: 200;
     }
   }
 `;
