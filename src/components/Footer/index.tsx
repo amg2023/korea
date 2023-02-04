@@ -49,9 +49,9 @@ export default function Footer() {
       on: !three.on,
     });
     if (three.on) {
-      navigate("");
+      navigate("/korea/");
     } else {
-      navigate("/?q=three");
+      navigate("/korea/?q=three");
     }
   };
 
