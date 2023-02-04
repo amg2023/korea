@@ -46,7 +46,7 @@ export default function SeoulPage() {
           </Canvas>
         </Suspense>
       ) : (
-        <Avatar imageUrl={"/moon.jpeg"} width="300px" height="300px" />
+        <Avatar imageUrl={S3_URL + "moon.jpeg"} width="300px" height="300px" />
       )}
       <h2>Accompanying and Charming Special City Seoul</h2>
       <Markdown content={seoulEs} />

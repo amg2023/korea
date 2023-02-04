@@ -47,7 +47,11 @@ export default function HangulPage() {
           </Canvas>
         </Suspense>
       ) : (
-        <Avatar imageUrl={"/kpop.jpeg"} width="300px" height="300px" />
+        <Avatar
+          imageUrl={S3_URL + "hangul.jpeg"}
+          width="300px"
+          height="300px"
+        />
       )}
       <h2>That is unparalleled grammatological luxuary.</h2>
       <h2>Gari Keith Ledyard (1932 - 2021)</h2>

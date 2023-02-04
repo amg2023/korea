@@ -6,7 +6,7 @@ import { useSizeEffect } from "utils/useSizeEffect";
 import SelectGltf from "../base/SelectGltf";
 import SelectGltfDraco from "../base/SelectGltfDraco";
 
-const url = "./mensa.glb";
+const url = S3_URL + "mensa.glb";
 export default function Mensa() {
   const { onSetType } = useModalActions();
   const { width } = useSizeEffect();

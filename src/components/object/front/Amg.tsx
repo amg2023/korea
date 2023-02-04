@@ -6,7 +6,7 @@ import { useSizeEffect } from "utils/useSizeEffect";
 import SelectGltf from "../base/SelectGltf";
 import SelectGltfDraco from "../base/SelectGltfDraco";
 
-const url = "./amg.glb";
+const url = S3_URL + "amg.glb";
 export default function Amg() {
   const { onSetType } = useModalActions();
   const { width } = useSizeEffect();
