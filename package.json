@@ -6,7 +6,7 @@
   "homepage": "https://amg2023.github.io/korea/",
   "scripts": {
     "dev": "vite",
-    "build": " cp dist/index.html dist/404.html && tsc && vite build",
+    "build": "cp dist/index.html dist/404.html && tsc && vite build",
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
