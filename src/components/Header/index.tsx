@@ -29,7 +29,7 @@ export default function Header() {
 
   useEffect(() => {
     if (three.on) {
-      navigate("/korea/three");
+      navigate("/korea/three/");
     } else {
       navigate("/korea/");
     }
@@ -37,10 +37,10 @@ export default function Header() {
 
   const onClickTimetable = () => {
     if (three.on) setModal({ on: true, type: "timetable" });
-    else navigate("timetable");
+    else navigate("/timetable/");
   };
   const onGoMain = () => {
-    if (three.on) navigate("/korea/three");
+    if (three.on) navigate("/korea/three/");
     else navigate("/korea/");
   };
 

@@ -37,9 +37,8 @@ export default function App() {
             <Header />
             <Routes>
               <Route path="/korea/" element={<TwoMain />} />
-              <Route path="/korea/three" element={<ThreeMain />} />
-              <Route path="/korea/timetable" element={<TimetablePage />} />
-              <Route path="/korea/register" element={<RegisterPage />} />
+              <Route path="/korea/three/" element={<ThreeMain />} />
+              <Route path="/korea/register/" element={<RegisterPage />} />
               <Route />
             </Routes>
             <Footer />

@@ -27,7 +27,7 @@ export default function MainArea() {
   }, []);
 
   const onGoRegister = () => {
-    navigate("/korea/register");
+    navigate("/korea/register/");
   };
 
   return (
