@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
-    background-color: black;
+    background-color: #1d1d1d;
     overflow-y: scroll;
     ::-webkit-scrollbar {
         width: 1rem;

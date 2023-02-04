@@ -29,23 +29,23 @@ export const timeTableEs = `
 | 14:00-18:00 | Workshop b:             |
 ---
 
-## 4) DAY 01 ThuApr27
+## 4) DAY 03 SatApr29
 | time  | info                   |
 | ----- | ---------------------- |
 | 13:00-19:00 | City tour or Free time |
-| 18:00-night | ~~Gala~~                |
+| 18:00 - | ~~Gala~~                |
 ---
 
 ## 5) DAY 04 SunApr30
 | time   | info                 |
 | ------ | -------------------- |
-| 07:00-night| Travel : Busan, etc. |
+| 07:00 -| Travel : Busan, etc. |
 ---
 
 ## 6) Day 05 MonMay1
 | time     | info                         |
 | -------- | ---------------------------- |
-| ~ 17:00/18:00 | Travel Back to Seoul/Incheon |
+| - 18:00 | Travel Back to Seoul/Incheon |
 
 ---
 

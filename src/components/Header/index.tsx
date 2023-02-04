@@ -15,13 +15,40 @@ import {
 import Clock from "./Clock";
 import useModalActions from "../../store/modal/query";
 import useTipActions from "store/tip/query";
+import { useNavigate } from "react-router-dom";
+import { useAtom, useAtomValue } from "jotai";
+import { threeAtom } from "store/three/atom";
+import { useEffect } from "react";
+import PulseButton from "components/common/button/PulseButton";
+import style from "react-syntax-highlighter/dist/esm/styles/hljs/a11y-dark";
 
 export default function Header() {
   const { modal, setModal } = useModalActions();
   const { tip, onTip, offTip } = useTipActions();
+  const [three, setThree] = useAtom(threeAtom);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (three.on) {
+      navigate("/three");
+    } else {
+      navigate("/");
+    }
+  }, [three]);
 
   const onClickTimetable = () => {
-    setModal({ on: true, type: "timetable" });
+    if (three.on) setModal({ on: true, type: "timetable" });
+    else navigate("timetable");
+  };
+  const onGoMain = () => {
+    if (three.on) navigate("/three");
+    else navigate("/");
+  };
+
+  const onToggleThree = () => {
+    setThree({
+      on: !three.on,
+    });
   };
 
   return (
@@ -43,38 +70,60 @@ export default function Header() {
           </a>
         </div>
 
-        <div className="title" onClick={onClickTimetable}>
-          <p>TIMETABLE</p>
-          <BsTable className="title-mark" />
-        </div>
-        <div className="title">
-          {tip.on ? (
-            <>
-              <p className="title-p" onClick={offTip}>
-                TIP ON
-              </p>
-              <MdTipsAndUpdates className="title-mark" onClick={offTip} />
-            </>
-          ) : (
-            <>
-              <p className="title-p" onClick={onTip}>
-                TIP OFF
-              </p>
-              <MdOutlineTipsAndUpdates className="title-mark" onClick={onTip} />
-            </>
-          )}
-        </div>
+        {three.on && (
+          <>
+            <div className="title" onClick={onClickTimetable}>
+              <p>TIMETABLE</p>
+              <BsTable className="title-mark" />
+            </div>
+            <div className="title">
+              {tip.on ? (
+                <>
+                  <p className="title-p" onClick={offTip}>
+                    TIP ON
+                  </p>
+                  <MdTipsAndUpdates className="title-mark" onClick={offTip} />
+                </>
+              ) : (
+                <>
+                  <p className="title-p" onClick={onTip}>
+                    TIP OFF
+                  </p>
+                  <MdOutlineTipsAndUpdates
+                    className="title-mark"
+                    onClick={onTip}
+                  />
+                </>
+              )}
+            </div>
+          </>
+        )}
       </S.HeaderLeft>
 
       <S.HeaderRight>
-        <h5 className="slash">|</h5>
+        <PulseButton
+          style={{
+            width: "4.5rem",
+            fontWeight: "200",
+            textShadow: "0 0 10px black",
+            background: "white",
+            boxShadow: "0 0 10px white",
+            color: "black",
+          }}
+          title={three.on ? "2D (go 3D)" : "3D (go 2D)"}
+          onClick={onToggleThree}
+        />
+        <div className="gomain" onClick={onGoMain}>
+          <h5 className="slash">|</h5>
+          <h5>SOUTH KOREA</h5>
+          <h5 className="slash">|</h5>
+          <h5>SEOUL</h5>
+          <h5 className="slash">|</h5>
+          <h5>APRIL 26-30, 2023</h5>
+          <h5 className="slash">|</h5>
+        </div>
+
         <Clock />
-        <h5 className="slash">|</h5>
-        <h5>SOUTH KOREA</h5>
-        <h5 className="slash">|</h5>
-        <h5>SEOUL</h5>
-        <h5 className="slash">|</h5>
-        <h5>APRIL 26-30, 2023</h5>
       </S.HeaderRight>
     </S.Header>
   );

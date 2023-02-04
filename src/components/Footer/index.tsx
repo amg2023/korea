@@ -8,10 +8,13 @@ import JoyDiscription from "components/common/tooltip";
 import { CancelButton } from "components/common/cancel/CancelButton";
 import useTipActions from "store/tip/query";
 import ToolTip from "components/common/tooltip";
+import { useAtom } from "jotai";
+import { threeAtom } from "store/three/atom";
 
 export default function Footer() {
   const { modal, setModal } = useModalActions();
   const { tip, offTip } = useTipActions();
+  const [three, setThree] = useAtom(threeAtom);
   const { width } = useSizeEffect();
   const [style, setStyle] = useState({
     width: "6rem",
@@ -40,16 +43,16 @@ export default function Footer() {
 
   return (
     <S.Footer>
-      {!modal.on && (
+      {!modal.on && three.on && (
         <S.TitleLeft>
           <div>
             AMG <span>2022</span>
           </div>
         </S.TitleLeft>
       )}
-      {!modal.on && <JoyStick />}
-      {!modal.on && tip.on && <ToolTip />}
-      {!modal.on && (
+      {!modal.on && three.on && <JoyStick />}
+      {!modal.on && tip.on && three.on && <ToolTip />}
+      {!modal.on && three.on && (
         <S.TitleRight>
           <PulseButton
             style={{

@@ -10,9 +10,11 @@ export const GradientInput = styled.div<IInput>`
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  align-items: flex-start;
+  width: 90vw;
   background: transparent;
-  margin: 1rem;
+  margin: 2rem;
+  margin-top: 5rem;
   height: ${(props) => (props.label === "country" ? "8.7rem" : "")};
 
   span {
@@ -26,15 +28,15 @@ export const GradientInput = styled.div<IInput>`
     border-left: 0px;
     border-bottom: 0px;
     transition: all 0.3s ease-in;
-    padding: 1rem;
-    width: 100%;
+    width: 80vw;
     background: transparent;
     color: white !important;
     font-size: 1rem;
-    line-height: 2rem;
+    line-height: 3rem;
     vertical-align: middle;
     &::-webkit-input-placeholder {
-      color: white;
+      font-weight: 300;
+      color: #5e5e5e;
     }
   }
 
@@ -44,6 +46,7 @@ export const GradientInput = styled.div<IInput>`
   }
 
   h4 {
+    font-size: 1.4rem;
     margin-top: 1rem;
   }
 

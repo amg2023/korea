@@ -1,8 +1,4 @@
 import { useAtomsDevtools } from "jotai/devtools";
-import Three from "./components/Three";
-import ModalPage from "./components/modal/ModalPage";
-import Info from "./components/Header";
-import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 import { Water } from "three-stdlib";
 import { extend } from "@react-three/fiber";
 import GlobalStyle from "./globalStyle";
@@ -10,6 +6,13 @@ import { useState } from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
 import Footer from "components/Footer";
 import Header from "./components/Header";
+import TwoMain from "./TwoMain";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import ThreeMain from "./ThreeMain";
+import TimetablePage from "components/page/TimetablePage";
+import { PayPalScriptProvider } from "@paypal/react-paypal-js";
+import RegisterPage from "components/page/RegisterPage";
+const { VITE_PAYPAL } = (import.meta as any).env;
 
 extend({ Water });
 const AtomsDevtools = ({ children }: any) => {
@@ -21,20 +24,28 @@ export default function App() {
   const [queryClient] = useState(() => new QueryClient());
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <GlobalStyle />
-      <AtomsDevtools>
-        {/* <PayPalScriptProvider
-        options={{
-          "client-id": (import.meta as any).env.VITE_PAYPAL,
-        }}
-      >
-      </PayPalScriptProvider> */}
-        <Header />
-        <ModalPage />
-        <Three />
-        <Footer />
-      </AtomsDevtools>
-    </QueryClientProvider>
+    <PayPalScriptProvider
+      options={{
+        "client-id": VITE_PAYPAL,
+        currency: "USD",
+      }}
+    >
+      <QueryClientProvider client={queryClient}>
+        <GlobalStyle />
+        <AtomsDevtools>
+          <BrowserRouter>
+            <Header />
+            <Routes>
+              <Route path="" element={<TwoMain />} />
+              <Route path="/three" element={<ThreeMain />} />
+              <Route path="/timetable" element={<TimetablePage />} />
+              <Route path="/register" element={<RegisterPage />} />
+              <Route />
+            </Routes>
+            <Footer />
+          </BrowserRouter>
+        </AtomsDevtools>
+      </QueryClientProvider>
+    </PayPalScriptProvider>
   );
 }

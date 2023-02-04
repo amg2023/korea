@@ -7,6 +7,7 @@ export const payAtom = atom<IPay>({
   option: [...Options],
   form: {
     name: "",
+    birth: "",
     email: "",
     phone: "",
     country: "",
@@ -14,6 +15,7 @@ export const payAtom = atom<IPay>({
   },
   validate: {
     name: false,
+    birth: false,
     email: false,
     phone: false,
     country: false,

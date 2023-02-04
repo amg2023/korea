@@ -21,6 +21,8 @@ import Seoul from "components/object/front/Seoul";
 import Tree, { TreePosition } from "components/object/base/Tree";
 import Hanok from "components/object/base/Hanok";
 import Flag from "components/object/base/Flag";
+import Amg from "components/object/front/Amg";
+import Mensa from "components/object/front/Mensa";
 
 export default function Three() {
   return (
@@ -86,6 +88,8 @@ export default function Three() {
               <Ground />
               <Roof />
               <Hanok />
+              <Amg />
+              <Mensa />
               {/* <Flag /> */}
             </Stage>
             <Environment preset="sunset" blur={1} background={true} />

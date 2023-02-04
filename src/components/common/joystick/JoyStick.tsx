@@ -1,10 +1,18 @@
 import JoyButton, { JoyButtonProps } from "./JoyButton";
 import { IJoyButton } from "./type";
 import * as S from "./style";
+import { useAtomValue } from "jotai";
+import { threeAtom } from "store/three/atom";
 
 export default function JoyStick() {
+  const three = useAtomValue(threeAtom);
+
   return (
-    <S.JoyStick>
+    <S.JoyStick
+      style={{
+        display: !three.on ? "none" : "flex",
+      }}
+    >
       <S.JoyStickInner>
         {JoyButtonProps.map((item: IJoyButton, key: number) => {
           return (

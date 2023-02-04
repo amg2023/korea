@@ -1,5 +1,4 @@
 export const seoulEs = `
-~Accompanying and Charming Special City Seoul~
 
 ---
 

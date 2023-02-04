@@ -11,7 +11,7 @@ export const SmallTag = styled.div<ISmallTag>`
   height: ${(props) => (props.width ? props.width : "1.8rem")};
   width: ${(props) => (props.width ? props.width : "6rem")};
   right: 50%;
-  bottom: ${(props) => (props.bottom ? props.bottom : "9rem")};
+  bottom: ${(props) => (props.bottom ? props.bottom : "1rem")};
 
   background: rgba(0, 0, 0, 0.2);
   border-radius: 0.7rem;

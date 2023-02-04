@@ -1,29 +1,29 @@
 import * as S from "./style";
-import { IOption, ITap } from "./type";
 import { Ref, useEffect, useRef, useState } from "react";
 import PulseButton from "components/common/button/PulseButton";
-import { MainEvents, Options } from "../../../data/package";
 import usePayActions from "store/pay/query";
+import { ITap, IOption } from "components/page/RegisterPage/type";
+import { MainEvents, Options } from "data/package";
 
 export const THead = () => {
   return (
     <thead>
       <tr>
         <th>package</th>
-        <th>title</th>
-        <th>content</th>
-        <th>price</th>
+        <th>time</th>
+        <th>price (USD)</th>
         <th>select</th>
       </tr>
     </thead>
   );
 };
 
-export default function CourseSelectTap({ setStep }: ITap) {
+export default function SelectTap({ setStep }: ITap) {
   const { pay, setPay, onCalcTotal } = usePayActions();
   const [complete, setComplete] = useState(true);
   const [option, setOption] = useState(true);
   const ref = useRef<HTMLTableSectionElement>();
+
   const onClickNext = () => {
     setStep!(2);
   };
@@ -69,8 +69,9 @@ export default function CourseSelectTap({ setStep }: ITap) {
   };
 
   return (
-    <S.CourseSelectContent>
-      <h1>CHOOSE COURSE (is TEST)</h1>
+    <S.SelectContent>
+      <h1>(STEP 1) SELECT PACKAGE</h1>
+      <h1>total price: {pay.total} USD </h1>
       <S.TableOuter>
         <h2>Main Events</h2>
         <table>
@@ -78,8 +79,11 @@ export default function CourseSelectTap({ setStep }: ITap) {
           <tbody>
             {MainEvents.map((item: IOption, key: number) => {
               return (
-                <tr key={key} className="table-row">
-                  <td>{item.title}</td>
+                <tr
+                  key={key}
+                  className="table-row"
+                  onChange={onChangeMainEvent}
+                >
                   <td>{item.content}</td>
                   <td>{item.schedule}</td>
                   <td>{item.price}</td>
@@ -89,7 +93,7 @@ export default function CourseSelectTap({ setStep }: ITap) {
                       id={key + 1 + ""}
                       name="course"
                       checked={item.checked}
-                      onChange={onChangeMainEvent}
+                      readOnly
                     />
                     <label htmlFor={key + 1 + ""}>
                       <div className="outer">
@@ -110,8 +114,11 @@ export default function CourseSelectTap({ setStep }: ITap) {
               <tbody ref={ref as Ref<HTMLTableSectionElement>}>
                 {Options.map((item: IOption, key: number) => {
                   return (
-                    <tr key={key} className="table-row">
-                      <td>{item.title}</td>
+                    <tr
+                      key={key}
+                      className={"table-row"}
+                      onClick={onChangeOptions}
+                    >
                       <td>{item.content}</td>
                       <td>{item.schedule}</td>
                       <td>{item.price}</td>
@@ -121,7 +128,6 @@ export default function CourseSelectTap({ setStep }: ITap) {
                           id={item.id + ""}
                           name={"option" + (key + 1)}
                           checked={item.checked}
-                          onClick={onChangeOptions}
                           readOnly
                         />
                         <label htmlFor={MainEvents.length + key + 1 + ""}>
@@ -138,7 +144,6 @@ export default function CourseSelectTap({ setStep }: ITap) {
           </>
         )}
       </S.TableOuter>
-      {/* <h2>total price: {pay.total} </h2>
       <div className="under">
         <PulseButton
           title={"NEXT"}
@@ -154,7 +159,7 @@ export default function CourseSelectTap({ setStep }: ITap) {
           onClick={onClickNext}
           complete={complete}
         />
-      </div> */}
-    </S.CourseSelectContent>
+      </div>
+    </S.SelectContent>
   );
 }

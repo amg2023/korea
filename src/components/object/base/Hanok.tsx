@@ -1,4 +1,3 @@
-import { usePlane } from "@react-three/cannon";
 import { useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import GltfObject from "./GltfObject";
@@ -9,10 +8,6 @@ import { useEffect } from "react";
 const url = S3_URL + "hanok.glb";
 export default function Hanok() {
   const { nodes, materials } = useGLTF(url);
-  useEffect(() => {
-    console.log(nodes);
-    console.log(materials);
-  }, []);
   return (
     <mesh
       scale={[0.01, 0.01, 0.01]}

@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { DefaultPage, InnerPage } from "../style";
+import { DefaultPage } from "../style";
 
-export const hotelPage = styled(InnerPage)`
+export const hotelPage = styled(DefaultPage)`
   position: relative;
   width: 100%;
   height: 90vh;

@@ -7,12 +7,21 @@ import ToolTipButton from "./ToolTipButton";
 import JoyButton, { JoyDiscriptionProps } from "./ToolTipButton";
 import * as S from "./style";
 import { IJoyDiscription } from "./type";
+import { useEffect } from "react";
+import { useAtomValue } from "jotai";
+import { threeAtom } from "store/three/atom";
 
 export default function ToolTip() {
   const { tip, offTip } = useTipActions();
   const { width } = useSizeEffect();
+  const three = useAtomValue(threeAtom);
+
   return (
-    <S.JoyStick>
+    <S.JoyStick
+      style={{
+        display: !three.on ? "none" : "flex",
+      }}
+    >
       <S.JoyStickInner>
         <CancelButton
           className="cancel"

@@ -3,44 +3,23 @@ import { DefaultPage } from "../style";
 
 export const TimetablePage = styled(DefaultPage)`
   position: relative;
+
+  padding-top: 2rem;
   width: 100%;
-  height: 100%;
+  height: 100vh;
 
-  .markdown {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    padding: 5rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
 
-    table {
-      padding: 0 20rem;
-      margin: 2rem;
-    }
-  }
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 
-  @media (max-width: 1000px) {
-    .markdown {
-      table {
-        padding: 0 10rem;
-      }
-    }
-  }
-
-  @media (max-width: 800px) {
-    .markdown {
-      table {
-        padding: 0 5rem;
-      }
-    }
-  }
-
-  @media (max-width: 600px) {
-    .markdown {
-      table {
-        padding: 0 1rem;
-      }
-    }
+  h1 {
+    margin-top: 10rem;
+    font-weight: 300;
   }
 `;

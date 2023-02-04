@@ -3,7 +3,6 @@ import { PerspectiveCamera, useAnimations, useGLTF } from "@react-three/drei";
 import { useEffect } from "react";
 import { Group, Quaternion, Vector3 } from "three";
 import { IGltfReturn } from "./types";
-import { DRACOLoader } from "three-stdlib";
 import { useFrame, useLoader } from "@react-three/fiber";
 import { useCompoundBody } from "@react-three/cannon";
 import { useControls } from "../common/control/useControls";
@@ -15,6 +14,7 @@ const url = S3_URL + "torang.glb";
 
 export default function MyCharacter() {
   const [fov, setFov] = useState(50);
+  const [block, setBlock] = useState(false);
   const [frontBack, setFrontBack] = useState("");
 
   const [ref, api] = useCompoundBody(() => ({
@@ -55,7 +55,7 @@ export default function MyCharacter() {
   }, [f, b, l, r, z]);
 
   const innerRef = useRef<Group>();
-  const speed = 30;
+  const speed = 20;
   const values = useRef({
     v: [0, 0, 0],
     av: [0, 0, 0],
@@ -120,11 +120,13 @@ export default function MyCharacter() {
         const p = values.current.p;
         const x_abs = Math.abs(p[0]);
         const z_abs = Math.abs(p[2]);
-        const limit = 45;
-        if (x_abs > limit - 10 || z_abs > limit - 10) {
+        const limit = 60;
+        const line = 25;
+        if (x_abs > limit - line || z_abs > limit - line) {
           setIsLimit(true);
-          if (x_abs > limit - 10) api.velocity.set(-_x, 0, _z);
-          if (z_abs > limit - 10) api.velocity.set(_x, 0, -_z);
+          if (x_abs > limit - line) api.velocity.set(-_x, 0, _z);
+          if (z_abs > limit - line) api.velocity.set(_x, 0, -_z);
+          setBlock(true);
         }
         // 한계선 넘으면 정지
         if (x_abs > limit || z_abs > limit) {
@@ -134,17 +136,20 @@ export default function MyCharacter() {
         if (!isLimit) {
           api.velocity.set(_x, 0, _z);
           api.angularVelocity.set(0, _y / 2, 0);
+          setBlock(false);
         }
       } else {
         // 회전
         setIsLimit(false);
         api.velocity.set(0, 0, 0);
         api.angularVelocity.set(0, _y * 0.5, 0);
+        setBlock(false);
       }
     } else {
       // 누른 키가 없을 때 멈춤
       api.velocity.set(0, 0, 0);
       api.angularVelocity.set(0, 0, 0);
+      setBlock(false);
     }
   });
 
@@ -159,7 +164,10 @@ export default function MyCharacter() {
         />
 
         <group ref={innerRef as Ref<Group>}>
-          <NameTag name={"TORANG"} bottom="15rem" />
+          <NameTag
+            name={block ? "(it's wall. can't go more)" : "TORANG"}
+            bottom="15rem"
+          />
           <primitive object={nodes!.walk} visible={false} />
           {Object.keys(nodes!).map((name: string, key: number) => {
             const names = name.split("_");

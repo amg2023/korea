@@ -13,7 +13,7 @@ export const Header = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  z-index: 50;
+  z-index: 200;
   background: rgba(0, 0, 0, 0.7);
   box-shadow: 0 0 1rem black;
 
@@ -119,6 +119,14 @@ export const HeaderRight = styled.div`
     margin: 0;
     padding: 0.5rem;
     font-weight: 300;
+  }
+
+  .gomain {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
   }
 
   @media (max-width: 800px) {

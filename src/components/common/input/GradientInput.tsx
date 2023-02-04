@@ -34,6 +34,14 @@ export const GradientInput = ({ placeholder, value, style, label }: IInput) => {
         setError("");
         onSetValidate("country");
       }
+    } else if (label === "birth") {
+      const f = value?.search(/^[0-9]{4}[\.]+[0-9]{2}[\.]+[0-9]{2}$/);
+      if (f !== -1) {
+        setError("");
+        onSetValidate("birth");
+      } else {
+        setError("please enter correct birth type");
+      }
     } else if (label === "phone") {
       const f = value?.search(/^[0-9]{3}[-]+[0-9]{3,4}[-]+[0-9]{4}$/);
       if (f !== -1) {
@@ -77,25 +85,35 @@ export const GradientInput = ({ placeholder, value, style, label }: IInput) => {
                 borderColor: "none",
                 marginBottom: "3rem",
                 color: "#0f0f0f",
-                zIndex: 1000,
+                position: "relative",
+                width: "80vw",
+                zIndex: 30,
               }),
               menu: (base) => ({
                 ...base,
                 color: "#0f0f0f",
-                zIndex: 1000,
+                position: "relative",
+                width: "80vw",
+                zIndex: 30,
               }),
               menuList: (base) => ({
                 ...base,
                 background: "#1d1d1d",
+                position: "relative",
+                width: "80vw",
                 color: "white",
-                zIndex: 1000,
+                zIndex: 30,
               }),
               option: (base) => ({
                 ...base,
+                position: "relative",
+                width: "80vw",
                 color: "white",
               }),
               singleValue: (base) => ({
                 ...base,
+                position: "relative",
+                width: "80vw",
                 color: "white",
               }),
             }}

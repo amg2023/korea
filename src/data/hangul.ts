@@ -1,8 +1,6 @@
 export const hangulEs = `
 
-~That is unparalleled grammatological luxuary.~
 
-~Gari Keith Ledyard (1932 - 2021)~
 
 ---
 

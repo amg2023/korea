@@ -2,19 +2,16 @@ import styled from "styled-components";
 
 export const PostContent = styled.div`
   position: relative;
-  padding: 2rem;
 
-  width: 100vw;
-  height: 100vh;
-  overflow-y: scroll;
-  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   * {
     margin: 0.1rem;
     padding: 0;
     font-weight: 300;
   }
-
   h1 {
     font-size: 5rem;
     width: 100%;
@@ -35,30 +32,19 @@ export const PostContent = styled.div`
       margin-right: 0.4rem;
     }
   }
-  blockquote {
-    border-left: 0.5rem solid #bfffe7;
-    margin: 2rem 0;
-    width: 100%;
-    background: rgba(185, 185, 185, 0.1);
-    padding: 1rem;
-    line-height: 1.4em;
-    color: #a5a5a5;
-  }
   table {
-    position: relative;
     width: 100%;
   }
   th,
   tr,
   td {
-    padding: 0.2rem;
+    padding: 2rem;
     font-size: 1.2rem;
-    border: 2px solid gray;
+    border-bottom: 2px solid #ff6b6b;
   }
   td:first-of-type,
   th:first-of-type {
     width: 100px;
-    background-color: #232323;
   }
   @media (max-width: 1000px) {
     h1 {
@@ -83,8 +69,6 @@ export const PostContent = styled.div`
     }
   }
   del {
-    display: flex;
-    justify-content: center;
     text-decoration: none;
     color: #ff6b6b;
   }
