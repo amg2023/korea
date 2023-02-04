@@ -36,10 +36,10 @@ export default function App() {
           <BrowserRouter>
             <Header />
             <Routes>
-              <Route path="" element={<TwoMain />} />
-              <Route path="/three" element={<ThreeMain />} />
-              <Route path="/timetable" element={<TimetablePage />} />
-              <Route path="/register" element={<RegisterPage />} />
+              <Route path="/korea/" element={<TwoMain />} />
+              <Route path="/korea/three" element={<ThreeMain />} />
+              <Route path="/korea/timetable" element={<TimetablePage />} />
+              <Route path="/korea/register" element={<RegisterPage />} />
               <Route />
             </Routes>
             <Footer />

@@ -8,7 +8,7 @@ export const MainEvents: IOption[] = [
     title: "Full package",
     content: "Full package (All content)",
     schedule: "Fri. 12th Sep. 10:00 - 17:00\nSat. 13th Sep. 10:00 - 21:00",
-    price: 10,
+    price: 0.1,
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ export const MainEvents: IOption[] = [
     title: "Full package",
     content: "Full package (All content)",
     schedule: "Fri. 12th Sep. 10:00 - 17:00\nSat. 13th Sep. 10:00 - 21:00",
-    price: 20,
+    price: 0.1,
   },
   {
     id: 3,
@@ -26,7 +26,7 @@ export const MainEvents: IOption[] = [
     title: "Semi package",
     content: "Semi package (All seminars)",
     schedule: "Fri. 12th Sep. 10:00 - 17:00\nSat. 13th Sep. 10:00 - 21:00",
-    price: 30,
+    price: 0.1,
   },
   {
     id: 4,
@@ -35,7 +35,7 @@ export const MainEvents: IOption[] = [
     title: "Semi package",
     content: "Semi package (All seminars)",
     schedule: "Fri. 12th Sep. 10:00 - 17:00\nSat. 13th Sep. 10:00 - 21:00",
-    price: 40,
+    price: 0.1,
   },
 ];
 
@@ -47,7 +47,7 @@ export const Options: IOption[] = [
     title: "Semi package",
     content: "All seminars and workshops and Gala dinner",
     schedule: "Fri. 12th Sep. 10:00 - 17:00\nSat. 13th Sep. 10:00 - 21:00",
-    price: 1,
+    price: 0.1,
   },
   {
     id: 6,
@@ -56,7 +56,7 @@ export const Options: IOption[] = [
     title: "Semi package",
     content: "All seminars and workshops and Gala dinner",
     schedule: "Fri. 12th Sep. 10:00 - 17:00\nSat. 13th Sep. 10:00 - 21:00",
-    price: 2,
+    price: 0.1,
   },
   {
     id: 7,
@@ -65,7 +65,7 @@ export const Options: IOption[] = [
     title: "Semi package",
     content: "All seminars and workshops and Gala dinner",
     schedule: "Fri. 12th Sep. 10:00 - 17:00\nSat. 13th Sep. 10:00 - 21:00",
-    price: 3,
+    price: 0.1,
   },
   {
     id: 8,
@@ -74,6 +74,6 @@ export const Options: IOption[] = [
     title: "Semi package",
     content: "All seminars and workshops and Gala dinner",
     schedule: "Fri. 12th Sep. 10:00 - 17:00\nSat. 13th Sep. 10:00 - 21:00",
-    price: 4,
+    price: 0.1,
   },
 ];

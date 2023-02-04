@@ -16,23 +16,22 @@ import Clock from "./Clock";
 import useModalActions from "../../store/modal/query";
 import useTipActions from "store/tip/query";
 import { useNavigate } from "react-router-dom";
-import { useAtom, useAtomValue } from "jotai";
+import { useAtom } from "jotai";
 import { threeAtom } from "store/three/atom";
 import { useEffect } from "react";
 import PulseButton from "components/common/button/PulseButton";
-import style from "react-syntax-highlighter/dist/esm/styles/hljs/a11y-dark";
 
 export default function Header() {
-  const { modal, setModal } = useModalActions();
+  const { setModal } = useModalActions();
   const { tip, onTip, offTip } = useTipActions();
   const [three, setThree] = useAtom(threeAtom);
   const navigate = useNavigate();
 
   useEffect(() => {
     if (three.on) {
-      navigate("/three");
+      navigate("/korea/three");
     } else {
-      navigate("/");
+      navigate("/korea/");
     }
   }, [three]);
 
@@ -41,8 +40,8 @@ export default function Header() {
     else navigate("timetable");
   };
   const onGoMain = () => {
-    if (three.on) navigate("/three");
-    else navigate("/");
+    if (three.on) navigate("/korea/three");
+    else navigate("/korea/");
   };
 
   const onToggleThree = () => {
