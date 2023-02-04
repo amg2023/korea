@@ -1,12 +1,13 @@
+import Avatar from "components/common/avatar/Avatar";
 import PulseButton from "components/common/button/PulseButton";
 import { Ref, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import * as S from "./style";
 
 const buttonStyle = {
-  width: "10rem",
-  height: "4rem",
-  fontSize: "1.6rem",
+  width: "8rem",
+  height: "3.5rem",
+  fontSize: "1.4rem",
   fontWeight: "200",
   textShadow: "0 0 10px black",
   background: "white",
@@ -27,7 +28,7 @@ export default function MainArea() {
   }, []);
 
   const onGoRegister = () => {
-    navigate("/korea/register/");
+    navigate("/korea/#register/");
   };
 
   return (
@@ -46,11 +47,9 @@ export default function MainArea() {
           <h1 className="day">APRIL 26~30 2023</h1>
         </div>
         <div className="underButton" ref={buttonRef as Ref<HTMLDivElement>}>
-          <PulseButton
-            style={buttonStyle}
-            title={"REGISTER"}
-            onClick={onGoRegister}
-          />
+          <a href="#E" className="anchor">
+            <PulseButton style={buttonStyle} title={"REGISTER"} />
+          </a>
           <a href="#B" className="anchor">
             <PulseButton style={buttonStyle} title={"TIMETABLE"} />
           </a>

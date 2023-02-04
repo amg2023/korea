@@ -29,6 +29,7 @@ export const TitleLeft = styled.div`
   margin: 0;
   letter-spacing: -10;
   text-shadow: 0 0 5px white;
+  z-index: 300;
 
   font-size: 2rem;
   span {

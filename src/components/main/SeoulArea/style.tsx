@@ -11,6 +11,11 @@ export const SSeoulArea = styled.div`
   width: 100vw;
   height: 200vh;
 
+  .seoul-page {
+    overflow: auto;
+    width: 80%;
+  }
+
   .title {
     h1 {
       font-size: 4rem;

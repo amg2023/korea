@@ -18,33 +18,36 @@ export default function SeoulPage() {
   const three = useAtomValue(threeAtom);
 
   return (
-    <S.seoulPage>
+    <S.seoulPage className="seoul-page">
       {three.on ? (
-        <Suspense>
-          <Canvas
-            shadows
-            style={{
-              width: "100vw",
-              height: "70vh",
-            }}
-          >
-            <spotLight
-              position={[100, 100, 100]}
-              angle={1}
-              intensity={0.5}
-              castShadow
-              penumbra={1}
-            />
-            <group rotation={[0, Math.PI, 0]}>
-              <GltfObject
-                nodes={nodes}
-                materials={materials}
-                scale={[0.02, 0.01, 0.008]}
+        <>
+          <h1>SEOUL</h1>
+          <Suspense>
+            <Canvas
+              shadows
+              style={{
+                width: "100vw",
+                height: "40vh",
+              }}
+            >
+              <spotLight
+                position={[100, 100, 100]}
+                angle={1}
+                intensity={0.5}
+                castShadow
+                penumbra={1}
               />
-            </group>
-            <OrbitControls maxDistance={6} minDistance={2} />
-          </Canvas>
-        </Suspense>
+              <group rotation={[0, Math.PI, 0]}>
+                <GltfObject
+                  nodes={nodes}
+                  materials={materials}
+                  scale={[0.01, 0.005, 0.008]}
+                />
+              </group>
+              <OrbitControls maxDistance={6} minDistance={2} />
+            </Canvas>
+          </Suspense>
+        </>
       ) : (
         <Avatar imageUrl={S3_URL + "moon.jpeg"} width="300px" height="300px" />
       )}

@@ -12,7 +12,6 @@ import ThreeMain from "./ThreeMain";
 import TimetablePage from "components/page/TimetablePage";
 import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 import RegisterPage from "components/page/RegisterPage";
-import Mains from "./Mains";
 const { VITE_PAYPAL } = (import.meta as any).env;
 
 extend({ Water });
@@ -37,7 +36,9 @@ export default function App() {
           <BrowserRouter>
             <Header />
             <Routes>
-              <Route path="" element={<Mains />} />
+              <Route path="/korea/" element={<TwoMain />} />
+              <Route path="/korea/three/" element={<ThreeMain />} />
+              <Route path="/korea/register/" element={<RegisterPage />} />
               <Route />
             </Routes>
             <Footer />

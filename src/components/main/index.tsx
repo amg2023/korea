@@ -1,5 +1,6 @@
 import HangulArea from "./HangulArea";
 import MainArea from "./MainArea";
+import RegisterArea from "./RegisterArea";
 import SeoulArea from "./SeoulArea";
 import * as S from "./style";
 import TimeTablePage from "./TimeTableArea";
@@ -23,6 +24,7 @@ export default function Main() {
       <TimeTablePage />
       <HangulArea />
       <SeoulArea />
+      <RegisterArea />
     </S.Main>
   );
 }

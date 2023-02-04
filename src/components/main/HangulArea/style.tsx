@@ -11,6 +11,11 @@ export const SHangulArea = styled.div`
   width: 100vw;
   height: 200vh;
 
+  .hangul-page {
+    overflow: auto;
+    width: 80%;
+  }
+
   .title {
     h1 {
       font-size: 4rem;

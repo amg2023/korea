@@ -10,6 +10,7 @@ import useTipActions from "store/tip/query";
 import ToolTip from "components/common/tooltip";
 import { useAtom } from "jotai";
 import { threeAtom } from "store/three/atom";
+import { useNavigate } from "react-router-dom";
 
 export default function Footer() {
   const { modal, setModal } = useModalActions();
@@ -41,13 +42,43 @@ export default function Footer() {
     setModal({ on: true, type: "registertable" });
   };
 
+  const navigate = useNavigate();
+
+  const onToggleThree = () => {
+    setThree({
+      on: !three.on,
+    });
+    if (three.on) {
+      navigate("");
+    } else {
+      navigate("/?q=three");
+    }
+  };
+
   return (
     <S.Footer>
-      {!modal.on && three.on && (
+      {!modal.on && (
         <S.TitleLeft>
-          <div>
-            AMG <span>2022</span>
-          </div>
+          {three.on && (
+            <div>
+              AMG <span>2022</span>
+            </div>
+          )}
+          <PulseButton
+            style={{
+              width: "8rem",
+              height: "3rem",
+              fontSize: "1rem",
+              fontWeight: "200",
+              textShadow: "0 0 10px black",
+              background: "white",
+              boxShadow: "0 0 10px white",
+              color: "black",
+              zIndex: 300,
+            }}
+            title={!three.on ? "2D (go 3D)" : "3D (go 2D)"}
+            onClick={onToggleThree}
+          />
         </S.TitleLeft>
       )}
       {!modal.on && three.on && <JoyStick />}

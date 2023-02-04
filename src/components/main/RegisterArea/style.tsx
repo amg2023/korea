@@ -8,5 +8,5 @@ export const SRegisterArea = styled.div`
   position: relative;
   padding: 2rem;
   width: 100vw;
-  height: 300vh;
+  height: 200vh;
 `;

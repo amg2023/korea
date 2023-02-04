@@ -27,27 +27,28 @@ export default function Header() {
   const [three, setThree] = useAtom(threeAtom);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (three.on) {
-      navigate("/korea/three/");
-    } else {
-      navigate("/korea/");
-    }
-  }, [three]);
+  // useEffect(() => {
+  //   if (three.on) {
+  //     navigate("/?q=three");
+  //   } else {
+  //     navigate("");
+  //   }
+  // }, [three]);
 
   const onClickTimetable = () => {
     if (three.on) setModal({ on: true, type: "timetable" });
     else navigate("/timetable/");
-  };
-  const onGoMain = () => {
-    if (three.on) navigate("/korea/three/");
-    else navigate("/korea/");
   };
 
   const onToggleThree = () => {
     setThree({
       on: !three.on,
     });
+    if (three.on) {
+      navigate("");
+    } else {
+      navigate("/?q=three");
+    }
   };
 
   return (
@@ -100,19 +101,7 @@ export default function Header() {
       </S.HeaderLeft>
 
       <S.HeaderRight>
-        <PulseButton
-          style={{
-            width: "4.5rem",
-            fontWeight: "200",
-            textShadow: "0 0 10px black",
-            background: "white",
-            boxShadow: "0 0 10px white",
-            color: "black",
-          }}
-          title={three.on ? "2D (go 3D)" : "3D (go 2D)"}
-          onClick={onToggleThree}
-        />
-        <div className="gomain" onClick={onGoMain}>
+        <div className="gomain">
           <h5 className="slash">|</h5>
           <h5>SOUTH KOREA</h5>
           <h5 className="slash">|</h5>
