@@ -1,12 +1,11 @@
-import Main from "components/main";
 import ModalPage from "components/modal/ModalPage";
-import Three from "components/Three";
-import { useAtomValue } from "jotai";
+import React, { Suspense } from "react";
 import { useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
-import usePayActions from "store/pay/query";
-import { threeAtom } from "store/three/atom";
+import { useLocation } from "react-router-dom";
 import useThreeActions from "store/three/query";
+
+const Three = React.lazy(() => import("components/Three"));
+const Main = React.lazy(() => import("components/main"));
 
 export default function Mains() {
   const location = useLocation();
@@ -22,15 +21,9 @@ export default function Mains() {
   }, [query]);
 
   return (
-    <>
-      {query === "?q=three" ? (
-        <>
-          <Three />
-          <ModalPage />
-        </>
-      ) : (
-        <Main />
-      )}
-    </>
+    <Suspense fallback={null}>
+      {query === "?q=three" ? <Three /> : <Main />}
+      <ModalPage />
+    </Suspense>
   );
 }

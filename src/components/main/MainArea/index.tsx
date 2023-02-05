@@ -24,7 +24,7 @@ export default function MainArea() {
     pageARef?.current?.classList.add("start");
     setTimeout(() => {
       buttonRef?.current?.classList.add("start");
-    }, 1000);
+    }, 500);
   }, []);
 
   const onGoRegister = () => {

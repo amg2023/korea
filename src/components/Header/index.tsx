@@ -16,16 +16,24 @@ import Clock from "./Clock";
 import useModalActions from "../../store/modal/query";
 import useTipActions from "store/tip/query";
 import { useNavigate } from "react-router-dom";
-import { useAtom } from "jotai";
+import { useAtom, useAtomValue } from "jotai";
 import { threeAtom } from "store/three/atom";
-import { useEffect } from "react";
-import PulseButton from "components/common/button/PulseButton";
+import { userAtom } from "store/user/atom";
+import { AvatarIcon } from "components/common/icon/AvatarIcon";
+import { GradientIcon } from "components/common/icon/GradientIcon";
+import { RiFileUserLine } from "react-icons/ri";
+import { useUserActions, useUserQueryEffect } from "store/user/query";
+import Avatar from "components/common/avatar/Avatar";
 
 export default function Header() {
   const { setModal } = useModalActions();
   const { tip, onTip, offTip } = useTipActions();
   const [three, setThree] = useAtom(threeAtom);
   const navigate = useNavigate();
+  const user = useAtomValue(userAtom);
+  const { logout } = useUserActions();
+
+  useUserQueryEffect();
 
   // useEffect(() => {
   //   if (three.on) {
@@ -40,15 +48,8 @@ export default function Header() {
     else navigate("/timetable/");
   };
 
-  const onToggleThree = () => {
-    setThree({
-      on: !three.on,
-    });
-    if (three.on) {
-      navigate("");
-    } else {
-      navigate("/?q=three");
-    }
+  const onClickAuth = () => {
+    setModal({ on: true, type: "login" });
   };
 
   return (
@@ -69,7 +70,24 @@ export default function Header() {
             <AiOutlineWhatsApp />
           </a>
         </div>
-
+        {user && user.user ? (
+          <AvatarIcon username={user.user.name} onLogout={logout}>
+            <Avatar
+              width={"2.5rem"}
+              height={"2.5rem"}
+              imageUrl={user.user.imageUrl}
+              boxShadow={"2px 2px 10px white"}
+              className={"manager"}
+            />
+          </AvatarIcon>
+        ) : (
+          <GradientIcon text={"LOGIN"}>
+            <RiFileUserLine
+              className="header-icon RiFileUserLine"
+              onClick={onClickAuth}
+            />
+          </GradientIcon>
+        )}
         {three.on && (
           <>
             <div className="title" onClick={onClickTimetable}>

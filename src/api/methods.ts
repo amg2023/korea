@@ -1,18 +1,30 @@
 import axios from "axios";
-const setFetch = async <T>(method: string, body?: T) => {
+import cache from "utils/cache";
+const setFetch = async <T>(
+  method: string,
+  Authorization: boolean,
+  body?: T
+) => {
   const payload: any = {
     method: method,
     headers: {
       "Content-Type": "application/json",
+      Authorization: null,
     },
-    body: null,
+    body: JSON.stringify(body),
   };
-  if (body) payload.body = JSON.stringify(body);
+  if (Authorization) payload.headers.Authorization = await cache.get("token");
+  // if (body) payload.body = JSON.stringify(body);
+  console.log(body);
+  console.log(payload);
   return payload;
 };
 
 const setResult = async (res: Response, setToken: boolean = false) => {
   if (res.status === 200) {
+    if (setToken) {
+      localStorage.setItem("token", JSON.stringify(res.headers.get("token")));
+    }
     const data = await res.json();
     return data;
   } else {
@@ -27,8 +39,14 @@ export default function Api() {
     return await setResult(res);
   };
 
+  const getToken = async (URL: string) => {
+    const payload = await setFetch("GET", true);
+    const res = await fetch(URL, payload);
+    return await setResult(res);
+  };
+
   const post = async <T>(URL: string, body: T) => {
-    const payload = await setFetch("POST", body);
+    const payload = await setFetch("POST", true, body as any);
     const res = await fetch(URL, payload);
     return await setResult(res, true);
   };
@@ -36,5 +54,6 @@ export default function Api() {
   return {
     get,
     post,
+    getToken,
   };
 }

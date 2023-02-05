@@ -1,5 +1,4 @@
 import FormTap from "components/FormTap";
-import RegisterPage from "components/page/RegisterPage";
 import PaypalTap from "components/PaypalTap";
 import SelectTap from "components/SelectTap";
 import { Ref, useEffect, useRef, useState } from "react";
@@ -22,6 +21,7 @@ export default function RegisterArea() {
       });
     }
   }, [step, setStep]);
+
   return (
     <S.SRegisterArea className="page E" id="E">
       <div className="page-title" ref={titleCRef as Ref<HTMLDivElement>}>

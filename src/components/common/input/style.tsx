@@ -6,6 +6,80 @@ export type IInput = {
   label?: string;
 };
 
+export const LineInput = styled.div`
+  @keyframes gradient {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 100% 0;
+    }
+  }
+
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  border-radius: 2px;
+  padding: 1.4rem 2rem 1.6rem;
+  background: transparent;
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 999;
+    height: 2px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    background-position: 0% 0%;
+    background: linear-gradient(
+      to right,
+      #b294ff,
+      #57e6e6,
+      #feffb8,
+      #57e6e6,
+      #b294ff,
+      #57e6e6
+    );
+    background-size: 500% auto;
+    animation: gradient 3s linear infinite;
+  }
+  input:focus {
+    outline: none;
+    padding: 1.5rem;
+  }
+  input {
+    border: none;
+    width: 100%;
+    flex-grow: 1;
+    background: transparent;
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 2rem;
+    vertical-align: middle;
+    &::-webkit-input-placeholder {
+      color: #717171;
+    }
+    transition: all 0.3s ease-in;
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px #1d1d1d inset !important;
+    transition: background-color 10000s ease-in-out 0s;
+    -webkit-text-fill-color: #fff !important;
+  }
+`;
+
 export const GradientInput = styled.div<IInput>`
   position: relative;
   display: flex;

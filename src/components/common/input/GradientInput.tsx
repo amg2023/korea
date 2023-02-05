@@ -5,7 +5,14 @@ import { IInput } from "./types";
 import Select from "react-select";
 import countryList from "react-select-country-list";
 
-export const GradientInput = ({ placeholder, value, style, label }: IInput) => {
+export const GradientInput = ({
+  type,
+  placeholder,
+  value,
+  style,
+  label,
+  name,
+}: IInput) => {
   const { pay, onSetForm, onSetValidate } = usePayActions();
   const [error, setError] = useState("please type " + label);
   const background_red =
@@ -137,6 +144,8 @@ export const GradientInput = ({ placeholder, value, style, label }: IInput) => {
             onChange={(e) => onSetForm(label, e.target.value)}
             value={value}
             style={style}
+            type={type}
+            name={name!}
             autoComplete="off"
           />
         </div>

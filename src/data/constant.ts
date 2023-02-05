@@ -11,3 +11,5 @@ export const WHATSAPP_URL = "https://www.google.com/";
 export const START_DAY = "4/26/2023";
 // 메일
 export const MAIL_URL = "https://wicked-lyssa-jigglypop.koyeb.app/";
+// 서버
+export const SERVER_URL = "https://wicked-lyssa-jigglypop.koyeb.app/api";

@@ -1,5 +1,6 @@
 import useModalActions from "../../store/modal/query";
 import { CancelButton } from "../common/cancel/CancelButton";
+import AuthPage from "./AuthPage";
 import HangulPage from "./HangulPage";
 import HotelPage from "./HotelPage";
 import RegisterPage from "./RegisterPage";
@@ -18,6 +19,8 @@ export default function Page() {
       {modal.type === "hangul" && <HangulPage />}
       {modal.type === "seoul" && <SeoulPage />}
       {modal.type === "hotel" && <HotelPage />}
+      {modal.type === "login" && <AuthPage />}
+      {modal.type === "register" && <AuthPage />}
     </S.Page>
   );
 }
