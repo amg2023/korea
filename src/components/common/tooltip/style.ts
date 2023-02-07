@@ -1,7 +1,6 @@
 import styled, { keyframes } from "styled-components";
 
-export const JoyStick = styled.div`
-  z-index: 100;
+export const SToolTip = styled.div`
   position: fixed;
   bottom: 0;
   right: 0;
@@ -10,6 +9,7 @@ export const JoyStick = styled.div`
   display: flex;
   align-items: flex-end;
   justify-content: center;
+  z-index: 500;
 
   width: 100vw;
   height: 40vh;
@@ -19,7 +19,7 @@ export const JoyStick = styled.div`
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 `;
 
-export const JoyStickInner = styled.div`
+export const SToolTipInner = styled.div`
   display: grid;
   align-items: center;
   justify-content: center;
@@ -32,7 +32,6 @@ export const JoyStickInner = styled.div`
   box-shadow: 0 0 10px black;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-  z-index: 100;
 
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
@@ -87,7 +86,7 @@ export const JoyStickInner = styled.div`
   }
 `;
 
-export const JoyDiscription = styled.div`
+export const SToolTipDiscription = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;

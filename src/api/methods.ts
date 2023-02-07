@@ -1,4 +1,3 @@
-import axios from "axios";
 import cache from "utils/cache";
 const setFetch = async <T>(
   method: string,
@@ -14,9 +13,6 @@ const setFetch = async <T>(
     body: JSON.stringify(body),
   };
   if (Authorization) payload.headers.Authorization = await cache.get("token");
-  // if (body) payload.body = JSON.stringify(body);
-  console.log(body);
-  console.log(payload);
   return payload;
 };
 

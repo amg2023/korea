@@ -23,9 +23,9 @@ export default function ToolTipButton({
   icon,
 }: IJoyDiscription) {
   return (
-    <S.JoyDiscription className={className}>
+    <S.SToolTipDiscription className={className}>
       <div>{icon}</div>
       <p>{value}</p>
-    </S.JoyDiscription>
+    </S.SToolTipDiscription>
   );
 }

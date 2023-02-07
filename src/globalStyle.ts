@@ -18,7 +18,7 @@ const GlobalStyle = createGlobalStyle`
         -webkit-backdrop-filter: blur(10px);
         backdrop-filter: blur(10px);
     }
-        /* 스크롤 코너 */
+    /* 스크롤 코너 */
     ::-webkit-scrollbar-corner {
       background-color: black;
     }

@@ -33,15 +33,8 @@ export default function Header() {
   const user = useAtomValue(userAtom);
   const { logout } = useUserActions();
 
+  // 유저 업데이트
   useUserQueryEffect();
-
-  // useEffect(() => {
-  //   if (three.on) {
-  //     navigate("/?q=three");
-  //   } else {
-  //     navigate("");
-  //   }
-  // }, [three]);
 
   const onClickTimetable = () => {
     if (three.on) setModal({ on: true, type: "timetable" });
@@ -73,8 +66,8 @@ export default function Header() {
         {user && user.user ? (
           <AvatarIcon username={user.user.name} onLogout={logout}>
             <Avatar
-              width={"2.5rem"}
-              height={"2.5rem"}
+              width={"2rem"}
+              height={"2rem"}
               imageUrl={user.user.imageUrl}
               boxShadow={"2px 2px 10px white"}
               className={"manager"}

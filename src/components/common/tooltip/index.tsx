@@ -17,12 +17,12 @@ export default function ToolTip() {
   const three = useAtomValue(threeAtom);
 
   return (
-    <S.JoyStick
+    <S.SToolTip
       style={{
         display: !three.on ? "none" : "flex",
       }}
     >
-      <S.JoyStickInner>
+      <S.SToolTipInner>
         <CancelButton
           className="cancel"
           onClick={() => {
@@ -51,7 +51,7 @@ export default function ToolTip() {
                 />
               );
             })}
-      </S.JoyStickInner>
-    </S.JoyStick>
+      </S.SToolTipInner>
+    </S.SToolTip>
   );
 }

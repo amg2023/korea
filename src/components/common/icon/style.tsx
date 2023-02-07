@@ -8,6 +8,8 @@ export const GradientIconOuter = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
+  grid-column: 1/2;
+  grid-row: 2/3;
 `;
 
 export const GradientIcon = styled.div`
@@ -19,7 +21,6 @@ export const GradientIcon = styled.div`
       background-position: 100% 0;
     }
   }
-
   position: relative;
   display: flex;
   justify-content: center;
@@ -31,8 +32,6 @@ export const GradientIcon = styled.div`
   cursor: pointer;
 
   font-size: 1.4rem;
-
-  margin: 0.2rem;
 `;
 
 export const GradientBorder = styled.div<IGradientIcon>`
@@ -55,9 +54,7 @@ export const GradientBorder = styled.div<IGradientIcon>`
   justify-content: center;
   align-items: center;
   text-align: center;
-
   background-color: white;
-
   cursor: pointer;
 `;
 
@@ -87,7 +84,6 @@ export const GradientToolTip = styled.div<IGradientIcon>`
   text-align: center;
 
   background-color: black;
-
   border-radius: 0.4rem;
   box-shadow: 0 0 10px #1d1d1d;
   cursor: pointer;
@@ -124,11 +120,12 @@ export const AvatarToolTip = styled.div<IGradientIcon>`
   justify-content: center;
   align-items: center;
   text-align: center;
+  z-index: 0;
 
-  background-color: black;
+  background-color: #1d1d1d;
 
   border-radius: 0.4rem;
-  box-shadow: 0 0 10px black;
+  box-shadow: 0 0 10px #1d1d1d;
   cursor: pointer;
 
   p {

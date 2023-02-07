@@ -137,7 +137,9 @@ export const HeaderRight = styled.div`
   }
 
   @media (max-width: 600px) {
-    flex-direction: column;
+    .gomain {
+      flex-direction: column;
+    }
     .slash {
       display: none;
     }

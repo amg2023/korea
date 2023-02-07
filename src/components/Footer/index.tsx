@@ -17,6 +17,7 @@ export default function Footer() {
   const { tip, offTip } = useTipActions();
   const [three, setThree] = useAtom(threeAtom);
   const { width } = useSizeEffect();
+  const navigate = useNavigate();
   const [style, setStyle] = useState({
     width: "6rem",
     height: "3rem",
@@ -42,8 +43,6 @@ export default function Footer() {
     setModal({ on: true, type: "registertable" });
   };
 
-  const navigate = useNavigate();
-
   const onToggleThree = () => {
     setThree({
       on: !three.on,
@@ -66,8 +65,8 @@ export default function Footer() {
           )}
           <PulseButton
             style={{
-              width: "8rem",
-              height: "3rem",
+              width: "4rem",
+              height: "2.5rem",
               fontSize: "1rem",
               fontWeight: "200",
               textShadow: "0 0 10px black",
@@ -76,7 +75,7 @@ export default function Footer() {
               color: "black",
               zIndex: 300,
             }}
-            title={!three.on ? "2D (go 3D)" : "3D (go 2D)"}
+            title={!three.on ? "2D" : "3D"}
             onClick={onToggleThree}
           />
         </S.TitleLeft>
