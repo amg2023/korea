@@ -124,7 +124,7 @@ export const HeaderRight = styled.div`
   .gomain {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
     cursor: pointer;
   }

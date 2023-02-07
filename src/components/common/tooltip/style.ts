@@ -41,7 +41,7 @@ export const SToolTipInner = styled.div`
   .cancel {
     position: absolute;
     font-size: 1.4rem;
-    left: 0.2rem;
+    right: 0.2rem;
     top: 0.2rem;
     z-index: 10;
   }

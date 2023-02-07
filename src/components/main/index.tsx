@@ -21,10 +21,10 @@ export default function Main() {
   return (
     <S.Main>
       <MainArea />
+      <RegisterArea />
       <TimeTablePage />
       <HangulArea />
       <SeoulArea />
-      <RegisterArea />
     </S.Main>
   );
 }

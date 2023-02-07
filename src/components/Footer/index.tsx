@@ -33,9 +33,9 @@ export default function Footer() {
       });
     else if (width > 800)
       setStyle({
-        width: "5rem",
-        height: "2.5rem",
-        fontSize: "1rem",
+        width: "3rem",
+        height: "2rem",
+        fontSize: "0.8rem",
       });
   }, [width]);
 

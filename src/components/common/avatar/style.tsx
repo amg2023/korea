@@ -2,7 +2,8 @@ import styled from "styled-components";
 import { IAvatar } from "./Avatar";
 
 export const Avatar = styled.div<IAvatar>`
-  margin: 10px;
+  padding: 0.5rem;
+  z-index: 500;
 
   .avatar-img {
     width: ${(props) => props.width};
