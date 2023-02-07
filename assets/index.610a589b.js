@@ -3312,7 +3312,7 @@ No matching component was found for:
         -webkit-backdrop-filter: blur(10px);
         backdrop-filter: blur(10px);
     }
-        /* 스크롤 코너 */
+    /* 스크롤 코너 */
     ::-webkit-scrollbar-corner {
       background-color: black;
     }
@@ -3899,7 +3899,6 @@ Error generating stack: `+a.message+`
     cursor: pointer;
   }
 `,jV=({className:t,onClick:e})=>W(mre,{className:t||"",onClick:e,children:W(hre,{})}),gre=lt.div`
-  z-index: 100;
   position: fixed;
   bottom: 0;
   right: 0;
@@ -3908,6 +3907,7 @@ Error generating stack: `+a.message+`
   display: flex;
   align-items: flex-end;
   justify-content: center;
+  z-index: 500;
 
   width: 100vw;
   height: 40vh;
@@ -3928,7 +3928,6 @@ Error generating stack: `+a.message+`
   box-shadow: 0 0 10px black;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-  z-index: 100;
 
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
@@ -4061,7 +4060,7 @@ Error generating stack: `+a.message+`
  * LICENSE.md file in the root directory of this source tree.
  *
  * @license MIT
- */function wie(t){let{basename:e,children:n,window:r}=t,i=ee.exports.useRef();i.current==null&&(i.current=Tre({window:r,v5Compat:!0}));let a=i.current,[o,s]=ee.exports.useState({action:a.action,location:a.location});return ee.exports.useLayoutEffect(()=>a.listen(s),[a]),W(Eie,{basename:e,children:n,location:o.location,navigationType:o.action,navigator:a})}var ID;(function(t){t.UseScrollRestoration="useScrollRestoration",t.UseSubmitImpl="useSubmitImpl",t.UseFetcher="useFetcher"})(ID||(ID={}));var kD;(function(t){t.UseFetchers="useFetchers",t.UseScrollRestoration="useScrollRestoration"})(kD||(kD={}));function Tie(){const{modal:t,setModal:e}=Uy(),{tip:n,offTip:r}=BM(),[i,a]=Zr(Zs),{width:o}=VV(),[s,l]=ee.exports.useState({width:"6rem",height:"3rem",fontSize:"1rem"});ee.exports.useEffect(()=>{o>1e3?l({width:"6rem",height:"3rem",fontSize:"1rem"}):o>800&&l({width:"5rem",height:"2.5rem",fontSize:"1rem"})},[o]);const u=()=>{e({on:!0,type:"registertable"})},c=e6(),p=()=>{a({on:!i.on}),i.on?c("/korea/"):c("/korea/?q=three")};return We(tre,{children:[!t.on&&We(Jne,{children:[i.on&&We("div",{children:["AMG ",W("span",{children:"2022"})]}),W(jc,{style:{width:"8rem",height:"3rem",fontSize:"1rem",fontWeight:"200",textShadow:"0 0 10px black",background:"white",boxShadow:"0 0 10px white",color:"black",zIndex:300},title:i.on?"3D (go 2D)":"2D (go 3D)",onClick:p})]}),!t.on&&i.on&&W(dre,{}),!t.on&&n.on&&i.on&&W(wre,{}),!t.on&&i.on&&W(ere,{children:W(jc,{style:{...s,fontWeight:"200",textShadow:"0 0 10px black",background:"linear-gradient(45deg,#ee0979,#ff6a00)",boxShadow:"0 0 10px #ee0979",color:"black"},title:"REGISTER",onClick:u})})]})}const Aie=lt.div`
+ */function wie(t){let{basename:e,children:n,window:r}=t,i=ee.exports.useRef();i.current==null&&(i.current=Tre({window:r,v5Compat:!0}));let a=i.current,[o,s]=ee.exports.useState({action:a.action,location:a.location});return ee.exports.useLayoutEffect(()=>a.listen(s),[a]),W(Eie,{basename:e,children:n,location:o.location,navigationType:o.action,navigator:a})}var ID;(function(t){t.UseScrollRestoration="useScrollRestoration",t.UseSubmitImpl="useSubmitImpl",t.UseFetcher="useFetcher"})(ID||(ID={}));var kD;(function(t){t.UseFetchers="useFetchers",t.UseScrollRestoration="useScrollRestoration"})(kD||(kD={}));function Tie(){const{modal:t,setModal:e}=Uy(),{tip:n,offTip:r}=BM(),[i,a]=Zr(Zs),{width:o}=VV(),s=e6(),[l,u]=ee.exports.useState({width:"6rem",height:"3rem",fontSize:"1rem"});ee.exports.useEffect(()=>{o>1e3?u({width:"6rem",height:"3rem",fontSize:"1rem"}):o>800&&u({width:"5rem",height:"2.5rem",fontSize:"1rem"})},[o]);const c=()=>{e({on:!0,type:"registertable"})},p=()=>{a({on:!i.on}),i.on?s("/korea/"):s("/korea/?q=three")};return We(tre,{children:[!t.on&&We(Jne,{children:[i.on&&We("div",{children:["AMG ",W("span",{children:"2022"})]}),W(jc,{style:{width:"4rem",height:"2.5rem",fontSize:"1rem",fontWeight:"200",textShadow:"0 0 10px black",background:"white",boxShadow:"0 0 10px white",color:"black",zIndex:300},title:i.on?"3D":"2D",onClick:p})]}),!t.on&&i.on&&W(dre,{}),!t.on&&n.on&&i.on&&W(wre,{}),!t.on&&i.on&&W(ere,{children:W(jc,{style:{...l,fontWeight:"200",textShadow:"0 0 10px black",background:"linear-gradient(45deg,#ee0979,#ff6a00)",boxShadow:"0 0 10px #ee0979",color:"black"},title:"REGISTER",onClick:c})})]})}const Aie=lt.div`
   position: fixed;
   top: 0;
   left: 0;
@@ -4193,7 +4192,9 @@ Error generating stack: `+a.message+`
   }
 
   @media (max-width: 600px) {
-    flex-direction: column;
+    .gomain {
+      flex-direction: column;
+    }
     .slash {
       display: none;
     }
@@ -4230,6 +4231,8 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   position: relative;
   display: flex;
   flex-direction: column;
+  grid-column: 1/2;
+  grid-row: 2/3;
 `,r6=lt.div`
   @keyframes gradient {
     0% {
@@ -4239,7 +4242,6 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
       background-position: 100% 0;
     }
   }
-
   position: relative;
   display: flex;
   justify-content: center;
@@ -4251,8 +4253,6 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   cursor: pointer;
 
   font-size: 1.4rem;
-
-  margin: 0.2rem;
 `,i6=lt.div`
   ${t=>t.isHover?"":"visibility: hidden;"}
 
@@ -4273,9 +4273,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   justify-content: center;
   align-items: center;
   text-align: center;
-
   background-color: white;
-
   cursor: pointer;
 `,dae=lt.div`
   opacity: ${t=>t.isHover?"1":"0"};
@@ -4303,7 +4301,6 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   text-align: center;
 
   background-color: black;
-
   border-radius: 0.4rem;
   box-shadow: 0 0 10px #1d1d1d;
   cursor: pointer;
@@ -4338,11 +4335,12 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   justify-content: center;
   align-items: center;
   text-align: center;
+  z-index: 0;
 
-  background-color: black;
+  background-color: #1d1d1d;
 
   border-radius: 0.4rem;
-  box-shadow: 0 0 10px black;
+  box-shadow: 0 0 10px #1d1d1d;
   cursor: pointer;
 
   p {
@@ -4351,7 +4349,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     margin: 0.6rem;
     font-weight: 300;
   }
-`,a6=(t,e)=>{const n=new RegExp(t,"g");return e.match(n)||[]},fae=t=>a6("<([a-zA-Z-0-9:s])+>",t),FD=t=>{const e="[a-zA-Z-0-9:s]";return a6(`<(${e})+>.*?</(${e})+>`,t)},hae=(t,e,n)=>{e==="length"||e==="parentRule"||e==="item"||e==="setProperty"||e==="removeProperty"||e==="getPropertyPriority"||e==="getPropertyValue"||(t.style[e]=n)},Vi=t=>{let e=null;if(typeof t=="string")if(FD(t)&&FD(t).length!==0){const r=fae(t);let i="";r&&r[0]&&(i=r[0].replace(/<|>/g,"")),e=document.createElement(`${i}`)}else e=document.querySelector(t);else t instanceof HTMLElement&&(e=t);const n={append(r){e instanceof HTMLElement&&r.appendChild(e)},get(){return e||(e=document.createElement("div"),e)},val(r,i){if(i)if(typeof t=="string"){const a=this.get();if(a instanceof HTMLElement)a.style.setProperty(r,i);else return null}else if(t instanceof HTMLElement)t.style.setProperty(r,i);else return null;else{if(typeof t=="string"){const a=this.get();if(a instanceof HTMLElement){const o=getComputedStyle(a).getPropertyValue(r);return o||null}else return null}else if(t instanceof HTMLElement){const a=getComputedStyle(t).getPropertyValue(r);return a||null}return null}},on(r,i){const a=this.get();if(a!==null)return a.addEventListener(r,i),{...n}},remove(r,i){const a=this.get();if(a!==null)return a.removeEventListener(r,i),{...n}},ready(r){t===document&&r()},css(r,i){const a=this.get();if(a!==null)return hae(a,r,i),{...n}},addClass(r){return e==null||e.classList.add(r),{...n}},toggleClass(r){return e==null||e.classList.toggle(r),{...n}},removeClass(r){return e==null||e.classList.remove(r),{...n}}};return{...n}},mae=({children:t,username:e,onLogout:n})=>{const[r,i]=ee.exports.useState(!1),a=ee.exports.useRef(null),o=ee.exports.useRef(null),s=()=>{i(!0)},l=()=>{i(!1)};return ee.exports.useEffect(()=>(Vi(a.current).on("mouseover",s),Vi(o.current).on("mouseover",s),Vi(a.current).on("mouseout",l),Vi(o.current).on("mouseout",l),()=>{Vi(a.current).remove("mouseover",s),Vi(o.current).remove("mouseover",s),Vi(a.current).remove("mouseout",l),Vi(o.current).remove("mouseout",l)}),[]),We(n6,{children:[We(r6,{className:"Avatar-icon",ref:a,children:[t,W(i6,{isHover:r})]}),We(pae,{isHover:r,ref:o,children:[W("p",{className:"tooltip-item username-tooltip",children:e}),W("p",{className:"tooltip-item logout-tooltip",onClick:n,children:"LOGOUT"})]})]})},gae=({children:t,text:e,className:n,onClick:r,id:i,iconStyle:a,toolTipStyle:o})=>{const[s,l]=ee.exports.useState(!1),u=ee.exports.useRef(null),c=()=>{l(!0)},p=()=>{l(!1)};return ee.exports.useEffect(()=>(Vi(u.current).on("mouseover",c),Vi(u.current).on("mouseout",p),()=>{Vi(u.current).remove("mouseover",c),Vi(u.current).remove("mouseout",p)}),[]),We(n6,{style:a,children:[We(r6,{className:`gradient-icon ${n||""}`,ref:u,onClick:r,id:i,style:a,children:[t,W(i6,{isHover:s})]}),W(dae,{isHover:s,style:o,children:W("p",{children:e})})]})};function vae(t){return Vo({tag:"svg",attr:{viewBox:"0 0 24 24"},child:[{tag:"g",attr:{},child:[{tag:"path",attr:{fill:"none",d:"M0 0h24v24H0z"}},{tag:"path",attr:{fillRule:"nonzero",d:"M15 4H5v16h14V8h-4V4zM3 2.992C3 2.444 3.447 2 3.999 2H16l5 5v13.993A1 1 0 0 1 20.007 22H3.993A1 1 0 0 1 3 21.008V2.992zm9 8.508a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5zM7.527 17a4.5 4.5 0 0 1 8.946 0H7.527z"}}]}]})(t)}const o6={get(t){const e=localStorage.getItem(t);return e?JSON.parse(e):null},set(t,e){localStorage.setItem(t,JSON.stringify(e))},remove(t){localStorage.removeItem(t)}},WS=async(t,e,n)=>{const r={method:t,headers:{"Content-Type":"application/json",Authorization:null},body:JSON.stringify(n)};return e&&(r.headers.Authorization=await o6.get("token")),console.log(n),console.log(r),r},$S=async(t,e=!1)=>{if(t.status===200)return e&&localStorage.setItem("token",JSON.stringify(t.headers.get("token"))),await t.json();{const n=await t.json();throw new Error(n.message)}};function Gy(){return{get:async r=>{const i=await WS("GET",!1),a=await fetch(r,i);return await $S(a)},post:async(r,i)=>{const a=await WS("POST",!0,i),o=await fetch(r,a);return await $S(o,!0)},getToken:async r=>{const i=await WS("GET",!0),a=await fetch(r,i);return await $S(a)}}}const yae=async()=>await Gy().getToken(`${WM}/auth/check`),bae=async t=>await Gy().post(`${WM}/auth/login`,t),Sae=async t=>await Gy().post(`${WM}/auth/register`,t);Fo(()=>[]);const mC=(...t)=>(console.warn("[DEPRECATED]: use `useSetAtom` from `jotai` instead."),GC(...t)),$M=(t,e)=>{const n=document.querySelector("#toasts"),r=document.createElement("div");r.classList.add("toast"),r.innerHTML=`<strong class="strong">${t}</strong> ${e?"":"success"}!`,n==null||n.appendChild(r),setTimeout(()=>{r.remove()},2e3)};function xae(){const t=mC(du),[e,n]=Zr(pu),{mutate:r,data:i,isError:a,error:o,isLoading:s}=Fy(yae,{onSuccess(l){n({error:"",user:{...l}}),t({on:!1,type:""})},onError(l){n({...e,error:"Error : "+l.message})}});return ee.exports.useEffect(()=>{o6.get("token")&&r()},[]),{check:r,data:i,isError:a,error:o,isLoading:s}}function Eae(){const t=mC(du),e=mC(pu);return{logout:async()=>{localStorage.clear(),e({error:"",user:null}),t({on:!1,type:""}),$M("logout ")},commentLogout:async()=>{localStorage.clear(),e({error:"",user:null}),t({on:!1,type:""})}}}const _ae=lt.div`
+`,a6=(t,e)=>{const n=new RegExp(t,"g");return e.match(n)||[]},fae=t=>a6("<([a-zA-Z-0-9:s])+>",t),FD=t=>{const e="[a-zA-Z-0-9:s]";return a6(`<(${e})+>.*?</(${e})+>`,t)},hae=(t,e,n)=>{e==="length"||e==="parentRule"||e==="item"||e==="setProperty"||e==="removeProperty"||e==="getPropertyPriority"||e==="getPropertyValue"||(t.style[e]=n)},Vi=t=>{let e=null;if(typeof t=="string")if(FD(t)&&FD(t).length!==0){const r=fae(t);let i="";r&&r[0]&&(i=r[0].replace(/<|>/g,"")),e=document.createElement(`${i}`)}else e=document.querySelector(t);else t instanceof HTMLElement&&(e=t);const n={append(r){e instanceof HTMLElement&&r.appendChild(e)},get(){return e||(e=document.createElement("div"),e)},val(r,i){if(i)if(typeof t=="string"){const a=this.get();if(a instanceof HTMLElement)a.style.setProperty(r,i);else return null}else if(t instanceof HTMLElement)t.style.setProperty(r,i);else return null;else{if(typeof t=="string"){const a=this.get();if(a instanceof HTMLElement){const o=getComputedStyle(a).getPropertyValue(r);return o||null}else return null}else if(t instanceof HTMLElement){const a=getComputedStyle(t).getPropertyValue(r);return a||null}return null}},on(r,i){const a=this.get();if(a!==null)return a.addEventListener(r,i),{...n}},remove(r,i){const a=this.get();if(a!==null)return a.removeEventListener(r,i),{...n}},ready(r){t===document&&r()},css(r,i){const a=this.get();if(a!==null)return hae(a,r,i),{...n}},addClass(r){return e==null||e.classList.add(r),{...n}},toggleClass(r){return e==null||e.classList.toggle(r),{...n}},removeClass(r){return e==null||e.classList.remove(r),{...n}}};return{...n}},mae=({children:t,username:e,onLogout:n})=>{const[r,i]=ee.exports.useState(!1),a=ee.exports.useRef(null),o=ee.exports.useRef(null),s=()=>{i(!0)},l=()=>{i(!1)};return ee.exports.useEffect(()=>(Vi(a.current).on("mouseover",s),Vi(o.current).on("mouseover",s),Vi(a.current).on("mouseout",l),Vi(o.current).on("mouseout",l),()=>{Vi(a.current).remove("mouseover",s),Vi(o.current).remove("mouseover",s),Vi(a.current).remove("mouseout",l),Vi(o.current).remove("mouseout",l)}),[]),We(n6,{children:[We(r6,{className:"Avatar-icon",ref:a,children:[t,W(i6,{isHover:r})]}),We(pae,{isHover:r,ref:o,children:[W("p",{className:"tooltip-item username-tooltip",children:e}),W("p",{className:"tooltip-item logout-tooltip",onClick:n,children:"LOGOUT"})]})]})},gae=({children:t,text:e,className:n,onClick:r,id:i,iconStyle:a,toolTipStyle:o})=>{const[s,l]=ee.exports.useState(!1),u=ee.exports.useRef(null),c=()=>{l(!0)},p=()=>{l(!1)};return ee.exports.useEffect(()=>(Vi(u.current).on("mouseover",c),Vi(u.current).on("mouseout",p),()=>{Vi(u.current).remove("mouseover",c),Vi(u.current).remove("mouseout",p)}),[]),We(n6,{style:a,children:[We(r6,{className:`gradient-icon ${n||""}`,ref:u,onClick:r,id:i,style:a,children:[t,W(i6,{isHover:s})]}),W(dae,{isHover:s,style:o,children:W("p",{children:e})})]})};function vae(t){return Vo({tag:"svg",attr:{viewBox:"0 0 24 24"},child:[{tag:"g",attr:{},child:[{tag:"path",attr:{fill:"none",d:"M0 0h24v24H0z"}},{tag:"path",attr:{fillRule:"nonzero",d:"M15 4H5v16h14V8h-4V4zM3 2.992C3 2.444 3.447 2 3.999 2H16l5 5v13.993A1 1 0 0 1 20.007 22H3.993A1 1 0 0 1 3 21.008V2.992zm9 8.508a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5zM7.527 17a4.5 4.5 0 0 1 8.946 0H7.527z"}}]}]})(t)}const o6={get(t){const e=localStorage.getItem(t);return e?JSON.parse(e):null},set(t,e){localStorage.setItem(t,JSON.stringify(e))},remove(t){localStorage.removeItem(t)}},WS=async(t,e,n)=>{const r={method:t,headers:{"Content-Type":"application/json",Authorization:null},body:JSON.stringify(n)};return e&&(r.headers.Authorization=await o6.get("token")),r},$S=async(t,e=!1)=>{if(t.status===200)return e&&localStorage.setItem("token",JSON.stringify(t.headers.get("token"))),await t.json();{const n=await t.json();throw new Error(n.message)}};function Gy(){return{get:async r=>{const i=await WS("GET",!1),a=await fetch(r,i);return await $S(a)},post:async(r,i)=>{const a=await WS("POST",!0,i),o=await fetch(r,a);return await $S(o,!0)},getToken:async r=>{const i=await WS("GET",!0),a=await fetch(r,i);return await $S(a)}}}const yae=async()=>await Gy().getToken(`${WM}/auth/check`),bae=async t=>await Gy().post(`${WM}/auth/login`,t),Sae=async t=>await Gy().post(`${WM}/auth/register`,t);Fo(()=>[]);const mC=(...t)=>(console.warn("[DEPRECATED]: use `useSetAtom` from `jotai` instead."),GC(...t)),$M=(t,e)=>{const n=document.querySelector("#toasts"),r=document.createElement("div");r.classList.add("toast"),r.innerHTML=`<strong class="strong">${t}</strong> ${e?"":"success"}!`,n==null||n.appendChild(r),setTimeout(()=>{r.remove()},2e3)};function xae(){const t=mC(du),[e,n]=Zr(pu),{mutate:r,data:i,isError:a,error:o,isLoading:s}=Fy(yae,{onSuccess(l){n({error:"",user:{...l}}),t({on:!1,type:""})},onError(l){n({...e,error:"Error : "+l.message})}});return ee.exports.useEffect(()=>{o6.get("token")&&r()},[]),{check:r,data:i,isError:a,error:o,isLoading:s}}function Eae(){const t=mC(du),e=mC(pu);return{logout:async()=>{localStorage.clear(),e({error:"",user:null}),t({on:!1,type:""}),$M("logout ")},commentLogout:async()=>{localStorage.clear(),e({error:"",user:null}),t({on:!1,type:""})}}}const _ae=lt.div`
   margin: 10px;
 
   .avatar-img {
@@ -4419,7 +4417,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
       box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
     }
   }
-`;function qM({imageUrl:t="",width:e="40px",height:n="40px",boxShadow:r="2px 2px 10px var(--text-black-dark)",className:i="admin"}){return W(_ae,{width:e,height:n,boxShadow:r,children:W("div",{className:"border-div blob white",children:W("div",{className:"box",children:W("img",{src:`${t===null||t===""?"/image/common/avatar.png":t}`,className:`avatar-img ${i}`})})})})}function wae(){const{setModal:t}=Uy(),{tip:e,onTip:n,offTip:r}=BM(),[i,a]=Zr(Zs),o=e6(),s=Hs(pu),{logout:l}=Eae();xae();const u=()=>{i.on?t({on:!0,type:"timetable"}):o("/timetable/")},c=()=>{t({on:!0,type:"login"})};return We(Aie,{children:[We(Cie,{children:[W("div",{className:"facebook",children:W("a",{href:Die,children:W(Nie,{})})}),W("div",{className:"instargram",children:W("a",{href:Pie,children:W(Lie,{})})}),W("div",{className:"whatsapp",children:W("a",{href:Fie,children:W(Oie,{})})}),s&&s.user?W(mae,{username:s.user.name,onLogout:l,children:W(qM,{width:"2.5rem",height:"2.5rem",imageUrl:s.user.imageUrl,boxShadow:"2px 2px 10px white",className:"manager"})}):W(gae,{text:"LOGIN",children:W(vae,{className:"header-icon RiFileUserLine",onClick:c})}),i.on&&We(ma,{children:[We("div",{className:"title",onClick:u,children:[W("p",{children:"TIMETABLE"}),W(YV,{className:"title-mark"})]}),W("div",{className:"title",children:e.on?We(ma,{children:[W("p",{className:"title-p",onClick:r,children:"TIP ON"}),W(Iie,{className:"title-mark",onClick:r})]}):We(ma,{children:[W("p",{className:"title-p",onClick:n,children:"TIP OFF"}),W(kie,{className:"title-mark",onClick:n})]})})]})]}),We(Rie,{children:[We("div",{className:"gomain",children:[W("h5",{className:"slash",children:"|"}),W("h5",{children:"SOUTH KOREA"}),W("h5",{className:"slash",children:"|"}),W("h5",{children:"SEOUL"}),W("h5",{className:"slash",children:"|"}),W("h5",{children:"APRIL 26-30, 2023"}),W("h5",{className:"slash",children:"|"})]}),W(cae,{})]})]})}/*!
+`;function qM({imageUrl:t="",width:e="40px",height:n="40px",boxShadow:r="2px 2px 10px var(--text-black-dark)",className:i="admin"}){return W(_ae,{width:e,height:n,boxShadow:r,children:W("div",{className:"border-div blob white",children:W("div",{className:"box",children:W("img",{src:`${t===null||t===""?"/image/common/avatar.png":t}`,className:`avatar-img ${i}`})})})})}function wae(){const{setModal:t}=Uy(),{tip:e,onTip:n,offTip:r}=BM(),[i,a]=Zr(Zs),o=e6(),s=Hs(pu),{logout:l}=Eae();xae();const u=()=>{i.on?t({on:!0,type:"timetable"}):o("/timetable/")},c=()=>{t({on:!0,type:"login"})};return We(Aie,{children:[We(Cie,{children:[W("div",{className:"facebook",children:W("a",{href:Die,children:W(Nie,{})})}),W("div",{className:"instargram",children:W("a",{href:Pie,children:W(Lie,{})})}),W("div",{className:"whatsapp",children:W("a",{href:Fie,children:W(Oie,{})})}),s&&s.user?W(mae,{username:s.user.name,onLogout:l,children:W(qM,{width:"2rem",height:"2rem",imageUrl:s.user.imageUrl,boxShadow:"2px 2px 10px white",className:"manager"})}):W(gae,{text:"LOGIN",children:W(vae,{className:"header-icon RiFileUserLine",onClick:c})}),i.on&&We(ma,{children:[We("div",{className:"title",onClick:u,children:[W("p",{children:"TIMETABLE"}),W(YV,{className:"title-mark"})]}),W("div",{className:"title",children:e.on?We(ma,{children:[W("p",{className:"title-p",onClick:r,children:"TIP ON"}),W(Iie,{className:"title-mark",onClick:r})]}):We(ma,{children:[W("p",{className:"title-p",onClick:n,children:"TIP OFF"}),W(kie,{className:"title-mark",onClick:n})]})})]})]}),We(Rie,{children:[We("div",{className:"gomain",children:[W("h5",{className:"slash",children:"|"}),W("h5",{children:"SOUTH KOREA"}),W("h5",{className:"slash",children:"|"}),W("h5",{children:"SEOUL"}),W("h5",{className:"slash",children:"|"}),W("h5",{children:"APRIL 26-30, 2023"}),W("h5",{className:"slash",children:"|"})]}),W(cae,{})]})]})}/*!
  * react-paypal-js v7.8.2 (2022-11-30T19:31:44.159Z)
  * Copyright 2020-present, PayPal, Inc. All rights reserved.
  *
@@ -5377,7 +5375,7 @@ $MonMay1$
     margin-top: 10rem;
     font-weight: 300;
   }
-`;function iwe(){return We(rwe,{children:[W("h1",{children:"TIMETABLE"}),W(nwe,{})]})}function awe(){const{onClickCancel:t,modal:e}=Uy();return We(Jae,{children:[W(jV,{className:"close",onClick:t}),e.type==="timetable"&&W(iwe,{}),e.type==="registertable"&&W(K_e,{}),e.type==="hangul"&&W(ISe,{}),e.type==="seoul"&&W(Q_e,{}),e.type==="hotel"&&W(NSe,{}),e.type==="login"&&W(HD,{}),e.type==="register"&&W(HD,{})]})}function owe(){return W(qae,{children:W(awe,{})})}function swe(){const[t,e]=Zr(Zs);return{three:t,onThree:()=>{e({on:!0})},offThree:()=>{e({on:!1})}}}const lwe=hn.lazy(()=>h6(()=>import("./index.e4504285.js"),[],import.meta.url)),uwe=hn.lazy(()=>h6(()=>import("./index.0f994aad.js"),[],import.meta.url));function cwe(){const e=VM().search,{three:n,onThree:r,offThree:i}=swe();return ee.exports.useEffect(()=>{e==="?q=three"?r():i()},[e]),We(ee.exports.Suspense,{fallback:null,children:[e==="?q=three"?W(lwe,{}):W(uwe,{}),W(owe,{})]})}const dwe=lt.div`
+`;function iwe(){return We(rwe,{children:[W("h1",{children:"TIMETABLE"}),W(nwe,{})]})}function awe(){const{onClickCancel:t,modal:e}=Uy();return We(Jae,{children:[W(jV,{className:"close",onClick:t}),e.type==="timetable"&&W(iwe,{}),e.type==="registertable"&&W(K_e,{}),e.type==="hangul"&&W(ISe,{}),e.type==="seoul"&&W(Q_e,{}),e.type==="hotel"&&W(NSe,{}),e.type==="login"&&W(HD,{}),e.type==="register"&&W(HD,{})]})}function owe(){return W(qae,{children:W(awe,{})})}function swe(){const[t,e]=Zr(Zs);return{three:t,onThree:()=>{e({on:!0})},offThree:()=>{e({on:!1})}}}const lwe=hn.lazy(()=>h6(()=>import("./index.bb6807e8.js"),[],import.meta.url)),uwe=hn.lazy(()=>h6(()=>import("./index.eb13d1d4.js"),[],import.meta.url));function cwe(){const e=VM().search,{three:n,onThree:r,offThree:i}=swe();return ee.exports.useEffect(()=>{e==="?q=three"?r():i()},[e]),We(ee.exports.Suspense,{fallback:null,children:[e==="?q=three"?W(lwe,{}):W(uwe,{}),W(owe,{})]})}const dwe=lt.div`
   position: fixed;
   bottom: 10px;
   right: 10px;
