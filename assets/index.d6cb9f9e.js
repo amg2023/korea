@@ -1,10 +1,9 @@
-import{r as a,aM as s,an as n,j as e,aZ as f,a_ as p,a$ as d,b0 as m,b1 as u,b2 as g,b3 as v,b4 as x}from"./index.610a589b.js";function l(t,r){a.exports.useEffect(()=>{const i=new IntersectionObserver(r,{threshold:.4});return i.observe(t==null?void 0:t.current),()=>i&&i.disconnect()},[t])}const w=s.div`
+import{r as a,aM as s,an as n,j as e,aZ as f,a_ as p,a$ as d,b0 as m,b1 as u,b2 as g,b3 as v,b4 as x}from"./index.e997d8f2.js";function l(t,r){a.exports.useEffect(()=>{const i=new IntersectionObserver(r,{threshold:.4});return i.observe(t==null?void 0:t.current),()=>i&&i.disconnect()},[t])}const w=s.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
-  padding: 2rem;
   padding-top: 10rem;
   width: 100vw;
   height: 200vh;
@@ -166,7 +165,6 @@ import{r as a,aM as s,an as n,j as e,aZ as f,a_ as p,a$ as d,b0 as m,b1 as u,b2 
   justify-content: center;
   align-items: center;
   position: relative;
-  padding: 2rem;
   padding-top: 10rem;
   width: 100vw;
   height: 200vh;
@@ -263,4 +261,4 @@ import{r as a,aM as s,an as n,j as e,aZ as f,a_ as p,a$ as d,b0 as m,b1 as u,b2 
   flex-direction: column;
   justify-content: center;
   align-items: center;
-`;function k(){const t=a.exports.useRef();return l(t,c),n(j,{className:"page B",id:"B",children:[e("div",{className:"page-title",ref:t,children:e("h1",{children:"TIMETABLE"})}),e(x,{})]})}const c=(t,r)=>{const[i]=t;i&&i.isIntersecting?i.target.classList.add("start"):i.target.classList.remove("start")};function L(){return n(E,{children:[e(N,{}),e(k,{}),e(b,{}),e(T,{}),e(A,{})]})}export{L as default,c as titleCB};
+`;function k(){const t=a.exports.useRef();return l(t,c),n(j,{className:"page B",id:"B",children:[e("div",{className:"page-title",ref:t,children:e("h1",{children:"TIMETABLE"})}),e(x,{})]})}const c=(t,r)=>{const[i]=t;i&&i.isIntersecting?i.target.classList.add("start"):i.target.classList.remove("start")};function L(){return n(E,{children:[e(N,{}),e(A,{}),e(k,{}),e(b,{}),e(T,{})]})}export{L as default,c as titleCB};
