@@ -64,19 +64,28 @@ export const LineInput = styled.div`
     font-weight: 300;
     line-height: 2rem;
     vertical-align: middle;
-    &::-webkit-input-placeholder {
-      color: #717171;
-    }
     transition: all 0.3s ease-in;
   }
 
+  input[type="password"]::placeholder {
+    color: #545454;
+    font-weight: 300;
+  }
+
+  input::placeholder {
+    color: #545454;
+    font-weight: 300;
+  }
+
+  input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px transparent !important;
+    -webkit-text-fill-color: #fff !important;
+  }
   input:-webkit-autofill,
   input:-webkit-autofill:hover,
   input:-webkit-autofill:focus,
   input:-webkit-autofill:active {
-    -webkit-box-shadow: 0 0 0 30px #1d1d1d inset !important;
-    transition: background-color 10000s ease-in-out 0s;
-    -webkit-text-fill-color: #fff !important;
+    transition: background-color 5000s ease-in-out 0s !important;
   }
 `;
 

@@ -19,8 +19,16 @@ const GlobalStyle = createGlobalStyle`
         backdrop-filter: blur(10px);
     }
         /* 스크롤 코너 */
-        ::-webkit-scrollbar-corner {
+    ::-webkit-scrollbar-corner {
       background-color: black;
+    }
+
+    // 인풋박스
+    input, textarea {
+        -moz-user-select: auto;
+        -webkit-user-select: auto;
+        -ms-user-select: auto;
+        user-select: auto;
     }
 `;
 
