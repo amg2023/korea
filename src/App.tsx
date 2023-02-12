@@ -34,8 +34,7 @@ export default function App() {
           <BrowserRouter>
             <Header />
             <Routes>
-              <Route path="/korea/" element={<Mains />} />
-              <Route />
+              <Route path="" element={<Mains />} />
             </Routes>
             <Footer />
             <Toast />

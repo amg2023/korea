@@ -41,10 +41,6 @@ export default function Header() {
     else navigate("/timetable/");
   };
 
-  const onClickAuth = () => {
-    setModal({ on: true, type: "login" });
-  };
-
   return (
     <S.Header>
       <S.HeaderLeft>
@@ -63,54 +59,28 @@ export default function Header() {
             <AiOutlineWhatsApp />
           </a>
         </div>
-        {user && user.user ? (
-          <AvatarIcon username={user.user.name} onLogout={logout}>
-            <Avatar
-              width={"2rem"}
-              height={"2rem"}
-              imageUrl={user.user.imageUrl}
-              boxShadow={"2px 2px 10px white"}
-              className={"manager"}
-            />
-          </AvatarIcon>
-        ) : (
-          <GradientIcon text={"LOGIN"}>
-            <RiFileUserLine
-              className="header-icon RiFileUserLine"
-              onClick={onClickAuth}
-            />
-          </GradientIcon>
-        )}
-        {three.on && (
-          <>
-            <div className="title" onClick={onClickTimetable}>
-              <p>TIMETABLE</p>
-              <BsTable className="title-mark" />
-            </div>
-            <div className="title">
-              {tip.on ? (
-                <>
-                  <p className="title-p" onClick={offTip}>
-                    TIP ON
-                  </p>
-                  <MdTipsAndUpdates className="title-mark" onClick={offTip} />
-                </>
-              ) : (
-                <>
-                  <p className="title-p" onClick={onTip}>
-                    TIP OFF
-                  </p>
-                  <MdOutlineTipsAndUpdates
-                    className="title-mark"
-                    onClick={onTip}
-                  />
-                </>
-              )}
-            </div>
-          </>
-        )}
+        <div className="title" onClick={onClickTimetable}>
+          <p>TIMETABLE</p>
+          <BsTable className="title-mark" />
+        </div>
+        <div className="title">
+          {tip.on ? (
+            <>
+              <p className="title-p" onClick={offTip}>
+                TIP ON
+              </p>
+              <MdTipsAndUpdates className="title-mark" onClick={offTip} />
+            </>
+          ) : (
+            <>
+              <p className="title-p" onClick={onTip}>
+                TIP OFF
+              </p>
+              <MdOutlineTipsAndUpdates className="title-mark" onClick={onTip} />
+            </>
+          )}
+        </div>
       </S.HeaderLeft>
-
       <S.HeaderRight>
         <div className="gomain">
           <h5 className="slash">|</h5>
@@ -121,7 +91,6 @@ export default function Header() {
           <h5>APRIL 26-30, 2023</h5>
           <h5 className="slash">|</h5>
         </div>
-
         <Clock />
       </S.HeaderRight>
     </S.Header>
