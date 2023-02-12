@@ -43,46 +43,18 @@ export default function Footer() {
     setModal({ on: true, type: "registertable" });
   };
 
-  const onToggleThree = () => {
-    setThree({
-      on: !three.on,
-    });
-    if (three.on) {
-      navigate("/korea/");
-    } else {
-      navigate("/korea/?q=three");
-    }
-  };
-
   return (
     <S.Footer>
       {!modal.on && (
         <S.TitleLeft>
-          {three.on && (
-            <div>
-              AMG <span>2022</span>
-            </div>
-          )}
-          <PulseButton
-            style={{
-              width: "4rem",
-              height: "2.5rem",
-              fontSize: "1rem",
-              fontWeight: "200",
-              textShadow: "0 0 10px black",
-              background: "white",
-              boxShadow: "0 0 10px white",
-              color: "black",
-              zIndex: 300,
-            }}
-            title={!three.on ? "2D" : "3D"}
-            onClick={onToggleThree}
-          />
+          <div>
+            AMG <span>2022</span>
+          </div>
         </S.TitleLeft>
       )}
-      {!modal.on && three.on && <JoyStick />}
-      {!modal.on && tip.on && three.on && <ToolTip />}
-      {!modal.on && three.on && (
+      {!modal.on && <JoyStick />}
+      {!modal.on && tip.on && <ToolTip />}
+      {!modal.on && (
         <S.TitleRight>
           <PulseButton
             style={{
