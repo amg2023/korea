@@ -1,20 +1,15 @@
 import { getCheckApi } from "../../api/Auth";
 import { modalAtom } from "../modal/atom";
-import { useAtom, useAtomValue } from "jotai";
+import { useAtom } from "jotai";
 import { userAtom } from "./atom";
 import { useMutation } from "react-query";
 import { useEffect } from "react";
-// import { createToast } from "../../util/toast";
-// import { useRouter } from "next/router";
-import { useUpdateAtom } from "jotai/utils";
 import { IUser } from "type/user";
 import cache from "utils/cache";
 import { createToast } from "utils/toast";
-// import { IUser } from "../../type/user";
-// import cache from "../../util/cache";
 
 export function useUserQueryEffect() {
-  const setModal = useUpdateAtom(modalAtom);
+  const [_, setModal] = useAtom(modalAtom);
   const [user, setUser] = useAtom(userAtom);
   const { mutate, data, isError, error, isLoading } = useMutation(getCheckApi, {
     onSuccess(res: IUser) {
@@ -42,9 +37,8 @@ export function useUserQueryEffect() {
 }
 
 export function useUserActions() {
-  const setModal = useUpdateAtom(modalAtom);
-  const setUser = useUpdateAtom(userAtom);
-  // const router = useRouter();
+  const [_, setModal] = useAtom(modalAtom);
+  const [__, setUser] = useAtom(userAtom);
 
   const logout = async () => {
     localStorage.clear();
@@ -53,7 +47,6 @@ export function useUserActions() {
       on: false,
       type: "",
     });
-    // router.push("/");
     createToast("logout ");
   };
 
@@ -64,27 +57,10 @@ export function useUserActions() {
       on: false,
       type: "",
     });
-    // createToast("로그아웃 ");
   };
 
   return {
     logout,
     commentLogout,
   };
-}
-
-// write, update 권한 체크
-export function useIsOwnerEffect() {
-  // const router = useRouter();
-  const user = useAtomValue(userAtom);
-  useEffect(() => {
-    // if (user.user) {
-    //   if (user.user.id !== 1) {
-    //     router.push("/");
-    //   }
-    // } else {
-    //   router.push("/");
-    // }
-  }, [user]);
-  return { user };
 }

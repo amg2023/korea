@@ -7,10 +7,8 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import Footer from "components/Footer";
 import Header from "./components/Header";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 import Mains from "./Mains";
 import Toast from "components/common/toast/Toast";
-const { VITE_PAYPAL } = (import.meta as any).env;
 
 extend({ Water });
 const AtomsDevtools = ({ children }: any) => {
@@ -22,25 +20,18 @@ export default function App() {
   const [queryClient] = useState(() => new QueryClient());
 
   return (
-    <PayPalScriptProvider
-      options={{
-        "client-id": VITE_PAYPAL,
-        currency: "USD",
-      }}
-    >
-      <QueryClientProvider client={queryClient}>
-        <GlobalStyle />
-        <AtomsDevtools>
-          <BrowserRouter>
-            <Header />
-            <Routes>
-              <Route path="/korea" element={<Mains />} />
-            </Routes>
-            <Footer />
-            <Toast />
-          </BrowserRouter>
-        </AtomsDevtools>
-      </QueryClientProvider>
-    </PayPalScriptProvider>
+    <QueryClientProvider client={queryClient}>
+      <GlobalStyle />
+      <AtomsDevtools>
+        <BrowserRouter>
+          <Header />
+          <Routes>
+            <Route path="/korea" element={<Mains />} />
+          </Routes>
+          <Footer />
+          <Toast />
+        </BrowserRouter>
+      </AtomsDevtools>
+    </QueryClientProvider>
   );
 }

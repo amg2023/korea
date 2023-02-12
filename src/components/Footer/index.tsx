@@ -4,20 +4,14 @@ import * as S from "./style";
 import JoyStick from "components/common/joystick/JoyStick";
 import { useSizeEffect } from "utils/useSizeEffect";
 import { useEffect, useState } from "react";
-import JoyDiscription from "components/common/tooltip";
-import { CancelButton } from "components/common/cancel/CancelButton";
 import useTipActions from "store/tip/query";
 import ToolTip from "components/common/tooltip";
-import { useAtom } from "jotai";
-import { threeAtom } from "store/three/atom";
-import { useNavigate } from "react-router-dom";
+import { MAIN_PAGE } from "data/constant";
 
 export default function Footer() {
-  const { modal, setModal } = useModalActions();
-  const { tip, offTip } = useTipActions();
-  const [three, setThree] = useAtom(threeAtom);
+  const { modal } = useModalActions();
+  const { tip } = useTipActions();
   const { width } = useSizeEffect();
-  const navigate = useNavigate();
   const [style, setStyle] = useState({
     width: "6rem",
     height: "3rem",
@@ -40,7 +34,7 @@ export default function Footer() {
   }, [width]);
 
   const onClickRegistertable = () => {
-    setModal({ on: true, type: "registertable" });
+    window.location.href = MAIN_PAGE;
   };
 
   return (
