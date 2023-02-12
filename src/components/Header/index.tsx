@@ -18,23 +18,12 @@ import useTipActions from "store/tip/query";
 import { useNavigate } from "react-router-dom";
 import { useAtom, useAtomValue } from "jotai";
 import { threeAtom } from "store/three/atom";
-import { userAtom } from "store/user/atom";
-import { AvatarIcon } from "components/common/icon/AvatarIcon";
-import { GradientIcon } from "components/common/icon/GradientIcon";
-import { RiFileUserLine } from "react-icons/ri";
-import { useUserActions, useUserQueryEffect } from "store/user/query";
-import Avatar from "components/common/avatar/Avatar";
 
 export default function Header() {
   const { setModal } = useModalActions();
   const { tip, onTip, offTip } = useTipActions();
   const [three, setThree] = useAtom(threeAtom);
   const navigate = useNavigate();
-  const user = useAtomValue(userAtom);
-  const { logout } = useUserActions();
-
-  // 유저 업데이트
-  useUserQueryEffect();
 
   const onClickTimetable = () => {
     if (three.on) setModal({ on: true, type: "timetable" });
