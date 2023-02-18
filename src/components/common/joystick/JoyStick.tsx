@@ -8,11 +8,7 @@ export default function JoyStick() {
   const three = useAtomValue(threeAtom);
 
   return (
-    <S.JoyStick
-      style={{
-        display: !three.on ? "none" : "flex",
-      }}
-    >
+    <S.JoyStick>
       <S.JoyStickInner>
         {JoyButtonProps.map((item: IJoyButton, key: number) => {
           return (

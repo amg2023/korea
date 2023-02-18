@@ -36,11 +36,11 @@ export default function Header() {
             <AiOutlineInstagram />
           </a>
         </div>
-        <div className="whatsapp">
+        {/* <div className="whatsapp">
           <a href={WHATSAPP_URL}>
             <AiOutlineWhatsApp />
           </a>
-        </div>
+        </div> */}
         <div className="title" onClick={onClickTimetable}>
           <p>TIMETABLE</p>
           <BsTable className="title-mark" />

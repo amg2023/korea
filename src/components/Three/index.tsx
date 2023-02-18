@@ -88,7 +88,7 @@ export default function Three() {
               <Seoul />
               <Hangul />
               <ScreenPicture />
-              <MyCharacter _ref={_ref} />
+              <MyCharacter />
               <Ground />
               <Roof />
               <Hanok />

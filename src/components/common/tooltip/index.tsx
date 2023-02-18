@@ -17,11 +17,7 @@ export default function ToolTip() {
   const three = useAtomValue(threeAtom);
 
   return (
-    <S.SToolTip
-      style={{
-        display: !three.on ? "none" : "flex",
-      }}
-    >
+    <S.SToolTip>
       <S.SToolTipInner>
         <CancelButton
           className="cancel"
