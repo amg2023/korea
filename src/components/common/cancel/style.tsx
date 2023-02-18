@@ -2,6 +2,9 @@ import styled from "styled-components";
 
 export const CancelButton = styled.button`
   position: relative;
+
+  z-index: 10;
+
   font-size: 1.6rem;
   transition: all 0.3s ease-in-out;
 

@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import useTipActions from "store/tip/query";
 import ToolTip from "components/common/tooltip";
 import { MAIN_PAGE } from "data/constant";
+import { GradientText } from "components/common/text/Text";
 
 export default function Footer() {
   const { modal } = useModalActions();
@@ -27,9 +28,9 @@ export default function Footer() {
       });
     else if (width > 800)
       setStyle({
-        width: "3rem",
-        height: "2rem",
-        fontSize: "0.8rem",
+        width: "4rem",
+        height: "2.2rem",
+        fontSize: "0.7rem",
       });
   }, [width]);
 
@@ -41,14 +42,12 @@ export default function Footer() {
     <S.Footer>
       {!modal.on && (
         <S.TitleLeft>
-          <div>
-            AMG <span>2022</span>
-          </div>
+          <GradientText>AMG</GradientText>
+          <GradientText>2022</GradientText>
         </S.TitleLeft>
       )}
       {!modal.on && <JoyStick />}
       {!modal.on && tip.on && <ToolTip />}
-      {/*}
       {!modal.on && (
         <S.TitleRight>
           <PulseButton
@@ -64,7 +63,7 @@ export default function Footer() {
             onClick={onClickRegistertable}
           />
         </S.TitleRight>
-      )} */}
+      )}
     </S.Footer>
   );
 }

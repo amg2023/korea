@@ -59,8 +59,8 @@ export const GradientBorder = styled.div<IGradientIcon>`
 `;
 
 export const GradientToolTip = styled.div<IGradientIcon>`
-  opacity: ${(props) => (props.isHover ? "1" : "0")};
-  transition: all 0.2s ease-in;
+  ${(props) => (props.isHover ? "display: flex;" : "display: none;")}
+  transition: all 0.5s ease-in;
 
   @keyframes gradient {
     0% {
@@ -74,16 +74,17 @@ export const GradientToolTip = styled.div<IGradientIcon>`
   left: 50%;
   transform: translate(-50%, 0);
 
-  margin-top: 3rem;
+  margin-top: 1.8rem;
   width: 6rem;
   height: 2.5rem;
 
-  display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
 
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.7);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   border-radius: 0.4rem;
   box-shadow: 0 0 10px #1d1d1d;
   cursor: pointer;
@@ -91,7 +92,7 @@ export const GradientToolTip = styled.div<IGradientIcon>`
 
   p {
     color: white;
-    font-size: 0.8rem;
+    font-size: 0.6rem;
     font-weight: 200;
   }
 `;
@@ -111,7 +112,6 @@ export const AvatarToolTip = styled.div<IGradientIcon>`
   left: 50%;
   transform: translate(-50%, 0);
 
-  margin-top: 4rem;
   width: 8rem;
   height: 6rem;
 

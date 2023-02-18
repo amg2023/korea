@@ -108,8 +108,7 @@ export default function MyCharacter({ _ref }: any) {
       const _x = _V.x;
       const _y = Number(r) * -2 * Math.PI + Number(l) * 2 * Math.PI;
       const _z = _V.z;
-      // console.log(_V);
-      // console.log(values.current);
+
       if (f || b) {
         // 전후진
         // 전후 전환용
@@ -118,7 +117,6 @@ export default function MyCharacter({ _ref }: any) {
         // raycaster.setFromCamera(ref.current?.position!, camera);
         raycaster.setFromCamera(mouse, camera);
         const intersects = raycaster.intersectObject(_ref.current, true);
-        console.log(intersects);
         if (intersects.length === 0) {
           api.velocity.set(_x, 0, _z);
           api.angularVelocity.set(0, _y / 2, 0);

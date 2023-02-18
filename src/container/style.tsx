@@ -7,17 +7,17 @@ export const Page = styled.div`
   width: 100vw;
   height: 100vh;
 
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   text-align: center;
-  justify-content: flex-start;
+  justify-content: flex-start; */
 
   h1 {
     font-size: 4rem;
   }
 
   .close {
-    position: absolute;
+    position: fixed;
     color: white;
     background-color: transparent;
     font-size: 1.6rem;

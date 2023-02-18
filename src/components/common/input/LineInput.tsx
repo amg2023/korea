@@ -7,9 +7,10 @@ export const LineInput = ({
   placeholder,
   onChange,
   value,
+  style,
 }: IInput) => {
   return (
-    <S.LineInput>
+    <S.LineInput style={style}>
       <input
         type={type}
         name={name}

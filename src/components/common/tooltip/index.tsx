@@ -4,17 +4,13 @@ import { CancelButton } from "../cancel/CancelButton";
 import Discription from "./Discription";
 import JoyDiscriptionButton, { JoyDiscriptionPCProps } from "./ToolTipButton";
 import ToolTipButton from "./ToolTipButton";
-import JoyButton, { JoyDiscriptionProps } from "./ToolTipButton";
+import { JoyDiscriptionProps } from "./ToolTipButton";
 import * as S from "./style";
 import { IJoyDiscription } from "./type";
-import { useEffect } from "react";
-import { useAtomValue } from "jotai";
-import { threeAtom } from "store/three/atom";
 
 export default function ToolTip() {
-  const { tip, offTip } = useTipActions();
+  const { offTip } = useTipActions();
   const { width } = useSizeEffect();
-  const three = useAtomValue(threeAtom);
 
   return (
     <S.SToolTip>

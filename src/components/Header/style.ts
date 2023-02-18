@@ -34,8 +34,15 @@ export const HeaderLeft = styled.div`
 
   color: white;
 
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
+
+  .icon {
+    grid-column: auto;
+    grid-row: auto;
+    margin: 0.2rem;
+    font-size: 1rem;
+  }
 
   a {
     display: flex;
@@ -56,55 +63,15 @@ export const HeaderLeft = styled.div`
 
     p {
       margin: 0;
-      padding: 0.2rem;
+      /* padding: 0.2rem; */
       font-size: 0.8rem;
       font-weight: 300;
       cursor: pointer;
     }
-    .title-mark {
-      display: none;
-    }
-  }
-
-  .facebook {
-    padding: 0.2rem;
-    font-size: 1.5rem;
-    cursor: pointer;
-  }
-
-  .instargram {
-    padding: 0.2rem;
-    font-size: 1.5rem;
-    cursor: pointer;
-  }
-
-  .whatsapp {
-    padding: 0.2rem;
-    font-size: 1.5rem;
-    cursor: pointer;
-    text-shadow: 0 0 10px white;
   }
 
   @media (max-width: 600px) {
     display: grid;
-    .title {
-      border: none;
-      box-shadow: none;
-      p {
-        display: none;
-      }
-      .title-mark {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 0.2rem;
-        font-size: 1.5rem;
-        cursor: pointer;
-      }
-      .title-p {
-        display: none;
-      }
-    }
   }
 `;
 

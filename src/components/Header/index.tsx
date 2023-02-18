@@ -14,6 +14,7 @@ import Clock from "./Clock";
 import useModalActions from "../../store/modal/query";
 import useTipActions from "store/tip/query";
 import * as S from "./style";
+import { GradientIcon } from "components/common/icon/GradientIcon";
 
 export default function Header() {
   const { setModal } = useModalActions();
@@ -23,45 +24,43 @@ export default function Header() {
     setModal({ on: true, type: "timetable" });
   };
 
+  const onGoAnother = (url: string) => {
+    window.location.href = url;
+  };
   return (
     <S.Header>
       <S.HeaderLeft>
-        <div className="facebook">
-          <a href={FACEBOOK_URL}>
-            <AiOutlineFacebook />
-          </a>
-        </div>
-        <div className="instargram">
-          <a href={INSTARGRAM_URL}>
-            <AiOutlineInstagram />
-          </a>
-        </div>
-        {/* <div className="whatsapp">
-          <a href={WHATSAPP_URL}>
-            <AiOutlineWhatsApp />
-          </a>
-        </div> */}
-        <div className="title" onClick={onClickTimetable}>
-          <p>TIMETABLE</p>
-          <BsTable className="title-mark" />
-        </div>
-        <div className="title">
+        <GradientIcon
+          text={"FACEBOOK"}
+          onClick={() => onGoAnother(FACEBOOK_URL)}
+          className="icon"
+        >
+          <AiOutlineFacebook />
+        </GradientIcon>
+        <GradientIcon
+          text={"INSTARGRAM"}
+          onClick={() => onGoAnother(INSTARGRAM_URL)}
+          className="icon"
+        >
+          <AiOutlineInstagram />
+        </GradientIcon>
+        <GradientIcon
+          text={"TIMETABLE"}
+          onClick={onClickTimetable}
+          className="icon"
+        >
+          <BsTable />
+        </GradientIcon>
+        <GradientIcon
+          text={`TOOLTIP ${tip.on ? "OFF" : "ON"}`}
+          className="icon"
+        >
           {tip.on ? (
-            <>
-              <p className="title-p" onClick={offTip}>
-                TIP ON
-              </p>
-              <MdTipsAndUpdates className="title-mark" onClick={offTip} />
-            </>
+            <MdTipsAndUpdates className="title-mark" onClick={offTip} />
           ) : (
-            <>
-              <p className="title-p" onClick={onTip}>
-                TIP OFF
-              </p>
-              <MdOutlineTipsAndUpdates className="title-mark" onClick={onTip} />
-            </>
+            <MdOutlineTipsAndUpdates className="title-mark" onClick={onTip} />
           )}
-        </div>
+        </GradientIcon>
       </S.HeaderLeft>
       <S.HeaderRight>
         <div className="gomain">

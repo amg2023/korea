@@ -8,6 +8,7 @@ export default defineConfig({
   resolve: {
     alias: [
       { find: "components", replacement: "/src/components" },
+      { find: "container", replacement: "/src/container" },
       { find: "data", replacement: "/src/data" },
       { find: "lang", replacement: "/src/lang" },
       { find: "store", replacement: "/src/store" },

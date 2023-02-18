@@ -107,14 +107,12 @@ export default function MyCharacter() {
       const _x = _V.x;
       const _y = Number(r) * -2 * Math.PI + Number(l) * 2 * Math.PI;
       const _z = _V.z;
-      // console.log(_V);
-      // console.log(values.current);
+
       if (f || b) {
         // 전후진
         // 전후 전환용
         Q.setFromAxisAngle(frontAxis, offset);
         innerRef?.current?.quaternion.rotateTowards(Q, 0.2);
-        console.log(innerRef?.current?.quaternion);
         // 프론트인데 백, 백인데 프론트로 가면 진행
         if (f && frontBack === "b") {
           setIsLimit(false);
@@ -169,10 +167,10 @@ export default function MyCharacter() {
         />
 
         <group ref={innerRef as Ref<Group>}>
-          <NameTag
+          {/* <NameTag
             name={block ? "(it's wall. can't go more)" : "TORANG"}
-            bottom="15rem"
-          />
+            // bottom="15rem"
+          /> */}
           <primitive object={nodes!.walk} visible={false} />
           {Object.keys(nodes!).map((name: string, key: number) => {
             const names = name.split("_");

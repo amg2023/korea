@@ -1,21 +1,22 @@
 import { useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import GltfObject from "./GltfObject";
-import { S3_URL } from "data/constant";
-import { useGLTF } from "@react-three/drei";
-import { useEffect } from "react";
+import { HOTEL_URL, S3_URL } from "data/constant";
+import SelectGltfDraco from "./SelectGltfDraco";
 
 const url = S3_URL + "hanok.glb";
 export default function Hanok() {
-  const { nodes, materials } = useGLTF(url);
+  const onClick = () => {
+    window.location.href = HOTEL_URL;
+  };
   return (
-    <mesh
+    <SelectGltfDraco
+      url={url}
+      nameTag={"HOTEL"}
       scale={[0.01, 0.01, 0.01]}
       rotation={[-Math.PI / 2, 0, 0]}
       position={[0, 0, 240]}
-    >
-      <GltfObject nodes={nodes} materials={materials} />
-    </mesh>
+      onClick={onClick}
+    />
   );
 }
 useLoader.preload(GLTFLoader, url);

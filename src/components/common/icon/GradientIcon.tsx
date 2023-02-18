@@ -33,7 +33,10 @@ export const GradientIcon = ({
   }, []);
 
   return (
-    <S.GradientIconOuter style={iconStyle}>
+    <S.GradientIconOuter
+      style={iconStyle}
+      className={`gradient-icon ${className ? className : ""}`}
+    >
       <S.GradientIcon
         className={`gradient-icon ${className ? className : ""}`}
         ref={iconRef}
@@ -42,7 +45,7 @@ export const GradientIcon = ({
         style={iconStyle}
       >
         {children}
-        <S.GradientBorder isHover={isHover}></S.GradientBorder>
+        {/* <S.GradientBorder isHover={isHover}></S.GradientBorder> */}
       </S.GradientIcon>
       <S.GradientToolTip isHover={isHover} style={toolTipStyle}>
         <p>{text}</p>

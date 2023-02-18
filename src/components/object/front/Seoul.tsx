@@ -12,6 +12,7 @@ export default function Seoul() {
     e.stopPropagation();
     onSetType("seoul");
   };
+
   return (
     <SelectGltf
       url={url}

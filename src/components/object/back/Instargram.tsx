@@ -13,7 +13,7 @@ export default function Instargram() {
     <SelectGltf
       url={url}
       nameTag={"INSTARGRAM"}
-      position={[0, 10, -38]}
+      position={[15, 10, -38]}
       scale={[0.02, 0.01, 0.01]}
       rotation={[0, Math.PI, 0]}
       onClick={onClick}

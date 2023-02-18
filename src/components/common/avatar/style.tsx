@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import { IAvatar } from "./Avatar";
+import { IAvatar } from "./type";
 
-export const Avatar = styled.div<IAvatar>`
+export const SAvatar = styled.div<IAvatar>`
   padding: 0.5rem;
-  z-index: 500;
+  /* z-index: 500; */
 
   .avatar-img {
     width: ${(props) => props.width};
@@ -29,19 +29,19 @@ export const Avatar = styled.div<IAvatar>`
   // className에 다음 값을 인자로 넘겨주면 gradient가 바뀜
   .admin {
     background: linear-gradient(45deg, #000000, #000000) padding-box,
-      var(--background) border-box;
+      var(--red-gradient) border-box;
   }
   .manager {
     background: linear-gradient(45deg, #000000, #000000) padding-box,
-      linear-gradient(45deg, #8e2de2, #4a00e0) border-box;
+      var(--green-gradient) border-box;
   }
-  .teacher {
+  .participant {
     background: linear-gradient(45deg, #000000, #000000) padding-box,
-      linear-gradient(45deg, #00b09b, #96c93d) border-box;
+      var(--pupple-gradient) border-box;
   }
-  .normal {
+  .guest {
     background: linear-gradient(45deg, #000000, #000000) padding-box,
-      linear-gradient(45deg, #ffe259, #ffa751) border-box;
+      var(--black-gradient) border-box;
   }
   .blob {
     background: black;

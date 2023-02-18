@@ -16,5 +16,7 @@ export const START_DAY = "4/26/2023";
 export const MAIL_URL = "https://wicked-lyssa-jigglypop.koyeb.app/";
 // 서버
 export const SERVER_URL = "https://wicked-lyssa-jigglypop.koyeb.app/api";
-//
+// 메인 페이지
 export const MAIN_PAGE = "https://amg2022korea.com";
+// mensa url
+export const MENSA_URL = "https://www.mensakorea.org/";

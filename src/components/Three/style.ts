@@ -9,9 +9,9 @@ export const SmallTag = styled.div<ISmallTag>`
   min-width: 50px;
   position: relative;
   height: ${(props) => (props.width ? props.width : "1.8rem")};
-  width: ${(props) => (props.width ? props.width : "6rem")};
+  width: ${(props) => (props.width ? props.width : "8rem")};
   right: 50%;
-  bottom: ${(props) => (props.bottom ? props.bottom : "1rem")};
+  top: 5rem;
 
   background: rgba(0, 0, 0, 0.2);
   border-radius: 0.7rem;

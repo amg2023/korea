@@ -9,12 +9,12 @@ export const ToastDiv = styled.div`
   align-items: flex-end;
   z-index: 2000;
   min-width: 200px;
-  color: white;
 
   .toast {
     background-color: rgba(0, 0, 0, 0.8);
-    color: white;
-    box-shadow: 0 0 20px var(--black);
+    color: var(--green);
+    border: 1px solid var(--green);
+    box-shadow: 0 0 20px var(--green);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     font-size: 1rem;

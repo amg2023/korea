@@ -1,5 +1,4 @@
 import styled, { keyframes } from "styled-components";
-import { Center } from "../../style";
 
 export const InnerText = styled.p`
   color: white;
@@ -24,14 +23,16 @@ export const TitleLeft = styled.div`
   left: 0;
   padding: 1rem;
 
-  line-height: 1em;
-  color: white;
   margin: 0;
-  letter-spacing: -10;
-  text-shadow: 0 0 5px white;
-  z-index: 300;
+  font-family: "BMDOHYEON_ttf";
+  z-index: 800;
 
   font-size: 2rem;
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
   span {
     display: flex;
   }

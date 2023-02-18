@@ -13,7 +13,6 @@ export default function Flag() {
   const { actions } = useAnimations(animations!!, ref);
 
   useEffect(() => {
-    console.log(actions);
     actions["mesh_plane"]?.play();
   }, []);
 

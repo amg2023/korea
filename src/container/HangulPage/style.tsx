@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { DefaultPage } from "../style";
 
-export const seoulPage = styled(DefaultPage)`
+export const hangulPage = styled(DefaultPage)`
   position: relative;
   width: 100%;
 
@@ -10,8 +10,8 @@ export const seoulPage = styled(DefaultPage)`
   align-items: center;
   justify-content: center;
 
-  overflow-y: scroll;
-  overflow-x: hidden;
+  /* overflow-y: scroll;
+  overflow-x: hidden; */
 
   h1 {
     margin: 0;

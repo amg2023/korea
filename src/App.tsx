@@ -7,8 +7,9 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import Footer from "components/Footer";
 import Header from "./components/Header";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Mains from "./Mains";
 import Toast from "components/common/toast/Toast";
+import Three from "components/Three";
+import ModalPage from "components/modal";
 
 extend({ Water });
 const AtomsDevtools = ({ children }: any) => {
@@ -25,9 +26,8 @@ export default function App() {
       <AtomsDevtools>
         <BrowserRouter>
           <Header />
-          <Routes>
-            <Route path="/korea" element={<Mains />} />
-          </Routes>
+          <Three />
+          <ModalPage />
           <Footer />
           <Toast />
         </BrowserRouter>

@@ -20,10 +20,8 @@ export const LineInput = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
-  max-width: 400px;
-  margin: 0 auto;
+  margin-bottom: 2rem;
   border-radius: 2px;
-  padding: 1.4rem 2rem 1.6rem;
   background: transparent;
 
   &:after {
@@ -68,12 +66,12 @@ export const LineInput = styled.div`
   }
 
   input[type="password"]::placeholder {
-    color: #545454;
+    color: #e5e5e5;
     font-weight: 300;
   }
 
   input::placeholder {
-    color: #545454;
+    color: #e5e5e5;
     font-weight: 300;
   }
 
@@ -94,24 +92,19 @@ export const GradientInput = styled.div<IInput>`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 90vw;
+  width: 100%;
   background: transparent;
-  margin: 2rem;
-  margin-top: 5rem;
-  height: ${(props) => (props.label === "country" ? "8.7rem" : "")};
+  margin: 1rem;
 
   span {
     display: none;
   }
 
   input {
+    position: relative;
+    width: 100%;
     border: none;
-    border-right: 0px;
-    border-top: 0px;
-    border-left: 0px;
-    border-bottom: 0px;
     transition: all 0.3s ease-in;
-    width: 80vw;
     background: transparent;
     color: white !important;
     font-size: 1rem;
@@ -125,12 +118,20 @@ export const GradientInput = styled.div<IInput>`
 
   input:focus {
     outline: none;
-    padding: 1.5rem;
+    margin: 0.5rem;
   }
 
   h4 {
-    font-size: 1.4rem;
-    margin-top: 1rem;
+    position: absolute;
+    margin-top: -1rem;
+    font-size: 1rem;
+    font-weight: 300;
+  }
+
+  .error {
+    h5 {
+      font-weight: 300;
+    }
   }
 
   &:after {
@@ -150,14 +151,6 @@ export const GradientInput = styled.div<IInput>`
     animation: gradient 3s linear infinite;
   }
 
-  input:-webkit-autofill,
-  input:-webkit-autofill:hover,
-  input:-webkit-autofill:focus,
-  input:-webkit-autofill:active {
-    -webkit-box-shadow: 0 0 0 30px #1d1d1d inset !important;
-    transition: background-color 10000s ease-in-out 0s;
-    -webkit-text-fill-color: #fff !important;
-  }
   @keyframes gradient {
     0% {
       background-position: 0 0;

@@ -20,7 +20,6 @@ import Progress3D from "components/common/progress";
 import Seoul from "components/object/front/Seoul";
 import Tree, { TreePosition } from "components/object/base/Tree";
 import Hanok from "components/object/base/Hanok";
-import Flag from "components/object/base/Flag";
 import Amg from "components/object/front/Amg";
 import Mensa from "components/object/front/Mensa";
 
@@ -32,12 +31,6 @@ export default function Three() {
         <fog attach="fog" args={["white", 0, 500]} />
 
         <Selection>
-          {/* <EffectComposer multisampling={0} autoClear={false}>
-            <Outline
-              visibleEdgeColor={"#ff6b6b" as unknown as number}
-              edgeStrength={1000}
-            />
-          </EffectComposer> */}
           <Physics>
             <Stage
               intensity={0.2}
@@ -83,7 +76,7 @@ export default function Three() {
               <Sun />
               <Facebook />
               <Instargram />
-              <Whatsapp />
+              {/* <Whatsapp /> */}
 
               <Seoul />
               <Hangul />
@@ -94,7 +87,6 @@ export default function Three() {
               <Hanok />
               <Amg />
               <Mensa />
-              {/* <Flag /> */}
             </Stage>
             <Environment preset="sunset" blur={1} background={true} />
           </Physics>
