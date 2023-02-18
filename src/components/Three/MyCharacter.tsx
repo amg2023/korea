@@ -1,7 +1,7 @@
 import { Ref, useMemo, useRef, useState } from "react";
 import { PerspectiveCamera, useAnimations, useGLTF } from "@react-three/drei";
 import { useEffect } from "react";
-import { Group, Quaternion, Vector3 } from "three";
+import { Group, MathUtils, Mesh, Quaternion, Vector2, Vector3 } from "three";
 import { IGltfReturn } from "./types";
 import { useFrame, useLoader } from "@react-three/fiber";
 import { useCompoundBody } from "@react-three/cannon";
@@ -9,10 +9,15 @@ import { useControls } from "../common/control/useControls";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { S3_URL } from "../../data/constant";
 import { NameTag } from "./NameTag";
+import { MutableRefObject } from "react";
 
 const url = S3_URL + "torang.glb";
 
-export default function MyCharacter() {
+export default function MyCharacter({
+  _ref,
+}: {
+  _ref: MutableRefObject<Group | undefined>;
+}) {
   const [fov, setFov] = useState(50);
   const [block, setBlock] = useState(false);
   const [frontBack, setFrontBack] = useState("");
@@ -70,9 +75,10 @@ export default function MyCharacter() {
     api.rotation.subscribe((r) => (values.current.r = r));
   }, []);
 
-  useFrame(({ camera, raycaster }) => {
+  useFrame(({ camera, raycaster, mouse }) => {
     const frontAxis = new Vector3(0, 1, 0);
     const sideAxis = new Vector3(0, 0, 0);
+    const down = new Vector3(0, -1, 0);
     const V = new Vector3();
     const Q = new Quaternion();
     //fov 조정
@@ -113,83 +119,68 @@ export default function MyCharacter() {
         // 전후 전환용
         Q.setFromAxisAngle(frontAxis, offset);
         innerRef?.current?.quaternion.rotateTowards(Q, 0.2);
-        // 프론트인데 백, 백인데 프론트로 가면 진행
-        if (f && frontBack === "b") {
-          setIsLimit(false);
-        } else if (b && frontBack === "f") {
-          setIsLimit(false);
-        }
-        // 리미트
-        const p = values.current.p;
-        const x_abs = Math.abs(p[0]);
-        const z_abs = Math.abs(p[2]);
-        const limit = 60;
-        const line = 25;
-        if (x_abs > limit - line || z_abs > limit - line) {
-          setIsLimit(true);
-          if (x_abs > limit - line) api.velocity.set(-_x, 0, _z);
-          if (z_abs > limit - line) api.velocity.set(_x, 0, -_z);
-          setBlock(true);
-        }
-        // 한계선 넘으면 정지
-        if (x_abs > limit || z_abs > limit) {
-          api.velocity.set(0, 0, 0);
-          api.angularVelocity.set(0, 0, 0);
-        }
-        if (!isLimit) {
-          api.velocity.set(_x, 0, _z);
-          api.angularVelocity.set(0, _y / 2, 0);
-          setBlock(false);
-        }
+        const __V = new Vector3(...values.current.p);
+        __V.x += _x * 0.1;
+        __V.y += _y * 0.1;
+        __V.z += _z * 0.1;
+        raycaster.set(__V, new Vector3(0, 1, 0));
+
+        _ref.current?.traverse((child) => {
+          if (child instanceof Mesh) {
+            const intersects = raycaster.intersectObject(child);
+            if (intersects.length === 0) {
+              api.velocity.set(_x, 0, _z);
+              api.angularVelocity.set(0, _y / 2, 0);
+            } else {
+              api.velocity.set(0, 0, 0);
+              api.angularVelocity.set(0, 0, 0);
+            }
+          }
+        });
       } else {
         // 회전
-        setIsLimit(false);
         api.velocity.set(0, 0, 0);
         api.angularVelocity.set(0, _y * 0.5, 0);
-        setBlock(false);
       }
     } else {
       // 누른 키가 없을 때 멈춤
       api.velocity.set(0, 0, 0);
       api.angularVelocity.set(0, 0, 0);
-      setBlock(false);
     }
   });
 
   return (
-    <group>
-      <group ref={ref as Ref<Group>}>
-        <PerspectiveCamera
-          makeDefault
-          position={[0, 15, -30]}
-          rotation={[0.25, 3.15, 0]}
-          fov={fov}
-        />
+    <group ref={ref as Ref<Group>}>
+      <PerspectiveCamera
+        makeDefault
+        position={[0, 15, -30]}
+        rotation={[0.25, 3.15, 0]}
+        fov={fov}
+      />
 
-        <group ref={innerRef as Ref<Group>}>
-          {/* <NameTag
-            name={block ? "(it's wall. can't go more)" : "TORANG"}
-            // bottom="15rem"
-          /> */}
-          <primitive object={nodes!.walk} visible={false} />
-          {Object.keys(nodes!).map((name: string, key: number) => {
-            const names = name.split("_");
-            if (names[0] === "mesh") {
-              const material_name = "material_" + names[1];
-              const node_name = "mesh_" + names[1];
-              return (
-                <skinnedMesh
-                  castShadow
-                  receiveShadow
-                  material={materials!![material_name]}
-                  geometry={nodes![node_name].geometry}
-                  skeleton={nodes![node_name].skeleton}
-                  key={key}
-                ></skinnedMesh>
-              );
-            }
-          })}
-        </group>
+      <group ref={innerRef as Ref<Group>}>
+        <NameTag
+          name={block ? "(it's wall. can't go more)" : "TORANG"}
+          bottom="15rem"
+        />
+        <primitive object={nodes!.walk} visible={false} />
+        {Object.keys(nodes!).map((name: string, key: number) => {
+          const names = name.split("_");
+          if (names[0] === "mesh") {
+            const material_name = "material_" + names[1];
+            const node_name = "mesh_" + names[1];
+            return (
+              <skinnedMesh
+                castShadow
+                receiveShadow
+                material={materials!![material_name]}
+                geometry={nodes![node_name].geometry}
+                skeleton={nodes![node_name].skeleton}
+                key={key}
+              ></skinnedMesh>
+            );
+          }
+        })}
       </group>
     </group>
   );

@@ -125,6 +125,7 @@ export const PulseButton = styled.button<IPulseButton>`
   color: white;
 
   .border-div {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -133,11 +134,15 @@ export const PulseButton = styled.button<IPulseButton>`
   }
 
   .box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
     font-size: 0.8rem;
+    word-break: break-all;
+    white-space: pre-wrap;
+
+    p {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
   }
 
   .blob {

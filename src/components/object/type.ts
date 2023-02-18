@@ -8,7 +8,14 @@ export type IWall = {
   rotation: [number, number, number];
 };
 
-export type IWallPosition = IWall[];
+export type IWallName = {
+  name: string;
+  scale: [number, number, number];
+  position: [number, number, number];
+  rotation: [number, number, number];
+};
+
+export type IWallPosition = IWallName[];
 export type IMountainPosition = IWall[];
 export type ITreePosition = IWall[];
 

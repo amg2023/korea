@@ -5,17 +5,17 @@ import GltfObject from "./GltfObject";
 import { S3_URL } from "data/constant";
 
 const url = S3_URL + "ground.gltf";
-export default function Ground() {
+export default function Ground({ _ref }: { _ref: any }) {
   const { nodes, materials } = useLoader(GLTFLoader, url);
-  const [ref] = usePlane(() => ({
-    rotation: [-Math.PI / 2, 0, 0],
-    position: [0, -0.3, 0],
-    args: [100, 100, 10],
-    type: "Static",
-  }));
+  // const [ref] = usePlane(() => ({
+  //   rotation: [-Math.PI / 2, 0, 0],
+  //   position: [0, -0.3, 0],
+  //   args: [100, 100, 10],
+  //   type: "Static",
+  // }));
 
   return (
-    <mesh ref={ref as any}>
+    <mesh ref={_ref} rotation={[-Math.PI / 2, 0, 0]}>
       <GltfObject
         nodes={nodes}
         materials={materials}
