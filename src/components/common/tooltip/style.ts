@@ -9,7 +9,6 @@ export const SToolTip = styled.div`
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  z-index: 500;
 
   width: 100vw;
   height: 40vh;
