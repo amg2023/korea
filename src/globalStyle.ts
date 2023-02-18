@@ -2,20 +2,6 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 
-  @font-face {
-    font-family: "NanumSquareL";
-    src: url("/fonts/NanumSquareL.ttf") format("truetype");
-  }
-
-  @font-face {
-    font-family: "NanumBarunGothicSubset";
-    src: url("/fonts/NanumBarunGothic.ttf") format("truetype");
-  }
-
-  @font-face {
-    font-family: "BMDOHYEON_ttf";
-    src: url("/fonts/BMDOHYEON_ttf.ttf") format("truetype");
-  }
 
   @font-face {
     font-family: "Consolas";

@@ -24,14 +24,14 @@ export const TitleLeft = styled.div`
   padding: 1rem;
 
   margin: 0;
-  font-family: "BMDOHYEON_ttf";
-  z-index: 800;
-
+  z-index: 300;
   font-size: 2rem;
 
   p {
     margin: 0;
     padding: 0;
+    font-family: "BMDoHyeon";
+    font-weight: 200;
   }
   span {
     display: flex;
