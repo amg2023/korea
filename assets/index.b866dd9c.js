@@ -4637,7 +4637,7 @@ $MonMay1$
     margin-top: 10rem;
     font-weight: 300;
   }
-`;function xye(){return _t(_ye,{children:[fe("h1",{children:"TIMETABLE"}),fe(Sye,{})]})}function Eye(){const{onClickCancel:t,modal:e}=uR();return _t(Nge,{children:[fe(AH,{className:"close",onClick:t}),e.type==="timetable"&&fe(xye,{}),e.type==="hangul"&&fe(dye,{}),e.type==="seoul"&&fe(gye,{}),e.type==="hotel"&&fe(fye,{})]})}function wye(){return fe(Lte,{children:fe(Eye,{})})}const Tye=fr.lazy(()=>Ite(()=>import("./index.098409b1.js"),[],import.meta.url));function Aye(){return _t(ve.exports.Suspense,{fallback:null,children:[fe(Tye,{}),fe(wye,{})]})}const Cye=Ft.div`
+`;function xye(){return _t(_ye,{children:[fe("h1",{children:"TIMETABLE"}),fe(Sye,{})]})}function Eye(){const{onClickCancel:t,modal:e}=uR();return _t(Nge,{children:[fe(AH,{className:"close",onClick:t}),e.type==="timetable"&&fe(xye,{}),e.type==="hangul"&&fe(dye,{}),e.type==="seoul"&&fe(gye,{}),e.type==="hotel"&&fe(fye,{})]})}function wye(){return fe(Lte,{children:fe(Eye,{})})}const Tye=fr.lazy(()=>Ite(()=>import("./index.81be3639.js"),[],import.meta.url));function Aye(){return _t(ve.exports.Suspense,{fallback:null,children:[fe(Tye,{}),fe(wye,{})]})}const Cye=Ft.div`
   position: fixed;
   bottom: 10px;
   right: 10px;
