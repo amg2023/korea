@@ -26,7 +26,7 @@ export const WallPosition: IWallPosition = [
 ];
 const url = S3_URL + "wall.gltf";
 export default function Wall({ position, scale, rotation }: IWall) {
-  const { nodes, materials } = useLoader(GLTFLoader, url);
+  const { nodes, materials, scene } = useLoader(GLTFLoader, url);
   return (
     <group position={position} scale={scale} rotation={rotation}>
       <mesh

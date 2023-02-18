@@ -47,7 +47,7 @@ export default function Footer() {
         </S.TitleLeft>
       )}
       {!modal.on && <JoyStick />}
-      {!modal.on && tip.on && <ToolTip />}
+      {/* {!modal.on && tip.on && <ToolTip />}
       {!modal.on && (
         <S.TitleRight>
           <PulseButton
@@ -63,7 +63,7 @@ export default function Footer() {
             onClick={onClickRegistertable}
           />
         </S.TitleRight>
-      )}
+      )} */}
     </S.Footer>
   );
 }

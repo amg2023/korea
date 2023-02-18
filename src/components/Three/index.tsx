@@ -2,7 +2,7 @@ import { Canvas } from "@react-three/fiber";
 import { Physics } from "@react-three/cannon";
 import { Environment, Stage } from "@react-three/drei";
 import { Selection } from "@react-three/postprocessing";
-import { Suspense } from "react";
+import { Suspense, useRef } from "react";
 
 import Facebook from "components/object/back/Facebook";
 import Instargram from "components/object/back/Instargram";
@@ -25,6 +25,7 @@ import Amg from "components/object/front/Amg";
 import Mensa from "components/object/front/Mensa";
 
 export default function Three() {
+  const _ref = useRef<any>();
   return (
     <Suspense fallback={<Progress3D />}>
       <Canvas shadows style={{ width: "100vw", height: "100vh" }}>
@@ -45,16 +46,19 @@ export default function Three() {
               receiveShadow
               castShadow
             >
-              {WallPosition.map(({ position, scale, rotation }, key) => {
-                return (
-                  <Wall
-                    key={key}
-                    position={position}
-                    scale={scale}
-                    rotation={rotation}
-                  />
-                );
-              })}
+              <group ref={_ref as any}>
+                {WallPosition.map(({ position, scale, rotation }, key) => {
+                  return (
+                    <Wall
+                      key={key}
+                      position={position}
+                      scale={scale}
+                      rotation={rotation}
+                    />
+                  );
+                })}
+              </group>
+
               {MountainPosition.map(({ position, scale, rotation }, key) => {
                 return (
                   <Mountain
@@ -84,7 +88,7 @@ export default function Three() {
               <Seoul />
               <Hangul />
               <ScreenPicture />
-              <MyCharacter />
+              <MyCharacter _ref={_ref} />
               <Ground />
               <Roof />
               <Hanok />

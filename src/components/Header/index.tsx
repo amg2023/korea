@@ -1,5 +1,3 @@
-import * as S from "./style";
-
 import { BsTable } from "react-icons/bs";
 import { MdOutlineTipsAndUpdates, MdTipsAndUpdates } from "react-icons/md";
 import {
@@ -15,19 +13,14 @@ import {
 import Clock from "./Clock";
 import useModalActions from "../../store/modal/query";
 import useTipActions from "store/tip/query";
-import { useNavigate } from "react-router-dom";
-import { useAtom, useAtomValue } from "jotai";
-import { threeAtom } from "store/three/atom";
+import * as S from "./style";
 
 export default function Header() {
   const { setModal } = useModalActions();
   const { tip, onTip, offTip } = useTipActions();
-  const [three, setThree] = useAtom(threeAtom);
-  const navigate = useNavigate();
 
   const onClickTimetable = () => {
-    if (three.on) setModal({ on: true, type: "timetable" });
-    else navigate("/timetable/");
+    setModal({ on: true, type: "timetable" });
   };
 
   return (
