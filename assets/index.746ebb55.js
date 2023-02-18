@@ -4502,7 +4502,7 @@ $MonMay1$
     margin-top: 10rem;
     font-weight: 300;
   }
-`;function hye(){return Mt(fye,{children:[ge("h1",{children:"TIMETABLE"}),ge(pye,{})]})}function mye(){const{onClickCancel:t,modal:e}=uR();return Mt(wge,{children:[ge(Tte,{className:"close",onClick:t}),e.type==="timetable"&&ge(hye,{}),e.type==="hangul"&&ge(rye,{}),e.type==="seoul"&&ge(lye,{}),e.type==="hotel"&&ge(aye,{})]})}function gye(){return ge(xte,{children:ge(mye,{})})}const yye=fr.lazy(()=>bte(()=>import("./index.23e37608.js"),[],import.meta.url));function vye(){return Mt(ve.exports.Suspense,{fallback:null,children:[ge(yye,{}),ge(gye,{})]})}const bye=jt.div`
+`;function hye(){return Mt(fye,{children:[ge("h1",{children:"TIMETABLE"}),ge(pye,{})]})}function mye(){const{onClickCancel:t,modal:e}=uR();return Mt(wge,{children:[ge(Tte,{className:"close",onClick:t}),e.type==="timetable"&&ge(hye,{}),e.type==="hangul"&&ge(rye,{}),e.type==="seoul"&&ge(lye,{}),e.type==="hotel"&&ge(aye,{})]})}function gye(){return ge(xte,{children:ge(mye,{})})}const yye=fr.lazy(()=>bte(()=>import("./index.48c8aaca.js"),[],import.meta.url));function vye(){return Mt(ve.exports.Suspense,{fallback:null,children:[ge(yye,{}),ge(gye,{})]})}const bye=jt.div`
   position: fixed;
   bottom: 10px;
   right: 10px;
