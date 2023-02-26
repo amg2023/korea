@@ -40,12 +40,6 @@ export default function MyCharacter({
   const { actions } = useAnimations(animations!!, ref);
 
   useEffect(() => {
-    console.log(scene);
-    console.log(nodes);
-    console.log(materials);
-  }, []);
-
-  useEffect(() => {
     if (f || b || l || r) {
       actions["walk"]?.reset().fadeIn(0.5).play();
       return () => {
