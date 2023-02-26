@@ -11,8 +11,7 @@ import { S3_URL } from "../../data/constant";
 import { NameTag } from "./NameTag";
 import { MutableRefObject } from "react";
 
-// const url = S3_URL + "torang.glb";
-const url = "./torang.glb";
+const url = S3_URL + "torang.glb";
 
 export default function MyCharacter({
   _ref,
