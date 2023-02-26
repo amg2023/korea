@@ -1,7 +1,7 @@
 import { Ref, useMemo, useRef, useState } from "react";
 import { PerspectiveCamera, useAnimations, useGLTF } from "@react-three/drei";
 import { useEffect } from "react";
-import { Group, MathUtils, Mesh, Quaternion, Vector2, Vector3 } from "three";
+import { Group, Mesh, Quaternion, Vector3 } from "three";
 import { IGltfReturn } from "./types";
 import { useFrame, useLoader } from "@react-three/fiber";
 import { useCompoundBody } from "@react-three/cannon";
@@ -11,7 +11,8 @@ import { S3_URL } from "../../data/constant";
 import { NameTag } from "./NameTag";
 import { MutableRefObject } from "react";
 
-const url = S3_URL + "torang.glb";
+// const url = S3_URL + "torang.glb";
+const url = "./torang.glb";
 
 export default function MyCharacter({
   _ref,
@@ -38,7 +39,12 @@ export default function MyCharacter({
     return _loader;
   }, [url]);
   const { actions } = useAnimations(animations!!, ref);
-  const [isLimit, setIsLimit] = useState(false);
+
+  useEffect(() => {
+    console.log(scene);
+    console.log(nodes);
+    console.log(materials);
+  }, []);
 
   useEffect(() => {
     if (f || b || l || r) {
@@ -75,10 +81,9 @@ export default function MyCharacter({
     api.rotation.subscribe((r) => (values.current.r = r));
   }, []);
 
-  useFrame(({ camera, raycaster, mouse }) => {
+  useFrame(({ camera, raycaster }) => {
     const frontAxis = new Vector3(0, 1, 0);
     const sideAxis = new Vector3(0, 0, 0);
-    const down = new Vector3(0, -1, 0);
     const V = new Vector3();
     const Q = new Quaternion();
     //fov 조정
@@ -130,7 +135,7 @@ export default function MyCharacter({
             const intersects = raycaster.intersectObject(child);
             if (intersects.length === 0) {
               api.velocity.set(_x, 0, _z);
-              api.angularVelocity.set(0, _y / 2, 0);
+              api.angularVelocity.set(0, _y * 0.5, 0);
             } else {
               api.velocity.set(0, 0, 0);
               api.angularVelocity.set(0, 0, 0);
