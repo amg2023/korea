@@ -4,13 +4,13 @@ import { tipAtom } from "store/tip/atom";
 import * as S from "./style";
 import { INameTag } from "./types";
 
-export const NameTag = ({ name, width, bottom }: INameTag) => {
+export const NameTag = ({ name, width, bottom, top }: INameTag) => {
   const [tip] = useAtom(tipAtom);
   return (
     <>
       {!tip.on && (
         <Html zIndexRange={[1, 0]}>
-          <S.SmallTag width={width} bottom={bottom}>
+          <S.SmallTag width={width} bottom={bottom} top={top}>
             <div className="categoryset-text">{name}</div>
           </S.SmallTag>
         </Html>

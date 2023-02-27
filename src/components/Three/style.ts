@@ -8,10 +8,10 @@ export const SmallTag = styled.div<ISmallTag>`
   text-align: center;
   min-width: 50px;
   position: relative;
-  height: ${(props) => (props.width ? props.width : "1.8rem")};
+  height: ${(props) => (props.height ? props.height : "1.8rem")};
   width: ${(props) => (props.width ? props.width : "8rem")};
   right: 50%;
-  top: 5rem;
+  top: ${(props) => (props.top ? props.top : "5rem")};
 
   background: rgba(0, 0, 0, 0.2);
   border-radius: 0.7rem;

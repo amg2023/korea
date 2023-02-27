@@ -20,7 +20,6 @@ export default function MyCharacter({
 }) {
   const [fov, setFov] = useState(50);
   const [block, setBlock] = useState(false);
-  const [frontBack, setFrontBack] = useState("");
 
   const [ref, api] = useCompoundBody(() => ({
     mass: 0,
@@ -95,8 +94,6 @@ export default function MyCharacter({
     if (!values.current) return;
     // 인사
     if (f || b || l || r) {
-      if (f) setFrontBack("f");
-      if (b) setFrontBack("b");
       const offset =
         Number(f) * 0 +
         Number(b) * Math.PI +
@@ -159,7 +156,7 @@ export default function MyCharacter({
       <group ref={innerRef as Ref<Group>}>
         <NameTag
           name={block ? "(it's wall. can't go more)" : "TORANG"}
-          bottom="15rem"
+          top="0rem"
         />
         <primitive object={nodes!.walk} visible={false} />
         {Object.keys(nodes!).map((name: string, key: number) => {
