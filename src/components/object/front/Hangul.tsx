@@ -19,7 +19,7 @@ export default function Hangul() {
       nameTag={"HANGUL"}
       scale={[0.01, 0.01, 0.025]}
       rotation={[0, Math.PI / 2, 0]}
-      position={[43, 10, -13]}
+      position={[63, 10, -13]}
       onClick={onClick}
     />
   );

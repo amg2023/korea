@@ -64,6 +64,7 @@ export const Footer = styled.div`
   right: 0;
   margin: 1rem;
   padding: 1rem;
+  z-index: 10000;
 
   display: flex;
   flex-direction: row;
@@ -128,9 +129,8 @@ export const Footer = styled.div`
     }
   }
   color: #f9f9f9;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0);
   border-radius: 1rem;
-  box-shadow: 0 0 0.6rem black;
 `;
 
 export const JoyStick = styled.div`

@@ -19,7 +19,7 @@ export default function Seoul() {
       nameTag={"SEOUL"}
       scale={[0.03, 0.011, 0.02]}
       rotation={[0, Math.PI / 2, 0]}
-      position={[43, 10, 16]}
+      position={[63, 10, 16]}
       onClick={onClick}
     />
   );

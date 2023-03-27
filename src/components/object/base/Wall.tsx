@@ -14,21 +14,21 @@ export const WallPosition: IWallPosition = [
   // 후면
   {
     name: "WallBack",
-    position: [0, 15, -40],
+    position: [0, 15, -60],
     scale: [0.37, 0.8, 1],
     rotation: [0, -Math.PI, 0],
   },
   // 우측
   {
     name: "WallRight",
-    position: [44, 15, 0],
+    position: [64, 15, 0],
     scale: [0.37, 0.8, 1],
     rotation: [0, Math.PI / 2, 0],
   },
   // 좌측
   {
     name: "WallLeft",
-    position: [-44, 15, 0],
+    position: [-64, 15, 0],
     scale: [0.37, 0.8, 1],
     rotation: [0, -Math.PI / 2, 0],
   },

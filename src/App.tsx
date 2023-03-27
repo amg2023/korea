@@ -28,9 +28,10 @@ export default function App() {
           <Header />
           <Three />
           <ModalPage />
-          <Footer />
+          {/* <Footer /> */}
           <Toast />
         </BrowserRouter>
+        <Footer />
       </AtomsDevtools>
     </QueryClientProvider>
   );
