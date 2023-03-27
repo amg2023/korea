@@ -1,10 +1,7 @@
 import { useAnimations, useCursor, useGLTF } from "@react-three/drei";
-import { useLoader } from "@react-three/fiber";
 import { Select } from "@react-three/postprocessing";
-import { Ref, useEffect, useRef, useState } from "react";
-import { useTranslation } from "react-i18next";
+import { Ref, useRef, useState } from "react";
 import { Group } from "three";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { ISelectGltf } from "../type";
 import GltfObject from "./GltfObject";
 import { NameTag } from "components/Three/NameTag";
@@ -17,10 +14,9 @@ export default function SelectGltfDraco({
   scale,
   onClick,
 }: ISelectGltf) {
-  const { nodes, materials, animations, scene } = useGLTF(url);
+  const { nodes, materials } = useGLTF(url);
   const ref = useRef<Group>();
   const [hover, setHover] = useState(false);
-  const { actions } = useAnimations(animations!!, ref);
 
   const onHover = () => {
     setHover(true);

@@ -18,7 +18,7 @@ export const JoyStick = styled.div`
   -webkit-user-select: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
-  @media (max-width: 800px) {
+  @media (max-width: 1200px) {
     display: flex;
   }
 `;

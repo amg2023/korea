@@ -1,6 +1,5 @@
 import { OrbitControls } from "@react-three/drei";
 import { useLoader, Canvas } from "@react-three/fiber";
-import Avatar from "components/common/avatar/Avatar";
 import GltfObject from "components/object/base/GltfObject";
 import { S3_URL } from "data/constant";
 import { seoulEs } from "data/seoul";

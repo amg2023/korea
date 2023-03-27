@@ -1,6 +1,5 @@
-import { modalAtom } from "./../../../store/modal/atom";
 import { useAtom } from "jotai";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { controlAtom } from "../../../store/control/atom";
 
 type IKeys = {

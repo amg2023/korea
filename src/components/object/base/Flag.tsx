@@ -1,15 +1,12 @@
-import { usePlane } from "@react-three/cannon";
 import { useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import GltfObject from "./GltfObject";
-import { S3_URL } from "data/constant";
 import { useAnimations, useGLTF } from "@react-three/drei";
 import { useEffect, useRef } from "react";
 
 const url = "./flags.glb";
 export default function Flag() {
   const ref = useRef<any>();
-  const { nodes, materials, animations, scene } = useGLTF(url);
+  const { animations, scene } = useGLTF(url);
   const { actions } = useAnimations(animations!!, ref);
 
   useEffect(() => {
