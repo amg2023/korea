@@ -1,34 +1,30 @@
 import { useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import { IWall, IWallName, IWallPosition } from "../type";
-import GltfObject from "./GltfObject";
+import { IWallName, IWallPosition } from "../type";
 import { S3_URL } from "data/constant";
-import { useAtom } from "jotai";
-import { meshAtom } from "store/mesh/atom";
-import { useEffect, useRef } from "react";
-import { Mesh, BufferGeometry, Material } from "three";
-import { Ref } from "react";
-import { useState } from "react";
+import { useEffect } from "react";
+import { Mesh } from "three";
+import { isBrowser } from "react-device-detect";
 
 export const WallPosition: IWallPosition = [
   // 후면
   {
     name: "WallBack",
-    position: [0, 15, -60],
+    position: [0, 14, isBrowser ? -60 : -75],
     scale: [0.37, 0.8, 1],
     rotation: [0, -Math.PI, 0],
   },
   // 우측
   {
     name: "WallRight",
-    position: [64, 15, 0],
+    position: [isBrowser ? 64 : 79, 14, 0],
     scale: [0.37, 0.8, 1],
     rotation: [0, Math.PI / 2, 0],
   },
   // 좌측
   {
     name: "WallLeft",
-    position: [-64, 15, 0],
+    position: [isBrowser ? -64 : -79, 14, 0],
     scale: [0.37, 0.8, 1],
     rotation: [0, -Math.PI / 2, 0],
   },

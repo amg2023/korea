@@ -28,7 +28,6 @@ export const SToolTipInner = styled.div`
   padding: 0.5rem;
   border-radius: 10px;
   background-color: rgba(0, 0, 0, 0.8);
-  box-shadow: 0 0 10px black;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 

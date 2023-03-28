@@ -3,43 +3,10 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
 import GltfObject from "./GltfObject";
 import { S3_URL } from "data/constant";
-import { IMountainPosition, ITreePosition, IWall } from "../type";
-import { useAnimations, useGLTF } from "@react-three/drei";
-import { useEffect, useRef } from "react";
+import { ITreePosition, IWall } from "../type";
+import { useGLTF } from "@react-three/drei";
 
-export const TreePosition: ITreePosition = [
-  // // 전면
-  // {
-  //   scale: [0.08, 0.08, 0.08],
-  //   position: [30, -4, 60],
-  //   rotation: [-Math.PI / 2, 0, Math.PI / 2],
-  // },
-  // {
-  //   scale: [0.08, 0.08, 0.08],
-  //   position: [-30, -4, 60],
-  //   rotation: [-Math.PI / 2, 0, Math.PI / 2],
-  // },
-  // {
-  //   scale: [0.08, 0.08, 0.08],
-  //   position: [-35, -4, 35],
-  //   rotation: [-Math.PI / 2, 0, 0],
-  // },
-  // {
-  //   scale: [0.08, 0.08, 0.08],
-  //   position: [35, -4, 35],
-  //   rotation: [-Math.PI / 2, 0, -Math.PI / 2],
-  // },
-  // {
-  //   scale: [0.08, 0.08, 0.08],
-  //   position: [-35, -4, -35],
-  //   rotation: [-Math.PI / 2, 0, 0],
-  // },
-  // {
-  //   scale: [0.08, 0.08, 0.08],
-  //   position: [35, -4, -35],
-  //   rotation: [-Math.PI / 2, 0, -Math.PI / 2],
-  // },
-];
+export const TreePosition: ITreePosition = [];
 const url = S3_URL + "tree.glb";
 export default function Tree({ position, scale, rotation }: IWall) {
   const { nodes, materials } = useGLTF(url);

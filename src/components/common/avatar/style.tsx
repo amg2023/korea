@@ -3,7 +3,6 @@ import { IAvatar } from "./type";
 
 export const SAvatar = styled.div<IAvatar>`
   padding: 0.5rem;
-  /* z-index: 500; */
 
   .avatar-img {
     width: ${(props) => props.width};

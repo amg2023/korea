@@ -28,7 +28,6 @@ export default function App() {
           <Header />
           <Three />
           <ModalPage />
-          {/* <Footer /> */}
           <Toast />
         </BrowserRouter>
         <Footer />

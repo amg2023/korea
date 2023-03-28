@@ -1,5 +1,6 @@
 import { ThreeEvent, useLoader } from "@react-three/fiber";
 import { S3_URL } from "data/constant";
+import { isBrowser } from "react-device-detect";
 import useModalActions from "store/modal/query";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import SelectGltf from "../base/SelectGltf";
@@ -19,7 +20,7 @@ export default function Seoul() {
       nameTag={"SEOUL"}
       scale={[0.03, 0.011, 0.02]}
       rotation={[0, Math.PI / 2, 0]}
-      position={[63, 10, 16]}
+      position={[isBrowser ? 63 : 78, 10, 16]}
       onClick={onClick}
     />
   );

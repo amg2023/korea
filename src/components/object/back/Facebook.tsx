@@ -1,4 +1,5 @@
 import { ThreeEvent, useLoader } from "@react-three/fiber";
+import { isBrowser } from "react-device-detect";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { FACEBOOK_URL, S3_URL } from "../../../data/constant";
 import SelectGltf from "../base/SelectGltf";
@@ -13,7 +14,7 @@ export default function Facebook() {
     <SelectGltf
       url={url}
       nameTag={"FACEBOOK"}
-      position={[-15, 10, -58]}
+      position={[-15, 10, isBrowser ? -58 : -73]}
       scale={[0.02, 0.01, 0.01]}
       rotation={[0, Math.PI, 0]}
       onClick={onClick}

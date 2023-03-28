@@ -10,6 +10,7 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { S3_URL } from "../../data/constant";
 import { NameTag } from "./NameTag";
 import { MutableRefObject } from "react";
+import { isBrowser } from "react-device-detect";
 
 const url = S3_URL + "torang.glb";
 
@@ -148,7 +149,7 @@ export default function MyCharacter({
     <group ref={ref as Ref<Group>}>
       <PerspectiveCamera
         makeDefault
-        position={[0, 15, -30]}
+        position={[0, 15, isBrowser ? -30 : -45]}
         rotation={[0.25, 3.15, 0]}
         fov={fov}
       />

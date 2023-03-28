@@ -13,16 +13,6 @@ export default function ScreenPicture() {
     onSetType("hotel");
   };
 
-  return (
-    // <SelectGltf
-    //   url={url}
-    //   nameTag={"HOTEL"}
-    //   scale={[8, 8, 8]}
-    //   rotation={[Math.PI / 2, 0, Math.PI / 2]}
-    //   position={[-42, 8, 0]}
-    //   onClick={onClick}
-    // />
-    <></>
-  );
+  return <></>;
 }
 useLoader.preload(GLTFLoader, url);
