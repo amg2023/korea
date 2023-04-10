@@ -76,12 +76,6 @@ export const SToolTipInner = styled.div`
     }
   }
 
-  @media (max-width: 1200px) {
-    width: 20rem;
-    padding: 1rem;
-    position: fixed;
-    top: 6.5rem;
-  }
 `;
 
 export const SToolTipDiscription = styled.div`
