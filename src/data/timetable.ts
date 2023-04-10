@@ -167,10 +167,10 @@ export const timeTableEs: ITimeTableEs = [
                 name: "Folk Village",
                 url: "https://www.koreanfolk.co.kr/multi/english/",
               },
-              {
-                name: "Blue House",
-                url: "https://eng.president.go.kr/",
-              },
+              // {
+              //   name: "Blue House",
+              //   url: "https://eng.president.go.kr/",
+              // },
               {
                 name: "Palace",
                 url: "http://www.royalpalace.go.kr:8080/html/eng_gbg/main/main.jsp",
