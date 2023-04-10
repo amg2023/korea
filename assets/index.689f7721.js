@@ -4007,12 +4007,6 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     }
   }
 
-  @media (max-width: 1200px) {
-    width: 20rem;
-    padding: 1rem;
-    position: fixed;
-    top: 6.5rem;
-  }
 `,Doe=bt.div`
   display: flex;
   flex-direction: column;
