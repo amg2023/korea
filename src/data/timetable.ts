@@ -468,7 +468,7 @@ export const timeTableEs: ITimeTableEs = [
         ],
       },
       {
-        time: "20:00",
+        time: "19:00",
         value: [
           {
             title: "Arrival at Seoul station (KTX)",
