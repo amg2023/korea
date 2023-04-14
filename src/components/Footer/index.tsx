@@ -9,6 +9,7 @@ import ToolTip from "components/common/tooltip";
 import { MAIN_PAGE } from "data/constant";
 import { GradientText } from "components/common/text/Text";
 import { GradientIcon } from "components/common/icon/GradientIcon";
+import useRaycastActions from "store/raycast/query";
 
 export default function Footer() {
   const { modal } = useModalActions();
@@ -38,11 +39,19 @@ export default function Footer() {
   const onClickRegistertable = () => {
     window.location.href = MAIN_PAGE;
   };
+  const { raycast } = useRaycastActions();
 
   return (
     <S.Footer>
       {!modal.on && (
         <S.TitleLeft>
+          <p>
+            {raycast.step === 4 ? (
+              <h4>SUCCESS</h4>
+            ) : (
+              <h4>STEP {raycast.step}</h4>
+            )}
+          </p>
           <GradientText>AMG</GradientText>
           <GradientText>2022</GradientText>
         </S.TitleLeft>

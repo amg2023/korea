@@ -34,6 +34,7 @@ export type IGltfObject = {
   onHover?: () => void;
   onLeave?: () => void;
   onClick?: (e: ThreeEvent<MouseEvent>) => void;
+  name?: string;
 };
 
 export type ISelectGltf = {

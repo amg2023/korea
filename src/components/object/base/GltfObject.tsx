@@ -8,11 +8,12 @@ export default function GltfObject({
   position,
   onHover,
   onLeave,
+  name,
 }: IGltfObject) {
   return (
     <group scale={scale} onPointerEnter={onHover} onPointerLeave={onLeave}>
-      {Object.keys(nodes).map((name: string, key: number) => {
-        const names = name.split("_");
+      {Object.keys(nodes).map((_name: string, key: number) => {
+        const names = _name.split("_");
         if (names[0] === "mesh") {
           const material_name = "material_" + names[1];
           const node_name = "mesh_" + names[1];
@@ -25,6 +26,7 @@ export default function GltfObject({
               geometry={nodes[node_name].geometry}
               rotation={rotation}
               position={position}
+              name={name}
             />
           );
         }

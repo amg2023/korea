@@ -2,7 +2,7 @@ import { Canvas } from "@react-three/fiber";
 import { Physics } from "@react-three/cannon";
 import { Environment, Stage } from "@react-three/drei";
 import { Selection } from "@react-three/postprocessing";
-import { Suspense, useRef } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 
 import Facebook from "components/object/back/Facebook";
 import Instargram from "components/object/back/Instargram";
@@ -22,9 +22,57 @@ import Hanok from "components/object/base/Hanok";
 import Amg from "components/object/front/Amg";
 import Mensa from "components/object/front/Mensa";
 import { Group } from "three";
+import Lamp from "components/object/base/Lamp";
+import useRaycastActions from "store/raycast/query";
+import Answer from "components/object/left/Answer";
+import Gorani from "components/object/front/Gorani";
 
 export default function Three() {
-  const _ref = useRef<Group>();
+  // ref세트
+  const groundRef = useRef<Group>();
+  const { raycast } = useRaycastActions();
+  const lampRefs = [];
+  const stepARefs = [];
+  const stepBRefs = [];
+  for (let i = 0; i < raycast.stepA.length; i++) {
+    const _ref = useRef<Group>();
+    lampRefs.push(_ref);
+    stepARefs.push({
+      ...raycast.stepA[i],
+      ref: _ref,
+    });
+  }
+  for (let i = 0; i < raycast.stepB.length; i++) {
+    const _ref = useRef<Group>();
+    lampRefs.push(_ref);
+    stepBRefs.push({
+      ...raycast.stepB[i],
+      ref: _ref,
+    });
+  }
+  const refs = [groundRef, ...lampRefs];
+
+  const [env, setEnv] = useState<
+    | "sunset"
+    | "dawn"
+    | "night"
+    | "warehouse"
+    | "forest"
+    | "apartment"
+    | "studio"
+    | "city"
+    | "park"
+    | "lobby"
+    | null
+    | undefined
+  >("sunset");
+  // useEffect(() => {
+  //   if (raycast.step === 1) setEnv("sunset");
+  //   else if (raycast.step === 2) setEnv("apartment");
+  //   else if (raycast.step === 3) setEnv("park");
+  //   else if (raycast.step === 4) setEnv("night");
+  // }, [raycast.step]);
+
   return (
     <Suspense fallback={<Progress3D />}>
       <Canvas shadows style={{ width: "100vw", height: "100vh" }}>
@@ -34,7 +82,7 @@ export default function Three() {
           <Physics>
             <Stage
               intensity={0.2}
-              environment="sunset"
+              environment={env}
               adjustCamera={false}
               receiveShadow
               castShadow
@@ -82,12 +130,48 @@ export default function Three() {
               <Seoul />
               <Hangul />
               <ScreenPicture />
-              <MyCharacter _ref={_ref} />
-              <Ground _ref={_ref} />
+              <MyCharacter refs={refs} />
+              <Ground _ref={groundRef} />
               <Roof />
               <Hanok />
               <Amg />
               <Mensa />
+              <Answer />
+              {raycast.step === 1 && (
+                <>
+                  {stepARefs.map(
+                    ({ ref, name, hint, position }: any, key: number) => {
+                      return (
+                        <Lamp
+                          _ref={ref}
+                          key={key}
+                          name={name}
+                          hint={hint}
+                          position={position}
+                        />
+                      );
+                    }
+                  )}
+                </>
+              )}
+              {raycast.step === 2 && (
+                <>
+                  {stepBRefs.map(
+                    ({ ref, name, hint, position }: any, key: number) => {
+                      return (
+                        <Lamp
+                          _ref={ref}
+                          key={key}
+                          name={name}
+                          hint={hint}
+                          position={position}
+                        />
+                      );
+                    }
+                  )}
+                </>
+              )}
+              {raycast.step === 4 && <Gorani />}
             </Stage>
             <Environment preset="sunset" blur={1} background={true} />
           </Physics>

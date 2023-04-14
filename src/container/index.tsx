@@ -5,6 +5,7 @@ import HotelPage from "./HotelPage";
 import SeoulPage from "./SeoulPage";
 import * as S from "./style";
 import TimetablePage from "./TimetablePage";
+import StepPage from "./StepPage";
 
 export default function Page() {
   const { modal } = useModalActions();
@@ -15,6 +16,7 @@ export default function Page() {
       {modal.type === "hangul" && <HangulPage />}
       {modal.type === "seoul" && <SeoulPage />}
       {modal.type === "hotel" && <HotelPage />}
+      {modal.type === "step" && <StepPage />}
     </S.Page>
   );
 }

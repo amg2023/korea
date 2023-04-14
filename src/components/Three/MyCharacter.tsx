@@ -11,17 +11,17 @@ import { S3_URL } from "../../data/constant";
 import { NameTag } from "./NameTag";
 import { MutableRefObject } from "react";
 import { isBrowser } from "react-device-detect";
+import useRaycastActions from "store/raycast/query";
 
 const url = S3_URL + "torang.glb";
 
 export default function MyCharacter({
-  _ref,
+  refs,
 }: {
-  _ref: MutableRefObject<Group | undefined>;
+  refs: MutableRefObject<any>[];
 }) {
   const [fov, setFov] = useState(50);
   const [block, setBlock] = useState(false);
-
   const [ref, api] = useCompoundBody(() => ({
     mass: 0,
     type: "Dynamic",
@@ -38,6 +38,7 @@ export default function MyCharacter({
     return _loader;
   }, [url]);
   const { actions } = useAnimations(animations!!, ref);
+  const { selectedName, raycast } = useRaycastActions();
 
   useEffect(() => {
     if (f || b || l || r) {
@@ -121,18 +122,21 @@ export default function MyCharacter({
         __V.z += _z * 0.1;
         raycaster.set(__V, new Vector3(0, 1, 0));
 
-        _ref.current?.traverse((child) => {
-          if (child instanceof Mesh) {
-            const intersects = raycaster.intersectObject(child);
-            if (intersects.length === 0) {
-              api.velocity.set(_x, 0, _z);
-              api.angularVelocity.set(0, _y * 0.5, 0);
-            } else {
-              api.velocity.set(0, 0, 0);
-              api.angularVelocity.set(0, 0, 0);
-            }
-          }
+        const childs: any = [];
+        refs.map((ref: MutableRefObject<Group | undefined>) => {
+          ref.current?.traverse((child) => {
+            if (child instanceof Mesh) childs.push(child);
+          });
         });
+        const intersects = raycaster.intersectObjects(childs);
+        if (intersects.length === 0) {
+          api.velocity.set(_x, 0, _z);
+          api.angularVelocity.set(0, _y * 0.5, 0);
+        } else {
+          selectedName(intersects[0].object.name);
+          api.velocity.set(0, 0, 0);
+          api.angularVelocity.set(0, 0, 0);
+        }
       } else {
         // 회전
         api.velocity.set(0, 0, 0);
