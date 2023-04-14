@@ -5,34 +5,34 @@ export const raycastAtom = atom<any>({
     {
       name: "stepALampA",
       hint: "2lang",
-      position: [14, -1, 14],
+      position: [20, -1, 20],
     },
     {
       name: "stepALampB",
       hint: "pokemon 2",
-      position: [-14, -1, -14],
+      position: [-20, -1, -20],
     },
   ],
   stepB: [
     {
       name: "stepBLampA",
       hint: "My",
-      position: [15, -1, 15],
+      position: [20, -1, 20],
     },
     {
       name: "stepBLampB",
       hint: "name",
-      position: [15, -1, -15],
+      position: [20, -1, -20],
     },
     {
       name: "stepBLampC",
       hint: "is",
-      position: [-15, -1, 15],
+      position: [-20, -1, 20],
     },
     {
       name: "stepBLampD",
       hint: "to2ng",
-      position: [-15, -1, -15],
+      position: [-20, -1, -20],
     },
   ],
   selected: "",
