@@ -7,13 +7,18 @@ import ToolTipButton from "./ToolTipButton";
 import { JoyDiscriptionProps } from "./ToolTipButton";
 import * as S from "./style";
 import { IJoyDiscription } from "./type";
+import { isBrowser } from "react-device-detect";
 
 export default function ToolTip() {
   const { offTip } = useTipActions();
   const { width } = useSizeEffect();
 
   return (
-    <S.SToolTip>
+    <S.SToolTip
+      style={{
+        display: isBrowser ? "flex" : "none",
+      }}
+    >
       <S.SToolTipInner>
         <CancelButton
           className="cancel"

@@ -27,4 +27,13 @@ export const StepPage = styled(DefaultPage)`
       text-align: center;
     }
   }
+
+  //
+  @media (max-width: 900px) {
+    padding: 6rem;
+  }
+
+  @media (max-width: 600px) {
+    padding: 2rem;
+  }
 `;

@@ -8,8 +8,6 @@ import useTipActions from "store/tip/query";
 import ToolTip from "components/common/tooltip";
 import { MAIN_PAGE } from "data/constant";
 import { GradientText } from "components/common/text/Text";
-import { GradientIcon } from "components/common/icon/GradientIcon";
-import useRaycastActions from "store/raycast/query";
 
 export default function Footer() {
   const { modal } = useModalActions();

@@ -19,7 +19,7 @@ export const LineInput = styled.div`
   position: relative;
   display: flex;
   flex-direction: row;
-  width: 60%;
+  width: 100%;
   margin-bottom: 2rem;
   border-radius: 2px;
   background: transparent;
