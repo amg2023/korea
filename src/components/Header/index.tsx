@@ -69,7 +69,7 @@ export default function Header() {
           <h5 className="slash">|</h5>
           <h5>SEOUL</h5>
           <h5 className="slash">|</h5>
-          <h5>APRIL 26-30, 2023</h5>
+          <h5>APRIL/26 - MAY/1, 2023</h5>
           <h5 className="slash">|</h5>
         </div>
         <Clock />
