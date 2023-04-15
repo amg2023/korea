@@ -35,11 +35,11 @@ export const Hint = styled.div<ISmallTag>`
   flex-direction: column;
   min-width: 50px;
   position: absolute;
-  height: ${(props) => (props.height ? props.height : "15rem")};
-  width: ${(props) => (props.width ? props.width : "15rem")};
+  height: ${(props) => (props.height ? props.height : "8rem")};
+  width: ${(props) => (props.width ? props.width : "12rem")};
   left: 50%;
   transform: translate(-50%, -50%);
-  top: -20rem;
+  top: -15rem;
 
   background: rgba(0, 0, 0, 0.2);
   border-radius: 0.7rem;
@@ -53,12 +53,18 @@ export const Hint = styled.div<ISmallTag>`
     width: 100%;
   }
 
+  h1 {
+    font-size: 1.4rem;
+    margin: 0;
+    padding: 0;
+  }
+
   .categoryset-text {
     background: var(--red-gradient);
     box-shadow: 0 0 10px #ee0979;
     padding: 1rem;
     border-radius: 1rem;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: 300;
     transition: all 0.3s ease-in;
   }

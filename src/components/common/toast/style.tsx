@@ -7,7 +7,7 @@ export const ToastDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  z-index: 2000;
+  z-index: 200000;
   min-width: 200px;
 
   .toast {

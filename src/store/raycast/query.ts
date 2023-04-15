@@ -1,6 +1,7 @@
 import { useAtom } from "jotai";
 import { raycastAtom } from "./atom";
 import { modalAtom } from "store/modal/atom";
+import { createToast } from "utils/toast";
 
 export default function useRaycastActions() {
   const [raycast, setRaycast] = useAtom(raycastAtom);
@@ -36,12 +37,16 @@ export default function useRaycastActions() {
               step: 2,
             })
           );
-        }).then(() => {
-          setModal({
-            on: false,
-            type: "",
+        })
+          .then(() => {
+            setModal({
+              on: false,
+              type: "",
+            });
+          })
+          .then(() => {
+            createToast("congratulations!, STEP 1");
           });
-        });
       } else {
         setRaycast({
           ...raycast,
@@ -57,12 +62,16 @@ export default function useRaycastActions() {
               step: 3,
             })
           );
-        }).then(() => {
-          setModal({
-            on: false,
-            type: "",
+        })
+          .then(() => {
+            setModal({
+              on: false,
+              type: "",
+            });
+          })
+          .then(() => {
+            createToast("congratulations!, STEP 2");
           });
-        });
       } else {
         setRaycast({
           ...raycast,
@@ -78,12 +87,16 @@ export default function useRaycastActions() {
               step: 4,
             })
           );
-        }).then(() => {
-          setModal({
-            on: false,
-            type: "",
+        })
+          .then(() => {
+            setModal({
+              on: false,
+              type: "",
+            });
+          })
+          .then(() => {
+            createToast("congratulations. TEST");
           });
-        });
       } else {
         setRaycast({
           ...raycast,
