@@ -50,7 +50,7 @@ export default function Footer() {
       {!modal.on && tip.on && <ToolTip />}
       {!modal.on && (
         <S.TitleRight>
-          <PulseButton
+          {/* <PulseButton
             style={{
               ...style,
               fontWeight: "200",
@@ -61,7 +61,7 @@ export default function Footer() {
             }}
             title={"REGISTER"}
             onClick={onClickRegistertable}
-          />
+          /> */}
         </S.TitleRight>
       )}
     </S.Footer>
