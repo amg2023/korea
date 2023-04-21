@@ -6,7 +6,7 @@ import { useState } from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
 import Footer from "components/Footer";
 import Header from "./components/Header";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import Toast from "components/common/toast/Toast";
 import Three from "components/Three";
 import ModalPage from "components/modal";

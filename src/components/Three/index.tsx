@@ -2,7 +2,7 @@ import { Canvas } from "@react-three/fiber";
 import { Physics } from "@react-three/cannon";
 import { Environment, Stage } from "@react-three/drei";
 import { Selection } from "@react-three/postprocessing";
-import { Suspense, useEffect, useRef, useState } from "react";
+import { Suspense, useRef, useState } from "react";
 
 import Facebook from "components/object/back/Facebook";
 import Instargram from "components/object/back/Instargram";
@@ -66,12 +66,6 @@ export default function Three() {
     | null
     | undefined
   >("sunset");
-  // useEffect(() => {
-  //   if (raycast.step === 1) setEnv("sunset");
-  //   else if (raycast.step === 2) setEnv("apartment");
-  //   else if (raycast.step === 3) setEnv("park");
-  //   else if (raycast.step === 4) setEnv("night");
-  // }, [raycast.step]);
 
   return (
     <Suspense fallback={<Progress3D />}>

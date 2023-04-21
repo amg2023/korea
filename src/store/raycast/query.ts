@@ -3,6 +3,16 @@ import { raycastAtom } from "./atom";
 import { modalAtom } from "store/modal/atom";
 import { createToast } from "utils/toast";
 
+export interface IMeta {
+  env: {
+    VITE_A: string;
+    VITE_B: string;
+    VITE_C: string;
+  };
+}
+
+const { VITE_A, VITE_B, VITE_C } = (import.meta as unknown as IMeta).env;
+
 export default function useRaycastActions() {
   const [raycast, setRaycast] = useAtom(raycastAtom);
   const [modal, setModal] = useAtom(modalAtom);
@@ -29,7 +39,7 @@ export default function useRaycastActions() {
 
   const goNext = () => {
     if (raycast.step === 1) {
-      if (raycast.answer.toUpperCase() === "GO") {
+      if (raycast.answer.toUpperCase() === VITE_A) {
         new Promise((resolve) => {
           resolve(
             setRaycast({
@@ -54,7 +64,7 @@ export default function useRaycastActions() {
         });
       }
     } else if (raycast.step === 2) {
-      if (raycast.answer.toUpperCase() === "RA") {
+      if (raycast.answer.toUpperCase() === VITE_B) {
         new Promise((resolve) => {
           resolve(
             setRaycast({
@@ -79,7 +89,7 @@ export default function useRaycastActions() {
         });
       }
     } else if (raycast.step === 3) {
-      if (raycast.answer.toUpperCase() === "GORANI") {
+      if (raycast.answer.toUpperCase() === VITE_C) {
         new Promise((resolve) => {
           resolve(
             setRaycast({
