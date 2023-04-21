@@ -9,7 +9,7 @@ export default function Amg() {
   const { width } = useSizeEffect();
 
   const onClick = () => {
-    window.location.href = MAIN_PAGE;
+    // window.location.href = MAIN_PAGE;
   };
 
   return (
