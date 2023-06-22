@@ -156,6 +156,7 @@ export default function MyCharacter({
         position={[0, 15, isBrowser ? -30 : -45]}
         rotation={[0.25, 3.15, 0]}
         fov={fov}
+        getObjectsByProperty
       />
 
       <group ref={innerRef as Ref<Group>}>

@@ -1,16 +1,7 @@
 import { BsTable } from "react-icons/bs";
 import { MdOutlineTipsAndUpdates, MdTipsAndUpdates } from "react-icons/md";
-import {
-  AiOutlineFacebook,
-  AiOutlineInstagram,
-  AiOutlineWhatsApp,
-} from "react-icons/ai";
-import {
-  FACEBOOK_URL,
-  INSTARGRAM_URL,
-  WHATSAPP_URL,
-} from "../../data/constant";
-import Clock from "./Clock";
+import { AiOutlineFacebook, AiOutlineInstagram } from "react-icons/ai";
+import { FACEBOOK_URL, INSTARGRAM_URL } from "../../data/constant";
 import useModalActions from "../../store/modal/query";
 import useTipActions from "store/tip/query";
 import * as S from "./style";
@@ -72,7 +63,6 @@ export default function Header() {
           <h5>APRIL/26 - MAY/1, 2023</h5>
           <h5 className="slash">|</h5>
         </div>
-        <Clock />
       </S.HeaderRight>
     </S.Header>
   );

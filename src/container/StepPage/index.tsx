@@ -1,6 +1,5 @@
 import { LineInput } from "components/common/input/LineInput";
 import * as S from "./style";
-import { GradientInput } from "components/common/input/GradientInput";
 import useRaycastActions from "store/raycast/query";
 import PulseButton from "components/common/button/PulseButton";
 

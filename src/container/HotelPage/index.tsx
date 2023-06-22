@@ -3,11 +3,9 @@ import { useLoader, Canvas } from "@react-three/fiber";
 import GltfObject from "components/object/base/GltfObject";
 import { S3_URL } from "data/constant";
 import { hotelEs } from "data/hotel";
-import { seoulEs } from "data/seoul";
 import { Suspense } from "react";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import Markdown from "../Markdown/Markdown";
-import * as S from "./style";
 
 const url = S3_URL + "screen.gltf";
 

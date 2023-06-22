@@ -14,7 +14,7 @@ export default function SelectGltfDraco({
   scale,
   onClick,
 }: ISelectGltf) {
-  const { nodes, materials } = useGLTF(url);
+  const { nodes, materials }: any = useGLTF(url);
   const ref = useRef<Group>();
   const [hover, setHover] = useState(false);
 

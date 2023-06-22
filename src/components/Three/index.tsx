@@ -52,7 +52,7 @@ export default function Three() {
   }
   const refs = [groundRef, ...lampRefs];
 
-  const [env, setEnv] = useState<
+  const [env, setEnv]: any = useState<
     | "sunset"
     | "dawn"
     | "night"

@@ -10,9 +10,6 @@ export const hangulPage = styled(DefaultPage)`
   align-items: center;
   justify-content: center;
 
-  /* overflow-y: scroll;
-  overflow-x: hidden; */
-
   h1 {
     margin: 0;
     margin-top: 2rem;
